@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ثمنها — تقدير أسعار السيارات في السعودية</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=DM+Sans:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+
+<!-- ═══════════════════════════════════════════
+     LANDING PAGE
+═══════════════════════════════════════════ -->
+<div id="landing-page" class="page active">
+  <nav class="landing-nav">
+    <div class="nav-brand">
+      <img src="logo.png" alt="ثمنها" class="nav-logo">
+    </div>
+    <div class="nav-actions">
+      <button class="btn-icon" id="theme-btn-land" onclick="toggleTheme()" title="تبديل المظهر">🌙</button>
+      <button class="btn-lang" id="lang-btn-land" onclick="toggleLang()">EN</button>
+      <button class="btn-ghost" onclick="goToAuthLogin()" data-t="signIn">تسجيل الدخول</button>
+      <button class="btn-blue" onclick="goToAuthRegister()" data-t="createAccount">حساب جديد</button>
+    </div>
+  </nav>
+
+  <section class="landing-hero">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span data-t="tagline">تقدير سيارتك · شراء · بيع</span>
+      </div>
+      <h1 class="hero-title" data-t="landingTitle">قيّم سيارتك بذكاء وسرعة</h1>
+      <p class="hero-desc" data-t="landingDesc">المنصة الأذكى في المملكة لتقدير سعر السيارة والبحث حسب الميزانية والسوق.</p>
+      <div class="hero-cta">
+        <button class="btn-blue btn-large" onclick="goToAuthRegister()" data-t="getStarted">ابدأ الآن</button>
+        <button class="btn-ghost btn-large" onclick="goToAuthLogin()" data-t="signIn">تسجيل الدخول</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="logo.png" alt="ثمنها" class="hero-logo-img">
+    </div>
+  </section>
+
+  <section class="landing-features">
+    <div class="lf-card">
+      <div class="lf-icon">📊</div>
+      <div class="lf-title" data-t="feature1Title">تقدير سعر سيارتي</div>
+      <div class="lf-desc" data-t="feature1Desc">احصل على تقييم دقيق لسيارتك المستعملة.</div>
+    </div>
+    <div class="lf-card">
+      <div class="lf-icon">💰</div>
+      <div class="lf-title" data-t="feature2Title">بحث حسب الميزانية</div>
+      <div class="lf-desc" data-t="feature2Desc">اكتشف السيارات المتوفرة ضمن ميزانيتك.</div>
+    </div>
+    <div class="lf-card">
+      <div class="lf-icon">🏷️</div>
+      <div class="lf-title" data-t="feature3Title">السوق</div>
+      <div class="lf-desc" data-t="feature3Desc">تصفح السيارات المعروضة أو أعلن عن سيارتك.</div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AUTH PAGE
+═══════════════════════════════════════════ -->
+<div id="auth-page" class="page">
+  <div class="auth-outer">
+    <div class="auth-brand-panel">
+      <img src="logo.png" alt="ثمنها" class="auth-brand-logo">
+      <p class="auth-brand-tagline" data-t="subTagline">المملكة العربية السعودية · ذكاء أسعار السيارات</p>
+    </div>
+    <div class="auth-form-panel">
+      <div class="auth-form-inner">
+        <div class="auth-top-controls">
+          <button class="btn-ghost btn-sm" onclick="goToLanding()">← <span data-t="back">رجوع</span></button>
+          <div style="display:flex;gap:8px;align-items:center">
+            <button class="btn-icon" id="theme-btn-auth" onclick="toggleTheme()">🌙</button>
+            <button class="btn-lang" id="lang-btn-auth" onclick="toggleLang()">EN</button>
+          </div>
+        </div>
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login" data-t="signIn">تسجيل الدخول</button>
+          <button class="auth-tab" data-tab="register" data-t="createAccount">إنشاء حساب</button>
+        </div>
+
+        <!-- LOGIN -->
+        <div class="auth-form active" id="form-login">
+          <div class="form-title" data-t="welcomeBack">مرحباً بعودتك</div>
+          <div class="form-subtitle" data-t="signInSub">سجل دخولك للوصول إلى أدوات السيارات</div>
+          <div id="alert-login" class="auth-alert"></div>
+          <div class="form-group">
+            <label data-t="email">البريد الإلكتروني</label>
+            <div class="input-wrap">
+              <span class="input-icon">✉</span>
+              <input id="login-email" type="email" placeholder="example@email.com" autocomplete="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-t="password">كلمة المرور</label>
+            <div class="input-wrap">
+              <span class="input-icon">🔒</span>
+              <input id="login-password" type="password" placeholder="••••••••" autocomplete="current-password">
+            </div>
+          </div>
+          <button class="btn-primary" id="btn-login" onclick="doLogin()">
+            <span class="btn-text" data-t="signInBtn">دخول ←</span>
+            <span class="btn-loader"></span>
+          </button>
+        </div>
+
+        <!-- REGISTER -->
+        <div class="auth-form" id="form-register">
+          <div class="form-title" data-t="createYour">إنشاء حسابك</div>
+          <div class="form-subtitle" data-t="createSub">مجاني للأبد</div>
+          <div id="alert-register" class="auth-alert"></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-t="firstName">الاسم الأول</label>
+              <div class="input-wrap">
+                <span class="input-icon">👤</span>
+                <input id="reg-firstname" type="text" placeholder="أحمد">
+              </div>
+            </div>
+            <div class="form-group">
+              <label data-t="lastName">اسم العائلة</label>
+              <div class="input-wrap">
+                <span class="input-icon">👤</span>
+                <input id="reg-lastname" type="text" placeholder="الرشيدي">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-t="email">البريد الإلكتروني</label>
+            <div class="input-wrap">
+              <span class="input-icon">✉</span>
+              <input id="reg-email" type="email" placeholder="example@email.com" autocomplete="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-t="password">كلمة المرور</label>
+            <div class="input-wrap">
+              <span class="input-icon">🔒</span>
+              <input id="reg-password" type="password" placeholder="••••••••" autocomplete="new-password">
+            </div>
+            <ul class="pass-rules">
+              <li id="rule-passRule1" data-t="passRule1">8 أحرف على الأقل</li>
+              <li id="rule-passRule2" data-t="passRule2">حرف كبير واحد</li>
+              <li id="rule-passRule3" data-t="passRule3">رقم واحد</li>
+              <li id="rule-passRule4" data-t="passRule4">رمز خاص واحد</li>
+            </ul>
+          </div>
+          <div class="form-group">
+            <label data-t="confirmPass">تأكيد كلمة المرور</label>
+            <div class="input-wrap">
+              <span class="input-icon">🔒</span>
+              <input id="reg-confirm" type="password" placeholder="••••••••" autocomplete="new-password">
+            </div>
+          </div>
+          <button class="btn-primary" id="btn-register" onclick="doRegister()">
+            <span class="btn-text" data-t="createBtn">إنشاء الحساب ←</span>
+            <span class="btn-loader"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MAIN APP
+═══════════════════════════════════════════ -->
+<div id="app-page" class="page">
+
+  <nav class="topbar">
+    <div class="topbar-left">
+      <img src="logo.png" alt="ثمنها" class="topbar-logo" onclick="goToDashboard()" style="cursor:pointer">
+    </div>
+    <div class="topbar-right">
+      <button class="btn-icon" id="theme-btn-app" onclick="toggleTheme()">🌙</button>
+      <button class="btn-lang" id="lang-btn-app" onclick="toggleLang()">EN</button>
+      <span class="user-name" id="user-name"></span>
+      <div class="user-avatar" id="user-avatar">?</div>
+      <button class="btn-logout" onclick="doLogout()" data-t="signOut">خروج</button>
+    </div>
+  </nav>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- ══ DASHBOARD (الصفحة الرئيسية) ══ -->
+  <section id="section-dashboard" class="app-section active">
+    <div class="dashboard">
+      <div class="dashboard-hero">
+        <div class="dashboard-eyebrow" data-t="tagline">تقدير سيارتك · شراء · بيع</div>
+        <div class="dashboard-title" data-t="dashTitle">الصفحة الرئيسية</div>
+        <p class="dashboard-sub" data-t="dashSub">تقدير فوري للسيارة، بحث بالميزانية، وسوق للبيع والشراء.</p>
+      </div>
+      <div class="feature-cards">
+        <div class="feature-card" onclick="goToFeature('estimator')">
+          <div class="card-icon">📊</div>
+          <div class="card-title" data-t="feature1Title">تقدير سعر سيارتي</div>
+          <div class="card-desc" data-t="feature1Desc">احصل على تقييم دقيق لسيارتك المستعملة.</div>
+          <div class="card-arrow">←</div>
+        </div>
+        <div class="feature-card" onclick="goToFeature('budget')">
+          <div class="card-icon">💰</div>
+          <div class="card-title" data-t="feature2Title">بحث حسب الميزانية</div>
+          <div class="card-desc" data-t="feature2Desc">اكتشف السيارات المتوفرة ضمن ميزانيتك.</div>
+          <div class="card-arrow">←</div>
+        </div>
+        <div class="feature-card" onclick="goToFeature('sell')">
+          <div class="card-icon">➕</div>
+          <div class="card-title" data-t="addCarTitle">أعلن عن سيارتك</div>
+          <div class="card-desc" data-t="addCarDesc">أضف إعلان سيارتك وتواصل مع المشترين.</div>
+          <div class="card-arrow">←</div>
+        </div>
+        <div class="feature-card" onclick="goToFeature('listings')">
+          <div class="card-icon">🏷️</div>
+          <div class="card-title" data-t="browseTitle">الإعلانات النشطة</div>
+          <div class="card-desc" data-t="browseDesc">تصفح السيارات المعروضة للبيع.</div>
+          <div class="card-arrow">←</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ تقدير السعر ══ -->
+  <section id="section-estimator" class="app-section">
+    <div class="inner-page">
+      <div class="inner-header">
+        <button class="back-btn" onclick="goToDashboard()">→</button>
+        <div>
+          <div class="inner-title" data-t="carValuation">تقدير السعر</div>
+          <div class="inner-subtitle" data-t="carValSub">احسب القيمة السوقية الحالية لسيارتك</div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-section-label" data-t="vehicleInfo">معلومات المركبة</div>
+        <div class="form-grid">
+          <div class="form-field">
+            <label data-t="make">الماركة *</label>
+            <select id="est-make" onchange="onMakeChange()">
+              <option value="" data-t="selectMake">اختر الماركة</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label data-t="model">الموديل *</label>
+            <select id="est-model" onchange="onModelChange()" disabled>
+              <option value="" data-t="selectModel">اختر الموديل</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label data-t="trim">الفئة</label>
+            <select id="est-trim" disabled>
+              <option value="" data-t="allTrims">جميع الفئات</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label data-t="year">السنة</label>
+            <input id="est-year" type="number" placeholder="مثال: 2020" min="1980" max="2026">
+          </div>
+          <div class="form-field full">
+            <label data-t="mileageKm">عداد الكيلومترات</label>
+            <input id="est-mileage" type="number" placeholder="مثال: 50000" min="0">
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-section-label" data-t="condHistory">الحالة والتاريخ</div>
+        <div class="form-field full">
+          <label data-t="accidentHistory">تاريخ الحوادث</label>
+          <div class="radio-pills">
+            <div class="radio-pill">
+              <input type="radio" name="accident" id="acc-none" value="none" checked>
+              <label for="acc-none"><span class="pill-icon">✅</span><span class="pill-text" data-t="noAccident">بدون حوادث</span></label>
+            </div>
+            <div class="radio-pill">
+              <input type="radio" name="accident" id="acc-minor" value="minor">
+              <label for="acc-minor"><span class="pill-icon">🟡</span><span class="pill-text" data-t="minor">بسيط</span></label>
+            </div>
+            <div class="radio-pill">
+              <input type="radio" name="accident" id="acc-medium" value="medium">
+              <label for="acc-medium"><span class="pill-icon">🟠</span><span class="pill-text" data-t="medium">متوسط</span></label>
+            </div>
+            <div class="radio-pill">
+              <input type="radio" name="accident" id="acc-major" value="major">
+              <label for="acc-major"><span class="pill-icon">🔴</span><span class="pill-text" data-t="major">كبير</span></label>
+            </div>
+          </div>
+        </div>
+        <button class="btn-estimate" onclick="runEstimation()">
+          <span data-t="calcPrice">📊 احسب السعر التقديري</span>
+        </button>
+      </div>
+      <div class="result-card" id="est-result">
+        <div class="result-header">
+          <div>
+            <div class="result-label" data-t="estMarketVal">القيمة السوقية التقديرية</div>
+            <div id="res-car-name" class="result-car-name"></div>
+          </div>
+          <div class="result-badge" data-t="calculated">✓ تم الحساب</div>
+        </div>
+        <div class="result-price-block">
+          <div class="result-price">
+            <span id="res-price"></span>
+            <span id="res-currency" class="result-currency"></span>
+          </div>
+          <div class="result-retention">
+            <span data-t="retentionLabel">نسبة القيمة المتبقية</span>: <strong id="res-retention"></strong>
+          </div>
+          <div class="result-range">
+            <span data-t="range">النطاق</span>: <span id="res-low"></span> — <span id="res-high"></span>
+          </div>
+          <div class="result-agency">
+            <span data-t="agencyPriceLbl">سعر الوكالة</span>: <span id="res-agency"></span>
+          </div>
+        </div>
+        <div class="result-factors" id="res-factors"></div>
+        <div class="result-disclaimer" data-t="disclaimer"></div>
+      </div>
+      <div class="not-found-card" id="est-not-found">
+        <div class="not-found-icon">🔍</div>
+        <div class="not-found-title" data-t="notFoundTitle">السيارة غير موجودة في قاعدة البيانات</div>
+        <div class="not-found-msg" data-t="notFoundMsg">هذه السيارة غير متوفرة في قاعدة بياناتنا.</div>
+        <a class="not-found-contact" href="mailto:thmmenha@gmail.com" data-t="contactUs">✉️ تواصل معنا</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ بحث بالميزانية ══ -->
+  <section id="section-budget" class="app-section">
+    <div class="inner-page">
+      <div class="inner-header">
+        <button class="back-btn" onclick="goToDashboard()">→</button>
+        <div>
+          <div class="inner-title" data-t="budgetFinder">البحث بالميزانية</div>
+          <div class="inner-subtitle" data-t="budgetFinderSub">ابحث عن سيارات جديدة ضمن نطاق سعرك</div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-section-label" data-t="searchFilters">معايير البحث</div>
+        <div class="form-grid">
+          <div class="form-field">
+            <label data-t="minBudget">أقل ميزانية</label>
+            <input id="budget-min" type="number" placeholder="80000" min="0">
+          </div>
+          <div class="form-field">
+            <label data-t="maxBudget">أعلى ميزانية</label>
+            <input id="budget-max" type="number" placeholder="200000" min="0">
+          </div>
+          <div class="form-field full">
+            <label data-t="carType">نوع السيارة</label>
+            <select id="budget-type">
+              <option value="" data-t="allTypes">جميع الأنواع</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-estimate" onclick="runBudgetSearch()">
+          <span data-t="searchCars">🔍 ابحث عن السيارات</span>
+        </button>
+      </div>
+      <div class="budget-results" id="budget-results">
+        <div class="results-count" id="budget-count"></div>
+        <div class="cars-grid" id="budget-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ أعلن عن سيارتك ══ -->
+  <section id="section-sell" class="app-section">
+    <div class="inner-page">
+      <div class="inner-header">
+        <button class="back-btn" onclick="goToDashboard()">→</button>
+        <div>
+          <div class="inner-title" data-t="addCarTitle">أعلن عن سيارتك</div>
+          <div class="inner-subtitle" data-t="addCarDesc">أضف إعلان سيارتك وتواصل مع المشترين</div>
+        </div>
+      </div>
+      <div class="form-card" style="max-width:600px">
+        <div class="form-section-label" data-t="listYourCar">بيانات السيارة</div>
+        <div class="form-grid">
+          <div class="form-field">
+            <label data-t="sellMake">الماركة *</label>
+            <input id="sell-make" type="text" placeholder="Toyota">
+          </div>
+          <div class="form-field">
+            <label data-t="sellModel">الموديل *</label>
+            <input id="sell-model" type="text" placeholder="Camry">
+          </div>
+          <div class="form-field">
+            <label data-t="sellYear">السنة *</label>
+            <input id="sell-year" type="number" placeholder="2020" min="1980" max="2026">
+            <span class="field-error" id="sell-year-err"></span>
+          </div>
+          <div class="form-field">
+            <label data-t="sellMileage">الكيلومترات</label>
+            <input id="sell-mileage" type="number" placeholder="50000">
+          </div>
+          <div class="form-field">
+            <label data-t="askingPrice">السعر المطلوب *</label>
+            <input id="sell-price" type="number" placeholder="95000">
+          </div>
+          <div class="form-field">
+            <label data-t="phoneWa">الجوال / واتساب *</label>
+            <input id="sell-phone" type="tel" placeholder="05XXXXXXXX">
+          </div>
+        </div>
+        <div class="form-field" style="margin-top:14px">
+          <label data-t="notes">ملاحظات</label>
+          <textarea id="sell-notes" placeholder="اللون، الحالة، الإضافات…" rows="3"></textarea>
+        </div>
+        <div class="form-field" style="margin-top:14px;margin-bottom:20px">
+          <label data-t="photosUpTo5">الصور (حتى 5)</label>
+          <label class="file-upload">
+            <input type="file" accept="image/*" multiple onchange="handleImageUpload(this)">
+            <div class="file-upload-display">
+              <span class="upload-icon">📸</span>
+              <strong data-t="clickUpload">انقر لرفع الصور</strong>
+              <p data-t="uploadSub">JPG أو PNG حتى 5MB لكل صورة</p>
+            </div>
+          </label>
+          <div id="img-preview" class="img-preview-strip"></div>
+        </div>
+        <button class="btn-estimate" id="btn-publish" onclick="submitListing()">
+          <span data-t="publishListing">🚀 نشر الإعلان</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ الإعلانات النشطة ══ -->
+  <section id="section-listings" class="app-section">
+    <div class="inner-page" style="max-width:1100px">
+      <div class="inner-header">
+        <button class="back-btn" onclick="goToDashboard()">→</button>
+        <div>
+          <div class="inner-title" data-t="browseTitle">الإعلانات النشطة</div>
+          <div class="inner-subtitle" data-t="marketplaceSub">تصفح السيارات المعروضة للبيع في المملكة</div>
+        </div>
+        <button class="btn-blue" onclick="goToFeature('sell')" style="margin-right:auto" data-t="addCarTitle">+ أعلن عن سيارتك</button>
+      </div>
+      <div class="listings-header">
+        <div class="listings-count" id="listings-count">0 إعلان</div>
+      </div>
+      <div class="listings-grid" id="listings-grid">
+        <div class="empty-listings"><div class="empty-icon">🚗</div><p data-t="noListings">لا توجد إعلانات بعد.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ تفاصيل الإعلان ══ -->
+  <section id="section-detail" class="app-section">
+    <div class="inner-page" style="max-width:900px">
+      <div class="inner-header">
+        <button class="back-btn" onclick="goToFeature('listings')">→</button>
+        <div>
+          <div class="inner-title" id="detail-title">تفاصيل السيارة</div>
+        </div>
+      </div>
+      <div id="detail-content"></div>
+    </div>
+  </section>
+
+  <!-- ══ الشات ══ -->
+  <section id="section-chat" class="app-section">
+    <div class="inner-page" style="max-width:700px">
+      <div class="inner-header">
+        <button class="back-btn" id="chat-back-btn" onclick="goToFeature('listings')">→</button>
+        <div>
+          <div class="inner-title" id="chat-title">المحادثة</div>
+          <div class="inner-subtitle" id="chat-subtitle"></div>
+        </div>
+      </div>
+      <div class="chat-box" id="chat-box">
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input-bar">
+          <input type="text" id="chat-input" placeholder="اكتب رسالتك…" onkeydown="if(event.key==='Enter') sendMessage()">
+          <button class="btn-blue" onclick="sendMessage()">إرسال</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /app-page -->
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
