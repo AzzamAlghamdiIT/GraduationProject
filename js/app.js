@@ -767,28 +767,50 @@ window.openPublicChat=function(carId,carName){
 
 async function loadPublicMessages(carId){
   try{
-    const msgs=await db.getPublicMsgs(carId);
-    const box=document.getElementById('chat-messages'); if(!box) return;
-    const myEmail=currentUser?.email||'';
-    box.innerHTML=msgs.length===0
-      ?`<div class="chat-empty">لا توجد تعليقات بعد. كن أول من يعلّق!</div>`
-      :msgs.map(m=>{
-          const isMine=m.sender_email===myEmail;
-          const uname=m.sender_username?'@'+m.sender_username:m.sender_email?.split('@')[0]||'?';
-          const avLetter=(m.sender_username||m.sender_email||'?')[0]?.toUpperCase();
-          const msgTime=new Date(m.created_at).toLocaleTimeString(LANG==='ar'?'ar-SA':'en-US',{hour:'2-digit',minute:'2-digit'});
-          const msgDate=new Date(m.created_at).toLocaleDateString(LANG==='ar'?'ar-SA':'en-US',{month:'short',day:'numeric'});
+    const msgs = await db.getPublicMsgs(carId);
+    const box  = document.getElementById('chat-messages'); if(!box) return;
+    const myEmail = currentUser?.email||'';
+
+    // Fetch profiles for all unique senders (excluding self — we already have currentProfile)
+    const senderEmails = [...new Set(msgs.map(m=>m.sender_email).filter(e=>e && e!==myEmail))];
+    const profilesMap  = {};
+    // Include own profile
+    if(currentProfile) profilesMap[myEmail] = currentProfile;
+
+    if(senderEmails.length){
+      await Promise.all(senderEmails.map(em=>
+        sb(`profiles?email=eq.${encodeURIComponent(em)}&select=email,username,avatar&limit=1`)
+          .then(rows=>{ if(rows&&rows.length) profilesMap[rows[0].email]=rows[0]; })
+          .catch(()=>{})
+      ));
+    }
+
+    box.innerHTML = msgs.length===0
+      ? `<div class="chat-empty">لا توجد تعليقات بعد. كن أول من يعلّق!</div>`
+      : msgs.map(m=>{
+          const isMine   = m.sender_email===myEmail;
+          const profile  = profilesMap[m.sender_email];
+          const uname    = profile?.username ? '@'+profile.username
+                         : m.sender_username ? '@'+m.sender_username
+                         : m.sender_email?.split('@')[0]||'?';
+          const avatar   = profile?.avatar || '';
+          const avLetter = (profile?.username||m.sender_username||m.sender_email||'?')[0]?.toUpperCase();
+          const avHtml   = avatar
+            ? `<div class="chat-av" style="padding:0;overflow:hidden"><img src="${avatar}" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>`
+            : `<div class="chat-av">${avLetter}</div>`;
+          const msgTime  = new Date(m.created_at).toLocaleTimeString(LANG==='ar'?'ar-SA':'en-US',{hour:'2-digit',minute:'2-digit'});
+          const msgDate  = new Date(m.created_at).toLocaleDateString(LANG==='ar'?'ar-SA':'en-US',{month:'short',day:'numeric'});
           return `<div class="chat-msg ${isMine?'mine':'theirs'}">
-            ${!isMine?`<div class="chat-av">${avLetter}</div>`:''}
+            ${!isMine ? avHtml : ''}
             <div>
-              ${!isMine?`<div class="chat-uname">${uname}</div>`:''}
+              ${!isMine ? `<div class="chat-uname">${uname}</div>` : ''}
               <div class="chat-bubble">${escHtml(m.message)}</div>
               <div class="chat-meta">${isMine?(LANG==='ar'?'أنت':'You'):uname} · ${msgTime} · ${msgDate}</div>
             </div>
           </div>`;
         }).join('');
-    box.scrollTop=box.scrollHeight;
-  }catch(e){}
+    box.scrollTop = box.scrollHeight;
+  }catch(e){ console.error('loadPublicMessages error',e); }
 }
 
 window.sendPublicMessage=async function(){
