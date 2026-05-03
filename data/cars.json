@@ -1,0 +1,5202 @@
+[
+ {
+   "Make": "Toyota",
+   "Model": "Camry",
+   "Type": "Sedan",
+   "Trim": "LE",
+   "Year": 2026,
+   "Agency_Price": "122300"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Camry",
+   "Type": "Sedan",
+   "Trim": "E Plus HEV",
+   "Year": 2026,
+   "Agency_Price": "111500"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Camry",
+   "Type": "Sedan",
+   "Trim": "E",
+   "Year": 2026,
+   "Agency_Price": "111000"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Camry",
+   "Type": "Sedan",
+   "Trim": "LE HEV",
+   "Year": 2026,
+   "Agency_Price": "119500"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Camry",
+   "Type": "Sedan",
+   "Trim": "E HEV",
+   "Year": 2026,
+   "Agency_Price": "106950"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Camry",
+   "Type": "Sedan",
+   "Trim": "LUMIERE HEV",
+   "Year": 2026,
+   "Agency_Price": "159850"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Yaris",
+   "Type": "Sedan",
+   "Trim": "Y Plus",
+   "Year": 2026,
+   "Agency_Price": "65000"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Yaris",
+   "Type": "Sedan",
+   "Trim": "Y",
+   "Year": 2026,
+   "Agency_Price": "60000"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Yaris",
+   "Type": "Sedan",
+   "Trim": "Y Limited",
+   "Year": 2026,
+   "Agency_Price": "62000"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Yaris",
+   "Type": "Sedan",
+   "Trim": "YX",
+   "Year": 2026,
+   "Agency_Price": "71200"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Corolla",
+   "Type": "Sedan",
+   "Trim": "XLI",
+   "Year": 2026,
+   "Agency_Price": "76400"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Corolla",
+   "Type": "Sedan",
+   "Trim": "XLI Executive",
+   "Year": 2026,
+   "Agency_Price": "80500"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Corolla",
+   "Type": "Sedan",
+   "Trim": "XLI Executive Moonroof",
+   "Year": 2026,
+   "Agency_Price": "88550"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Raize",
+   "Type": "Crossover",
+   "Trim": "XLE",
+   "Year": 2026,
+   "Agency_Price": "62500"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Raize",
+   "Type": "Crossover",
+   "Trim": "Limited",
+   "Year": 2026,
+   "Agency_Price": "68000"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Hilux",
+   "Type": "Pickup",
+   "Trim": "GLX",
+   "Year": 2026,
+   "Agency_Price": "115500"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Hilux",
+   "Type": "Pickup",
+   "Trim": "GL DSL",
+   "Year": 2026,
+   "Agency_Price": "95300"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Hilux",
+   "Type": "Pickup",
+   "Trim": "GL2",
+   "Year": 2026,
+   "Agency_Price": "123625"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Hilux",
+   "Type": "Pickup",
+   "Trim": "SGLX 4X4 AT DSL",
+   "Year": 2026,
+   "Agency_Price": "160425"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "HiAce",
+   "Type": "Van",
+   "Trim": "Panel Van",
+   "Year": 2026,
+   "Agency_Price": "117300"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "HiAce",
+   "Type": "Van",
+   "Trim": "Panel Van High Roof",
+   "Year": 2026,
+   "Agency_Price": "147200"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "HiAce",
+   "Type": "Van",
+   "Trim": "Passenger Van",
+   "Year": 2026,
+   "Agency_Price": "159850"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Prado",
+   "Type": "SUV",
+   "Trim": "TXL1",
+   "Year": 2026,
+   "Agency_Price": "200100"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Prado",
+   "Type": "SUV",
+   "Trim": "TX2",
+   "Year": 2026,
+   "Agency_Price": "190900"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Prado",
+   "Type": "SUV",
+   "Trim": "TX2 DSL",
+   "Year": 2026,
+   "Agency_Price": "198950"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Prado",
+   "Type": "SUV",
+   "Trim": "TXL2 DIESEL",
+   "Year": 2026,
+   "Agency_Price": "220800"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Prado",
+   "Type": "SUV",
+   "Trim": "TXL3",
+   "Year": 2026,
+   "Agency_Price": "228275"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Innova",
+   "Type": "MPV",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "109825"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Innova",
+   "Type": "MPV",
+   "Trim": "VIP 7 HEV",
+   "Year": 2026,
+   "Agency_Price": "128800"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Urban Cruiser",
+   "Type": "Crossover",
+   "Trim": "GLX",
+   "Year": 2026,
+   "Agency_Price": "83950"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Urban Cruiser",
+   "Type": "Crossover",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "75325"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Fortuner",
+   "Type": "SUV",
+   "Trim": "GX2 4x4",
+   "Year": 2026,
+   "Agency_Price": "127650"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Fortuner",
+   "Type": "SUV",
+   "Trim": "VX3",
+   "Year": 2026,
+   "Agency_Price": "182850"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Fortuner",
+   "Type": "SUV",
+   "Trim": "VX1",
+   "Year": 2026,
+   "Agency_Price": "161000"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Fortuner",
+   "Type": "SUV",
+   "Trim": "GX2 4x4 DIESEL",
+   "Year": 2026,
+   "Agency_Price": "145475"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Crown",
+   "Type": "Sedan",
+   "Trim": "Premium",
+   "Year": 2026,
+   "Agency_Price": "159850"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Crown",
+   "Type": "Sedan",
+   "Trim": "Prestige",
+   "Year": 2026,
+   "Agency_Price": "144325"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Land Cruiser",
+   "Type": "SUV",
+   "Trim": "GXR2",
+   "Year": 2026,
+   "Agency_Price": "289800"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Land Cruiser",
+   "Type": "SUV",
+   "Trim": "GXR3",
+   "Year": 2026,
+   "Agency_Price": "318550"
+ },
+ {
+   "Make": "Toyota",
+   "Model": "Land Cruiser",
+   "Type": "SUV",
+   "Trim": "GXR4",
+   "Year": 2026,
+   "Agency_Price": "331200"
+ },
+ {
+   "Make": "KIA",
+   "Model": "K3",
+   "Type": "Sedan",
+   "Trim": "GL Retail",
+   "Year": 2026,
+   "Agency_Price": "64975"
+ },
+ {
+   "Make": "KIA",
+   "Model": "K3",
+   "Type": "Sedan",
+   "Trim": "GL Fleet",
+   "Year": 2026,
+   "Agency_Price": "69000"
+ },
+ {
+   "Make": "KIA",
+   "Model": "K4",
+   "Type": "Sedan",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "76475"
+ },
+ {
+   "Make": "KIA",
+   "Model": "K4",
+   "Type": "Sedan",
+   "Trim": "GLS-BASE",
+   "Year": 2026,
+   "Agency_Price": "89125"
+ },
+ {
+   "Make": "KIA",
+   "Model": "K4",
+   "Type": "Sedan",
+   "Trim": "LX",
+   "Year": 2026,
+   "Agency_Price": "80500"
+ },
+ {
+   "Make": "KIA",
+   "Model": "K4",
+   "Type": "Sedan",
+   "Trim": "GLS",
+   "Year": 2026,
+   "Agency_Price": "86250"
+ },
+ {
+   "Make": "KIA",
+   "Model": "K5",
+   "Type": "Sedan",
+   "Trim": "GL Mid",
+   "Year": 2026,
+   "Agency_Price": "101775"
+ },
+ {
+   "Make": "KIA",
+   "Model": "K5",
+   "Type": "Sedan",
+   "Trim": "GLS",
+   "Year": 2026,
+   "Agency_Price": "117875"
+ },
+ {
+   "Make": "KIA",
+   "Model": "K5",
+   "Type": "Sedan",
+   "Trim": "GL Panorama",
+   "Year": 2026,
+   "Agency_Price": "109365"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Sonet",
+   "Type": "Crossover",
+   "Trim": "GL New Shape",
+   "Year": 2026,
+   "Agency_Price": "68080"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Sonet",
+   "Type": "Crossover",
+   "Trim": "GLS New Shape",
+   "Year": 2026,
+   "Agency_Price": "78775"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Seltos",
+   "Type": "Crossover",
+   "Trim": "GLS Panorama",
+   "Year": 2026,
+   "Agency_Price": "85675"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Seltos",
+   "Type": "Crossover",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "78200"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Pegas",
+   "Type": "Sedan",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "48875"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Pegas",
+   "Type": "Sedan",
+   "Trim": "GLS",
+   "Year": 2026,
+   "Agency_Price": "52900"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Pegas",
+   "Type": "Sedan",
+   "Trim": "EX",
+   "Year": 2026,
+   "Agency_Price": "54050"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Sportage",
+   "Type": "Crossover",
+   "Trim": "L - GLS",
+   "Year": 2026,
+   "Agency_Price": "105225"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Sportage",
+   "Type": "Crossover",
+   "Trim": "L - GL",
+   "Year": 2026,
+   "Agency_Price": "93725"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Sportage",
+   "Type": "Crossover",
+   "Trim": "L - GLS TOP",
+   "Year": 2026,
+   "Agency_Price": "133975"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Carnival",
+   "Type": "MPV",
+   "Trim": "GLS",
+   "Year": 2026,
+   "Agency_Price": "164450"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Carnival",
+   "Type": "MPV",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "144670"
+ },
+ {
+   "Make": "KIA",
+   "Model": "Carens",
+   "Type": "MPV",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "77050"
+ },
+ {
+   "Make": "KIA",
+   "Model": "K8",
+   "Type": "Sedan",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "152950"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Elantra",
+   "Type": "Sedan",
+   "Trim": "Smart",
+   "Year": 2026,
+   "Agency_Price": "78775"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Elantra",
+   "Type": "Sedan",
+   "Trim": "Smart Plus",
+   "Year": 2026,
+   "Agency_Price": "82800"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Elantra",
+   "Type": "Sedan",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "90275"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Accent",
+   "Type": "Sedan",
+   "Trim": "Smart",
+   "Year": 2026,
+   "Agency_Price": "68195"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Accent",
+   "Type": "Sedan",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "76475"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Accent",
+   "Type": "Sedan",
+   "Trim": "Fleet",
+   "Year": 2026,
+   "Agency_Price": "63825"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Sonata",
+   "Type": "Sedan",
+   "Trim": "Smart",
+   "Year": 2026,
+   "Agency_Price": "107525"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Sonata",
+   "Type": "Sedan",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "116150"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Sonata",
+   "Type": "Sedan",
+   "Trim": "Fleet",
+   "Year": 2026,
+   "Agency_Price": "98325"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Azera",
+   "Type": "Sedan",
+   "Trim": "Classic",
+   "Year": 2026,
+   "Agency_Price": "145475"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Azera",
+   "Type": "Sedan",
+   "Trim": "Calligraphy",
+   "Year": 2026,
+   "Agency_Price": "200675"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Grand i10",
+   "Type": "Hatchback",
+   "Trim": "Fleet",
+   "Year": 2026,
+   "Agency_Price": "47150"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Kona",
+   "Type": "Crossover",
+   "Trim": "Smart",
+   "Year": 2026,
+   "Agency_Price": "89815"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Kona",
+   "Type": "Crossover",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "98325"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Kona",
+   "Type": "Crossover",
+   "Trim": "Fleet",
+   "Year": 2026,
+   "Agency_Price": "83375"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Creta",
+   "Type": "Crossover",
+   "Trim": "Smart",
+   "Year": 2026,
+   "Agency_Price": "77050"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Creta",
+   "Type": "Crossover",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "89125"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Santa fe",
+   "Type": "SUV",
+   "Trim": "Smart",
+   "Year": 2026,
+   "Agency_Price": "127075"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Santa fe",
+   "Type": "SUV",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "142025"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Grand Creta",
+   "Type": "Crossover",
+   "Trim": "Smart",
+   "Year": 2026,
+   "Agency_Price": "94300"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Grand Creta",
+   "Type": "Crossover",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "106490"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Staria",
+   "Type": "MPV",
+   "Trim": "Van",
+   "Year": 2026,
+   "Agency_Price": "120750"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Staria",
+   "Type": "MPV",
+   "Trim": "Smart 9",
+   "Year": 2026,
+   "Agency_Price": "127650"
+ },
+ {
+   "Make": "Hyundai",
+   "Model": "Staria",
+   "Type": "MPV",
+   "Trim": "Smart 11",
+   "Year": 2026,
+   "Agency_Price": "142140"
+ },
+ {
+   "Make": "Changan",
+   "Model": "Alsvin",
+   "Type": "Sedan",
+   "Trim": "Full option",
+   "Year": 2026,
+   "Agency_Price": "39800"
+ },
+ {
+   "Make": "Changan",
+   "Model": "Eado Plus",
+   "Type": "Sedan",
+   "Trim": "Limited",
+   "Year": 2026,
+   "Agency_Price": "76590"
+ },
+ {
+   "Make": "Changan",
+   "Model": "Eado Plus",
+   "Type": "Sedan",
+   "Trim": "Smart",
+   "Year": 2026,
+   "Agency_Price": "69575"
+ },
+ {
+   "Make": "Changan",
+   "Model": "Eado Plus",
+   "Type": "Sedan",
+   "Trim": "Trend",
+   "Year": 2026,
+   "Agency_Price": "67275"
+ },
+ {
+   "Make": "Changan",
+   "Model": "UNI-V",
+   "Type": "Sedan",
+   "Trim": "Elite",
+   "Year": 2026,
+   "Agency_Price": "82225"
+ },
+ {
+   "Make": "Changan",
+   "Model": "UNI-V",
+   "Type": "Sedan",
+   "Trim": "Sport",
+   "Year": 2026,
+   "Agency_Price": "87055"
+ },
+ {
+   "Make": "Changan",
+   "Model": "CS35 Plus",
+   "Type": "Crossover",
+   "Trim": "Limited",
+   "Year": 2026,
+   "Agency_Price": "77050"
+ },
+ {
+   "Make": "Changan",
+   "Model": "CS35 Plus",
+   "Type": "Crossover",
+   "Trim": "Smart",
+   "Year": 2026,
+   "Agency_Price": "71875"
+ },
+ {
+   "Make": "Changan",
+   "Model": "CS35 Plus",
+   "Type": "Crossover",
+   "Trim": "Trend",
+   "Year": 2026,
+   "Agency_Price": "62790"
+ },
+ {
+   "Make": "Changan",
+   "Model": "UNI-S",
+   "Type": "Crossover",
+   "Trim": "Elite",
+   "Year": 2026,
+   "Agency_Price": "87055"
+ },
+ {
+   "Make": "Changan",
+   "Model": "CS95",
+   "Type": "SUV",
+   "Trim": "Platinum",
+   "Year": 2026,
+   "Agency_Price": "117875"
+ },
+ {
+   "Make": "Changan",
+   "Model": "CS95",
+   "Type": "SUV",
+   "Trim": "Royal",
+   "Year": 2026,
+   "Agency_Price": "128800"
+ },
+ {
+   "Make": "Changan",
+   "Model": "UNI-K",
+   "Type": "Crossover",
+   "Trim": "Elite",
+   "Year": 2026,
+   "Agency_Price": "131100"
+ },
+ {
+   "Make": "Changan",
+   "Model": "UNI-T",
+   "Type": "Crossover",
+   "Trim": "Elite",
+   "Year": 2026,
+   "Agency_Price": "96255"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Sunny",
+   "Type": "Sedan",
+   "Trim": "1.6 S AT",
+   "Year": 2026,
+   "Agency_Price": "66,000"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Sunny",
+   "Type": "Sedan",
+   "Trim": "1.5 Super Saloon",
+   "Year": 2026,
+   "Agency_Price": "58,800"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Altima",
+   "Type": "Sedan",
+   "Trim": "S",
+   "Year": 2026,
+   "Agency_Price": "112,700"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Altima",
+   "Type": "Sedan",
+   "Trim": "SV",
+   "Year": 2026,
+   "Agency_Price": "122,935"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Altima",
+   "Type": "Sedan",
+   "Trim": "SL (Turbo)",
+   "Year": 2026,
+   "Agency_Price": "141,400"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Kicks",
+   "Type": "Crossover",
+   "Trim": "S",
+   "Year": 2026,
+   "Agency_Price": "89,600"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Kicks",
+   "Type": "Crossover",
+   "Trim": "SV+",
+   "Year": 2026,
+   "Agency_Price": "101,300"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Kicks",
+   "Type": "Crossover",
+   "Trim": "SL",
+   "Year": 2026,
+   "Agency_Price": "111,300"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "X-Trail",
+   "Type": "SUV",
+   "Trim": "S (5 Seats)",
+   "Year": 2026,
+   "Agency_Price": "102,235"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "X-Trail",
+   "Type": "SUV",
+   "Trim": "S (7 Seats)",
+   "Year": 2026,
+   "Agency_Price": "104,535"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "X-Trail",
+   "Type": "SUV",
+   "Trim": "SV Plus",
+   "Year": 2026,
+   "Agency_Price": "141,735"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Pathfinder",
+   "Type": "SUV",
+   "Trim": "S 2WD",
+   "Year": 2026,
+   "Agency_Price": "164,999"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Pathfinder",
+   "Type": "SUV",
+   "Trim": "SL 4WD (7 Seater)",
+   "Year": 2026,
+   "Agency_Price": "227,999"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Patrol",
+   "Type": "SUV",
+   "Trim": "SE T2",
+   "Year": 2026,
+   "Agency_Price": "271,000"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Patrol",
+   "Type": "SUV",
+   "Trim": "SE Platinum City",
+   "Year": 2026,
+   "Agency_Price": "358,685"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Patrol Safari",
+   "Type": "SUV",
+   "Trim": "Safari M/T",
+   "Year": 2026,
+   "Agency_Price": "230,000"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Patrol Safari",
+   "Type": "SUV",
+   "Trim": "Super Safari",
+   "Year": 2026,
+   "Agency_Price": "242,000"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Xterra",
+   "Type": "SUV",
+   "Trim": "SE (2WD)",
+   "Year": 2026,
+   "Agency_Price": "123,500"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Xterra",
+   "Type": "SUV",
+   "Trim": "Platinum (4WD)",
+   "Year": 2026,
+   "Agency_Price": "170,000"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Maxima",
+   "Type": "Sedan",
+   "Trim": "S",
+   "Year": 2026,
+   "Agency_Price": "140,929"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Maxima",
+   "Type": "Sedan",
+   "Trim": "SR2",
+   "Year": 2026,
+   "Agency_Price": "184,761"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Navara",
+   "Type": "Pickup",
+   "Trim": "ASF 4x2 M/T",
+   "Year": 2026,
+   "Agency_Price": "84,900"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "Navara",
+   "Type": "Pickup",
+   "Trim": "CSF 4WD Diesel",
+   "Year": 2026,
+   "Agency_Price": "113,100"
+ },
+ {
+   "Make": "Nissan",
+   "Model": "GT-R",
+   "Type": "Coupe",
+   "Trim": "Premium",
+   "Year": 2026,
+   "Agency_Price": "478,000"
+ },
+ {
+   "Make": "Honda",
+   "Model": "City",
+   "Type": "Sedan",
+   "Trim": "DX",
+   "Year": 2026,
+   "Agency_Price": "75,325"
+ },
+ {
+   "Make": "Honda",
+   "Model": "City",
+   "Type": "Sedan",
+   "Trim": "LX Sport",
+   "Year": 2026,
+   "Agency_Price": "80,385"
+ },
+ {
+   "Make": "Honda",
+   "Model": "City",
+   "Type": "Sedan",
+   "Trim": "EX",
+   "Year": 2026,
+   "Agency_Price": "91,885"
+ },
+ {
+   "Make": "Honda",
+   "Model": "Civic",
+   "Type": "Sedan",
+   "Trim": "Sport (1.5 Turbo)",
+   "Year": 2026,
+   "Agency_Price": "125,235"
+ },
+ {
+   "Make": "Honda",
+   "Model": "Accord",
+   "Type": "Sedan",
+   "Trim": "LX",
+   "Year": 2026,
+   "Agency_Price": "132,135"
+ },
+ {
+   "Make": "Honda",
+   "Model": "Accord",
+   "Type": "Sedan",
+   "Trim": "EX",
+   "Year": 2026,
+   "Agency_Price": "152,835"
+ },
+ {
+   "Make": "Honda",
+   "Model": "Accord",
+   "Type": "Sedan",
+   "Trim": "EX-L",
+   "Year": 2026,
+   "Agency_Price": "165,485"
+ },
+ {
+   "Make": "Honda",
+   "Model": "Accord",
+   "Type": "Sedan",
+   "Trim": "Sport (Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "178,135"
+ },
+ {
+   "Make": "Honda",
+   "Model": "HR-V",
+   "Type": "Crossover",
+   "Trim": "DX",
+   "Year": 2026,
+   "Agency_Price": "94,185"
+ },
+ {
+   "Make": "Honda",
+   "Model": "HR-V",
+   "Type": "Crossover",
+   "Trim": "LX",
+   "Year": 2026,
+   "Agency_Price": "103,385"
+ },
+ {
+   "Make": "Honda",
+   "Model": "HR-V",
+   "Type": "Crossover",
+   "Trim": "EX",
+   "Year": 2026,
+   "Agency_Price": "113,735"
+ },
+ {
+   "Make": "Honda",
+   "Model": "ZR-V",
+   "Type": "Crossover",
+   "Trim": "LX",
+   "Year": 2026,
+   "Agency_Price": "120,635"
+ },
+ {
+   "Make": "Honda",
+   "Model": "ZR-V",
+   "Type": "Crossover",
+   "Trim": "EX",
+   "Year": 2026,
+   "Agency_Price": "140,185"
+ },
+ {
+   "Make": "Honda",
+   "Model": "CR-V",
+   "Type": "SUV",
+   "Trim": "DX (2WD)",
+   "Year": 2026,
+   "Agency_Price": "143,635"
+ },
+ {
+   "Make": "Honda",
+   "Model": "CR-V",
+   "Type": "SUV",
+   "Trim": "EX (AWD)",
+   "Year": 2026,
+   "Agency_Price": "170,085"
+ },
+ {
+   "Make": "Honda",
+   "Model": "CR-V",
+   "Type": "SUV",
+   "Trim": "Touring (AWD)",
+   "Year": 2026,
+   "Agency_Price": "185,035"
+ },
+ {
+   "Make": "Honda",
+   "Model": "Pilot",
+   "Type": "SUV",
+   "Trim": "EX-L (AWD)",
+   "Year": 2026,
+   "Agency_Price": "212,635"
+ },
+ {
+   "Make": "Honda",
+   "Model": "Pilot",
+   "Type": "SUV",
+   "Trim": "Sport",
+   "Year": 2026,
+   "Agency_Price": "198,835"
+ },
+ {
+   "Make": "Honda",
+   "Model": "Pilot",
+   "Type": "SUV",
+   "Trim": "Touring (AWD)",
+   "Year": 2026,
+   "Agency_Price": "241,385"
+ },
+ {
+   "Make": "Honda",
+   "Model": "Odyssey",
+   "Type": "Minivan",
+   "Trim": "LX",
+   "Year": 2026,
+   "Agency_Price": "163,185"
+ },
+ {
+   "Make": "Honda",
+   "Model": "Odyssey",
+   "Type": "Minivan",
+   "Trim": "EX-L",
+   "Year": 2026,
+   "Agency_Price": "185,035"
+ },
+ {
+   "Make": "Honda",
+   "Model": "Odyssey",
+   "Type": "Minivan",
+   "Trim": "Touring",
+   "Year": 2026,
+   "Agency_Price": "210,335"
+ },
+ {
+   "Make": "Honda",
+   "Model": "Civic Type R",
+   "Type": "Hatchback",
+   "Trim": "Type R",
+   "Year": 2026,
+   "Agency_Price": "216,085"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "Mazda 6",
+   "Type": "Sedan",
+   "Trim": "S (Entry)",
+   "Year": 2026,
+   "Agency_Price": "91,425"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "Mazda 6",
+   "Type": "Sedan",
+   "Trim": "V (Core)",
+   "Year": 2026,
+   "Agency_Price": "97,175"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "Mazda 6",
+   "Type": "Sedan",
+   "Trim": "R (High)",
+   "Year": 2026,
+   "Agency_Price": "127,075"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "Mazda 6",
+   "Type": "Sedan",
+   "Trim": "Ignite Edition",
+   "Year": 2026,
+   "Agency_Price": "132,825"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "Mazda 3",
+   "Type": "Sedan",
+   "Trim": "Core (1.5)",
+   "Year": 2026,
+   "Agency_Price": "78,775"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "Mazda 3",
+   "Type": "Sedan",
+   "Trim": "High (2.0)",
+   "Year": 2026,
+   "Agency_Price": "98,325"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "CX-30",
+   "Type": "Crossover",
+   "Trim": "Core",
+   "Year": 2026,
+   "Agency_Price": "89,125"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "CX-30",
+   "Type": "Crossover",
+   "Trim": "High",
+   "Year": 2026,
+   "Agency_Price": "110,400"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "CX-5",
+   "Type": "SUV",
+   "Trim": "Core (2WD)",
+   "Year": 2026,
+   "Agency_Price": "97,175"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "CX-5",
+   "Type": "SUV",
+   "Trim": "Ignite (AWD)",
+   "Year": 2026,
+   "Agency_Price": "125,925"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "CX-5",
+   "Type": "SUV",
+   "Trim": "High Plus (AWD)",
+   "Year": 2026,
+   "Agency_Price": "132,825"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "CX-60",
+   "Type": "SUV",
+   "Trim": "High (AWD)",
+   "Year": 2026,
+   "Agency_Price": "175,375"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "CX-60",
+   "Type": "SUV",
+   "Trim": "High Plus (AWD)",
+   "Year": 2026,
+   "Agency_Price": "208,725"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "CX-90",
+   "Type": "SUV",
+   "Trim": "Core",
+   "Year": 2026,
+   "Agency_Price": "161,575"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "CX-90",
+   "Type": "SUV",
+   "Trim": "High",
+   "Year": 2026,
+   "Agency_Price": "193,775"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "CX-90",
+   "Type": "SUV",
+   "Trim": "High Plus",
+   "Year": 2026,
+   "Agency_Price": "210,450"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "CX-90",
+   "Type": "SUV",
+   "Trim": "Premium",
+   "Year": 2026,
+   "Agency_Price": "239,775"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "BT-50",
+   "Type": "Pickup",
+   "Trim": "Single Cab",
+   "Year": 2026,
+   "Agency_Price": "79,350"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "BT-50",
+   "Type": "Pickup",
+   "Trim": "Double Cab (4x2)",
+   "Year": 2026,
+   "Agency_Price": "92,000"
+ },
+ {
+   "Make": "Mazda",
+   "Model": "BT-50",
+   "Type": "Pickup",
+   "Trim": "Double Cab (4x4)",
+   "Year": 2026,
+   "Agency_Price": "114,425"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "IS",
+   "Type": "Sedan",
+   "Trim": "300 AA Elegant",
+   "Year": 2026,
+   "Agency_Price": "182,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "IS",
+   "Type": "Sedan",
+   "Trim": "300 BB Excellence",
+   "Year": 2026,
+   "Agency_Price": "204,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "IS",
+   "Type": "Sedan",
+   "Trim": "350 F-Sport",
+   "Year": 2026,
+   "Agency_Price": "241,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "ES",
+   "Type": "Sedan",
+   "Trim": "250 AA Elegant",
+   "Year": 2026,
+   "Agency_Price": "192,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "ES",
+   "Type": "Sedan",
+   "Trim": "300h AH Hybrid",
+   "Year": 2026,
+   "Agency_Price": "197,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "ES",
+   "Type": "Sedan",
+   "Trim": "350 CC Elite",
+   "Year": 2026,
+   "Agency_Price": "250,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "ES",
+   "Type": "Sedan",
+   "Trim": "300h HH Hybrid Plus",
+   "Year": 2026,
+   "Agency_Price": "267,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "LS",
+   "Type": "Sedan",
+   "Trim": "500h BH Hybrid",
+   "Year": 2026,
+   "Agency_Price": "353,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "LS",
+   "Type": "Sedan",
+   "Trim": "500h HH Hybrid Plus",
+   "Year": 2026,
+   "Agency_Price": "493,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "UX",
+   "Type": "Crossover",
+   "Trim": "200 AA Elegant",
+   "Year": 2026,
+   "Agency_Price": "175,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "UX",
+   "Type": "Crossover",
+   "Trim": "250h BB Hybrid",
+   "Year": 2026,
+   "Agency_Price": "189,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "NX",
+   "Type": "SUV",
+   "Trim": "350 AA Elegant",
+   "Year": 2026,
+   "Agency_Price": "213,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "NX",
+   "Type": "SUV",
+   "Trim": "350h AH Hybrid",
+   "Year": 2026,
+   "Agency_Price": "220,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "NX",
+   "Type": "SUV",
+   "Trim": "350h HH Hybrid Plus",
+   "Year": 2026,
+   "Agency_Price": "268,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "RX",
+   "Type": "SUV",
+   "Trim": "350 B1 Excellence",
+   "Year": 2026,
+   "Agency_Price": "299,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "RX",
+   "Type": "SUV",
+   "Trim": "350h BH Hybrid",
+   "Year": 2026,
+   "Agency_Price": "310,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "RX",
+   "Type": "SUV",
+   "Trim": "500h F-Sport Performance",
+   "Year": 2026,
+   "Agency_Price": "345,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "GX",
+   "Type": "SUV",
+   "Trim": "550 Elite",
+   "Year": 2026,
+   "Agency_Price": "370,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "GX",
+   "Type": "SUV",
+   "Trim": "550 Luxury",
+   "Year": 2026,
+   "Agency_Price": "441,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "LX",
+   "Type": "SUV",
+   "Trim": "600 AA Excellence",
+   "Year": 2026,
+   "Agency_Price": "572,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "LX",
+   "Type": "SUV",
+   "Trim": "600 BB Signature",
+   "Year": 2026,
+   "Agency_Price": "665,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "LX",
+   "Type": "SUV",
+   "Trim": "600 VR VIP",
+   "Year": 2026,
+   "Agency_Price": "705,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "LC",
+   "Type": "Coupe",
+   "Trim": "500 Carbon Package",
+   "Year": 2026,
+   "Agency_Price": "465,000"
+ },
+ {
+   "Make": "Lexus",
+   "Model": "LM",
+   "Type": "Minivan",
+   "Trim": "350h (4-Seater) VIP",
+   "Year": 2026,
+   "Agency_Price": "545,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "Q50",
+   "Type": "Sedan",
+   "Trim": "Luxe",
+   "Year": 2026,
+   "Agency_Price": "175,500"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "Q50",
+   "Type": "Sedan",
+   "Trim": "Sensory",
+   "Year": 2026,
+   "Agency_Price": "191,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "Q50",
+   "Type": "Sedan",
+   "Trim": "Red Sport 400",
+   "Year": 2026,
+   "Agency_Price": "231,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "QX50",
+   "Type": "SUV",
+   "Trim": "Luxe",
+   "Year": 2026,
+   "Agency_Price": "215,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "QX50",
+   "Type": "SUV",
+   "Trim": "Sensory",
+   "Year": 2026,
+   "Agency_Price": "235,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "QX50",
+   "Type": "SUV",
+   "Trim": "Autograph",
+   "Year": 2026,
+   "Agency_Price": "255,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "QX55",
+   "Type": "Crossover",
+   "Trim": "Luxe",
+   "Year": 2026,
+   "Agency_Price": "229,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "QX55",
+   "Type": "Crossover",
+   "Trim": "Sensory",
+   "Year": 2026,
+   "Agency_Price": "251,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "QX60",
+   "Type": "SUV",
+   "Trim": "Luxe",
+   "Year": 2026,
+   "Agency_Price": "265,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "QX60",
+   "Type": "SUV",
+   "Trim": "Sensory",
+   "Year": 2026,
+   "Agency_Price": "288,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "QX60",
+   "Type": "SUV",
+   "Trim": "Autograph",
+   "Year": 2026,
+   "Agency_Price": "315,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "QX80",
+   "Type": "SUV",
+   "Trim": "Pure",
+   "Year": 2026,
+   "Agency_Price": "399,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "QX80",
+   "Type": "SUV",
+   "Trim": "Luxe",
+   "Year": 2026,
+   "Agency_Price": "435,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "QX80",
+   "Type": "SUV",
+   "Trim": "Sensory",
+   "Year": 2026,
+   "Agency_Price": "468,000"
+ },
+ {
+   "Make": "Infiniti",
+   "Model": "QX80",
+   "Type": "SUV",
+   "Trim": "Autograph",
+   "Year": 2026,
+   "Agency_Price": "499,000"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Attrage",
+   "Type": "Sedan",
+   "Trim": "GLX",
+   "Year": 2026,
+   "Agency_Price": "50,600"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Attrage",
+   "Type": "Sedan",
+   "Trim": "HL",
+   "Year": 2026,
+   "Agency_Price": "54,650"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Mirage",
+   "Type": "Hatchback",
+   "Trim": "GLX",
+   "Year": 2026,
+   "Agency_Price": "51,750"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "ASX",
+   "Type": "Crossover",
+   "Trim": "GLX (2WD)",
+   "Year": 2026,
+   "Agency_Price": "82,800"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "ASX",
+   "Type": "Crossover",
+   "Trim": "GLS (4WD)",
+   "Year": 2026,
+   "Agency_Price": "91,425"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Xpander",
+   "Type": "MPV",
+   "Trim": "Midline",
+   "Year": 2026,
+   "Agency_Price": "77,050"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Xpander",
+   "Type": "MPV",
+   "Trim": "Highline",
+   "Year": 2026,
+   "Agency_Price": "82,225"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Eclipse Cross",
+   "Type": "SUV",
+   "Trim": "ML (2WD)",
+   "Year": 2026,
+   "Agency_Price": "100,050"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Eclipse Cross",
+   "Type": "SUV",
+   "Trim": "HL (4WD)",
+   "Year": 2026,
+   "Agency_Price": "114,425"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Eclipse Cross",
+   "Type": "SUV",
+   "Trim": "GLS Premium",
+   "Year": 2026,
+   "Agency_Price": "123,050"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Outlander",
+   "Type": "SUV",
+   "Trim": "Midline (2WD)",
+   "Year": 2026,
+   "Agency_Price": "111,550"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Outlander",
+   "Type": "SUV",
+   "Trim": "Highline (4WD)",
+   "Year": 2026,
+   "Agency_Price": "134,550"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Outlander",
+   "Type": "SUV",
+   "Trim": "Premium (4WD)",
+   "Year": 2026,
+   "Agency_Price": "155,250"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Montero Sport",
+   "Type": "SUV",
+   "Trim": "GLX (4WD)",
+   "Year": 2026,
+   "Agency_Price": "142,600"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Montero Sport",
+   "Type": "SUV",
+   "Trim": "GLS Premium",
+   "Year": 2026,
+   "Agency_Price": "165,600"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "Pajero",
+   "Type": "SUV",
+   "Trim": "GLS (3.5L)",
+   "Year": 2026,
+   "Agency_Price": "135,000"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "L200",
+   "Type": "Pickup",
+   "Trim": "Single Cab (Gasoline)",
+   "Year": 2026,
+   "Agency_Price": "81,650"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "L200",
+   "Type": "Pickup",
+   "Trim": "Double Cab (4WD Diesel)",
+   "Year": 2026,
+   "Agency_Price": "113,850"
+ },
+ {
+   "Make": "Mitsubishi",
+   "Model": "L200",
+   "Type": "Pickup",
+   "Trim": "Sportero (Full)",
+   "Year": 2026,
+   "Agency_Price": "136,850"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Dzire",
+   "Type": "Sedan",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "54,050"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Dzire",
+   "Type": "Sedan",
+   "Trim": "GLX (New Shape)",
+   "Year": 2026,
+   "Agency_Price": "65,700"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Swift",
+   "Type": "Hatchback",
+   "Trim": "GL Plus",
+   "Year": 2026,
+   "Agency_Price": "57,385"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Swift",
+   "Type": "Hatchback",
+   "Trim": "GLX",
+   "Year": 2026,
+   "Agency_Price": "63,135"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Baleno",
+   "Type": "Hatchback",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "56,350"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Baleno",
+   "Type": "Hatchback",
+   "Trim": "GLX",
+   "Year": 2026,
+   "Agency_Price": "63,250"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Ciaz",
+   "Type": "Sedan",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "59,800"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Ciaz",
+   "Type": "Sedan",
+   "Trim": "GLX",
+   "Year": 2026,
+   "Agency_Price": "70,150"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Fronx",
+   "Type": "Crossover",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "69,000"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Fronx",
+   "Type": "Crossover",
+   "Trim": "GLX",
+   "Year": 2026,
+   "Agency_Price": "75,325"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Grand Vitara",
+   "Type": "SUV",
+   "Trim": "GL (2WD)",
+   "Year": 2026,
+   "Agency_Price": "79,235"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Grand Vitara",
+   "Type": "SUV",
+   "Trim": "GLX (AWD)",
+   "Year": 2026,
+   "Agency_Price": "100,000"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Jimny",
+   "Type": "SUV",
+   "Trim": "GL (Manual)",
+   "Year": 2026,
+   "Agency_Price": "93,840"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Jimny",
+   "Type": "SUV",
+   "Trim": "GLX (Automatic)",
+   "Year": 2026,
+   "Agency_Price": "105,340"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Ertiga",
+   "Type": "MPV/Minivan",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "72,450"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Ertiga",
+   "Type": "MPV/Minivan",
+   "Trim": "GLX",
+   "Year": 2026,
+   "Agency_Price": "78,200"
+ },
+ {
+   "Make": "Suzuki",
+   "Model": "Eeco",
+   "Type": "Van",
+   "Trim": "5-Seater",
+   "Year": 2026,
+   "Agency_Price": "48,300"
+ },
+ {
+   "Make": "Isuzu",
+   "Model": "D-Max",
+   "Type": "Pickup",
+   "Trim": "Single Cab (2WD) Diesel",
+   "Year": 2026,
+   "Agency_Price": "82,225"
+ },
+ {
+   "Make": "Isuzu",
+   "Model": "D-Max",
+   "Type": "Pickup",
+   "Trim": "Double Cab (2WD) Diesel",
+   "Year": 2026,
+   "Agency_Price": "90,850"
+ },
+ {
+   "Make": "Isuzu",
+   "Model": "D-Max",
+   "Type": "Pickup",
+   "Trim": "Double Cab (4WD) GT",
+   "Year": 2026,
+   "Agency_Price": "124,200"
+ },
+ {
+   "Make": "Isuzu",
+   "Model": "D-Max",
+   "Type": "Pickup",
+   "Trim": "LS (4WD) Full",
+   "Year": 2026,
+   "Agency_Price": "134,550"
+ },
+ {
+   "Make": "Isuzu",
+   "Model": "MU-X",
+   "Type": "SUV",
+   "Trim": "LS (2WD) Diesel",
+   "Year": 2026,
+   "Agency_Price": "119,600"
+ },
+ {
+   "Make": "Isuzu",
+   "Model": "MU-X",
+   "Type": "SUV",
+   "Trim": "LS (4WD) Diesel",
+   "Year": 2026,
+   "Agency_Price": "132,250"
+ },
+ {
+   "Make": "Isuzu",
+   "Model": "MU-X",
+   "Type": "SUV",
+   "Trim": "Full Option (4WD)",
+   "Year": 2026,
+   "Agency_Price": "158,700"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "G70",
+   "Type": "Sedan",
+   "Trim": "Premium (2.0T)",
+   "Year": 2026,
+   "Agency_Price": "195,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "G70",
+   "Type": "Sedan",
+   "Trim": "Sport (3.3T)",
+   "Year": 2026,
+   "Agency_Price": "265,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "G80",
+   "Type": "Sedan",
+   "Trim": "Prestige (2.5T)",
+   "Year": 2026,
+   "Agency_Price": "282,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "G80",
+   "Type": "Sedan",
+   "Trim": "Royal (3.5T)",
+   "Year": 2026,
+   "Agency_Price": "360,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "G80",
+   "Type": "Sedan",
+   "Trim": "Electrified (Electric)",
+   "Year": 2026,
+   "Agency_Price": "385,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "G90",
+   "Type": "Sedan",
+   "Trim": "Prestige (3.5T)",
+   "Year": 2026,
+   "Agency_Price": "395,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "G90",
+   "Type": "Sedan",
+   "Trim": "Royal (Long Wheelbase)",
+   "Year": 2026,
+   "Agency_Price": "545,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "GV60",
+   "Type": "SUV",
+   "Trim": "Premium (Electric)",
+   "Year": 2026,
+   "Agency_Price": "320,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "GV70",
+   "Type": "SUV",
+   "Trim": "Prestige (2.5T)",
+   "Year": 2026,
+   "Agency_Price": "255,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "GV70",
+   "Type": "SUV",
+   "Trim": "Sport (3.5T)",
+   "Year": 2026,
+   "Agency_Price": "325,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "GV70",
+   "Type": "SUV",
+   "Trim": "Electrified (Electric)",
+   "Year": 2026,
+   "Agency_Price": "345,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "GV80",
+   "Type": "SUV",
+   "Trim": "Prestige (2.5T)",
+   "Year": 2026,
+   "Agency_Price": "315,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "GV80",
+   "Type": "SUV",
+   "Trim": "Royal (3.5T)",
+   "Year": 2026,
+   "Agency_Price": "390,000"
+ },
+ {
+   "Make": "Genesis",
+   "Model": "GV80 Coupe",
+   "Type": "SUV",
+   "Trim": "Sport (3.5T)",
+   "Year": 2026,
+   "Agency_Price": "425,000"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Taurus",
+   "Type": "Sedan",
+   "Trim": "Ambiente 2.0L",
+   "Year": 2026,
+   "Agency_Price": "125,925"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Taurus",
+   "Type": "Sedan",
+   "Trim": "Trend 2.0L",
+   "Year": 2026,
+   "Agency_Price": "132,825"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Taurus",
+   "Type": "Sedan",
+   "Trim": "Titanium 2.0L",
+   "Year": 2026,
+   "Agency_Price": "145,360"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Taurus",
+   "Type": "Sedan",
+   "Trim": "Ambiente HEV (Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "121,900"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Taurus",
+   "Type": "Sedan",
+   "Trim": "Trend HEV (Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "128,800"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Territory",
+   "Type": "SUV",
+   "Trim": "Ambiente",
+   "Year": 2026,
+   "Agency_Price": "98,175"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Territory",
+   "Type": "SUV",
+   "Trim": "Trend",
+   "Year": 2026,
+   "Agency_Price": "108,175"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Territory",
+   "Type": "SUV",
+   "Trim": "Titanium",
+   "Year": 2026,
+   "Agency_Price": "123,175"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Explorer",
+   "Type": "SUV",
+   "Trim": "Active",
+   "Year": 2026,
+   "Agency_Price": "184,771"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Explorer",
+   "Type": "SUV",
+   "Trim": "Active Comfort",
+   "Year": 2026,
+   "Agency_Price": "201,825"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Explorer",
+   "Type": "SUV",
+   "Trim": "Platinum",
+   "Year": 2026,
+   "Agency_Price": "238,625"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Explorer",
+   "Type": "SUV",
+   "Trim": "ST (3.0L EcoBoost)",
+   "Year": 2026,
+   "Agency_Price": "238,625"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Expedition",
+   "Type": "SUV",
+   "Trim": "Active (4x2)",
+   "Year": 2026,
+   "Agency_Price": "224,500"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Expedition",
+   "Type": "SUV",
+   "Trim": "Active High (4x2)",
+   "Year": 2026,
+   "Agency_Price": "239,000"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Expedition",
+   "Type": "SUV",
+   "Trim": "Tremor",
+   "Year": 2026,
+   "Agency_Price": "298,000"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Expedition",
+   "Type": "SUV",
+   "Trim": "Platinum",
+   "Year": 2026,
+   "Agency_Price": "319,900"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Expedition",
+   "Type": "SUV",
+   "Trim": "Stealth",
+   "Year": 2026,
+   "Agency_Price": "319,900"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Mustang",
+   "Type": "Coupe",
+   "Trim": "GT Fastback",
+   "Year": 2026,
+   "Agency_Price": "254,448"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Mustang",
+   "Type": "Coupe",
+   "Trim": "GT Premium",
+   "Year": 2026,
+   "Agency_Price": "290,447"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Mustang",
+   "Type": "Coupe",
+   "Trim": "Dark Horse",
+   "Year": 2026,
+   "Agency_Price": "313,447"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Bronco",
+   "Type": "SUV",
+   "Trim": "Big Bend",
+   "Year": 2026,
+   "Agency_Price": "193,315"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Bronco",
+   "Type": "SUV",
+   "Trim": "Raptor",
+   "Year": 2026,
+   "Agency_Price": "450,000"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Ranger",
+   "Type": "Pickup",
+   "Trim": "XL Double Cab 4x4",
+   "Year": 2026,
+   "Agency_Price": "137,885"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Ranger",
+   "Type": "Pickup",
+   "Trim": "Raptor",
+   "Year": 2026,
+   "Agency_Price": "276,000"
+ },
+ {
+   "Make": "Ford",
+   "Model": "F-150",
+   "Type": "Pickup",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "189,000"
+ },
+ {
+   "Make": "Ford",
+   "Model": "F-150",
+   "Type": "Pickup",
+   "Trim": "Raptor",
+   "Year": 2026,
+   "Agency_Price": "387,000"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Escape",
+   "Type": "SUV",
+   "Trim": "S (2.5L)",
+   "Year": 2026,
+   "Agency_Price": "60,000"
+ },
+ {
+   "Make": "Ford",
+   "Model": "Everest",
+   "Type": "SUV",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "155,000"
+ },
+ {
+   "Make": "Lincoln",
+   "Model": "Corsair",
+   "Type": "SUV",
+   "Trim": "Premiere",
+   "Year": 2026,
+   "Agency_Price": "158,585"
+ },
+ {
+   "Make": "Lincoln",
+   "Model": "Corsair",
+   "Type": "SUV",
+   "Trim": "Reserve",
+   "Year": 2026,
+   "Agency_Price": "184,000"
+ },
+ {
+   "Make": "Lincoln",
+   "Model": "Nautilus",
+   "Type": "SUV",
+   "Trim": "Premier",
+   "Year": 2026,
+   "Agency_Price": "215,000"
+ },
+ {
+   "Make": "Lincoln",
+   "Model": "Nautilus",
+   "Type": "SUV",
+   "Trim": "Reserve",
+   "Year": 2026,
+   "Agency_Price": "264,385"
+ },
+ {
+   "Make": "Lincoln",
+   "Model": "Nautilus",
+   "Type": "SUV",
+   "Trim": "Reserve (Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "285,000"
+ },
+ {
+   "Make": "Lincoln",
+   "Model": "Nautilus",
+   "Type": "SUV",
+   "Trim": "Black Label",
+   "Year": 2026,
+   "Agency_Price": "315,000"
+ },
+ {
+   "Make": "Lincoln",
+   "Model": "Aviator",
+   "Type": "SUV",
+   "Trim": "Reserve 4WD",
+   "Year": 2026,
+   "Agency_Price": "320,000"
+ },
+ {
+   "Make": "Lincoln",
+   "Model": "Aviator",
+   "Type": "SUV",
+   "Trim": "Presidential 4WD",
+   "Year": 2026,
+   "Agency_Price": "352,000"
+ },
+ {
+   "Make": "Lincoln",
+   "Model": "Navigator",
+   "Type": "SUV",
+   "Trim": "Reserve (Standard)",
+   "Year": 2026,
+   "Agency_Price": "392,700"
+ },
+ {
+   "Make": "Lincoln",
+   "Model": "Navigator",
+   "Type": "SUV",
+   "Trim": "Reserve (L) Long",
+   "Year": 2026,
+   "Agency_Price": "415,000"
+ },
+ {
+   "Make": "Lincoln",
+   "Model": "Navigator",
+   "Type": "SUV",
+   "Trim": "Presidential",
+   "Year": 2026,
+   "Agency_Price": "442,635"
+ },
+ {
+   "Make": "Lincoln",
+   "Model": "Navigator",
+   "Type": "SUV",
+   "Trim": "Presidential - Captain Seats",
+   "Year": 2026,
+   "Agency_Price": "453,900"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Cruze",
+   "Type": "Sedan",
+   "Trim": "LS",
+   "Year": 2026,
+   "Agency_Price": "60,720"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Cruze",
+   "Type": "Sedan",
+   "Trim": "LT",
+   "Year": 2026,
+   "Agency_Price": "68,500"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Groove",
+   "Type": "Crossover",
+   "Trim": "LT",
+   "Year": 2026,
+   "Agency_Price": "69,000"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Groove",
+   "Type": "Crossover",
+   "Trim": "Premier",
+   "Year": 2026,
+   "Agency_Price": "80,500"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Captiva",
+   "Type": "SUV",
+   "Trim": "LS (Turbo)",
+   "Year": 2026,
+   "Agency_Price": "74,776"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Captiva",
+   "Type": "SUV",
+   "Trim": "LT",
+   "Year": 2026,
+   "Agency_Price": "76,463"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Captiva",
+   "Type": "SUV",
+   "Trim": "Premier",
+   "Year": 2026,
+   "Agency_Price": "81,400"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Captiva",
+   "Type": "SUV",
+   "Trim": "LT (PHEV Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "102,077"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Captiva",
+   "Type": "SUV",
+   "Trim": "Premier (PHEV Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "109,897"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Traverse",
+   "Type": "SUV",
+   "Trim": "LS",
+   "Year": 2026,
+   "Agency_Price": "134,981"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Traverse",
+   "Type": "SUV",
+   "Trim": "LT",
+   "Year": 2026,
+   "Agency_Price": "176,965"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Traverse",
+   "Type": "SUV",
+   "Trim": "Z71",
+   "Year": 2026,
+   "Agency_Price": "211,830"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Tahoe",
+   "Type": "SUV",
+   "Trim": "LS 4WD",
+   "Year": 2026,
+   "Agency_Price": "262,656"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Tahoe",
+   "Type": "SUV",
+   "Trim": "LT 4WD",
+   "Year": 2026,
+   "Agency_Price": "285,000"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Tahoe",
+   "Type": "SUV",
+   "Trim": "RST 4WD",
+   "Year": 2026,
+   "Agency_Price": "326,358"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Tahoe",
+   "Type": "SUV",
+   "Trim": "Premier",
+   "Year": 2026,
+   "Agency_Price": "355,000"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Tahoe",
+   "Type": "SUV",
+   "Trim": "Z71",
+   "Year": 2026,
+   "Agency_Price": "305,000"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Suburban",
+   "Type": "SUV",
+   "Trim": "LS 2WD",
+   "Year": 2026,
+   "Agency_Price": "265,117"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Suburban",
+   "Type": "SUV",
+   "Trim": "LT Z71",
+   "Year": 2026,
+   "Agency_Price": "349,703"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Silverado",
+   "Type": "Pickup",
+   "Trim": "WT (Work Truck)",
+   "Year": 2026,
+   "Agency_Price": "105,000"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Silverado",
+   "Type": "Pickup",
+   "Trim": "RST",
+   "Year": 2026,
+   "Agency_Price": "217,189"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Silverado",
+   "Type": "Pickup",
+   "Trim": "Trail Boss",
+   "Year": 2026,
+   "Agency_Price": "225,650"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Silverado",
+   "Type": "Pickup",
+   "Trim": "ZR2 (Top)",
+   "Year": 2026,
+   "Agency_Price": "310,014"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Blazer",
+   "Type": "SUV",
+   "Trim": "RS",
+   "Year": 2026,
+   "Agency_Price": "205,000"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Corvette",
+   "Type": "Coupe",
+   "Trim": "Stingray",
+   "Year": 2026,
+   "Agency_Price": "435,000"
+ },
+ {
+   "Make": "Chevrolet",
+   "Model": "Corvette",
+   "Type": "Coupe",
+   "Trim": "Z06",
+   "Year": 2026,
+   "Agency_Price": "620,000"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Terrain",
+   "Type": "SUV",
+   "Trim": "Elevation",
+   "Year": 2026,
+   "Agency_Price": "120,000"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Terrain",
+   "Type": "SUV",
+   "Trim": "AT4",
+   "Year": 2026,
+   "Agency_Price": "148,300"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Terrain",
+   "Type": "SUV",
+   "Trim": "Denali",
+   "Year": 2026,
+   "Agency_Price": "164,500"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Acadia",
+   "Type": "SUV",
+   "Trim": "Elevation",
+   "Year": 2026,
+   "Agency_Price": "195,300"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Acadia",
+   "Type": "SUV",
+   "Trim": "AT4",
+   "Year": 2026,
+   "Agency_Price": "203,800"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Acadia",
+   "Type": "SUV",
+   "Trim": "Denali",
+   "Year": 2026,
+   "Agency_Price": "238,100"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Yukon",
+   "Type": "SUV",
+   "Trim": "Elevation",
+   "Year": 2026,
+   "Agency_Price": "278,700"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Yukon",
+   "Type": "SUV",
+   "Trim": "AT4",
+   "Year": 2026,
+   "Agency_Price": "332,500"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Yukon",
+   "Type": "SUV",
+   "Trim": "AT4 Ultimate",
+   "Year": 2026,
+   "Agency_Price": "362,000"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Yukon",
+   "Type": "SUV",
+   "Trim": "Denali",
+   "Year": 2026,
+   "Agency_Price": "374,600"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Yukon XL",
+   "Type": "SUV",
+   "Trim": "Elevation",
+   "Year": 2026,
+   "Agency_Price": "292,500"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Yukon XL",
+   "Type": "SUV",
+   "Trim": "Denali",
+   "Year": 2026,
+   "Agency_Price": "388,400"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Sierra LD",
+   "Type": "Pickup",
+   "Trim": "Elevation",
+   "Year": 2026,
+   "Agency_Price": "189,500"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Sierra LD",
+   "Type": "Pickup",
+   "Trim": "SLE",
+   "Year": 2026,
+   "Agency_Price": "178,100"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Sierra LD",
+   "Type": "Pickup",
+   "Trim": "AT4",
+   "Year": 2026,
+   "Agency_Price": "230,000"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Sierra LD",
+   "Type": "Pickup",
+   "Trim": "AT4X",
+   "Year": 2026,
+   "Agency_Price": "297,600"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Sierra LD",
+   "Type": "Pickup",
+   "Trim": "Denali",
+   "Year": 2026,
+   "Agency_Price": "295,700"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Sierra LD",
+   "Type": "Pickup",
+   "Trim": "Denali Ultimate",
+   "Year": 2026,
+   "Agency_Price": "316,000"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Sierra HD",
+   "Type": "Pickup",
+   "Trim": "Pro",
+   "Year": 2026,
+   "Agency_Price": "221,700"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Sierra HD",
+   "Type": "Pickup",
+   "Trim": "Denali",
+   "Year": 2026,
+   "Agency_Price": "318,600"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Canyon",
+   "Type": "Pickup",
+   "Trim": "AT4X",
+   "Year": 2026,
+   "Agency_Price": "227,600"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Hummer EV",
+   "Type": "SUV",
+   "Trim": "Edition 1",
+   "Year": 2026,
+   "Agency_Price": "579,200"
+ },
+ {
+   "Make": "GMC",
+   "Model": "Hummer EV",
+   "Type": "Pickup",
+   "Trim": "Edition 1",
+   "Year": 2026,
+   "Agency_Price": "590,600"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "CT4",
+   "Type": "Sedan",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "171,700"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "CT4",
+   "Type": "Sedan",
+   "Trim": "Premium Luxury",
+   "Year": 2026,
+   "Agency_Price": "195,500"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "CT4-V",
+   "Type": "Sedan",
+   "Trim": "V-Series",
+   "Year": 2026,
+   "Agency_Price": "255,000"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "CT4-V Blackwing",
+   "Type": "Sedan",
+   "Trim": "Blackwing (472hp)",
+   "Year": 2026,
+   "Agency_Price": "334,800"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "CT5",
+   "Type": "Sedan",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "194,900"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "CT5",
+   "Type": "Sedan",
+   "Trim": "Premium Luxury",
+   "Year": 2026,
+   "Agency_Price": "264,000"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "CT5",
+   "Type": "Sedan",
+   "Trim": "Sport",
+   "Year": 2026,
+   "Agency_Price": "268,500"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "CT5-V",
+   "Type": "Sedan",
+   "Trim": "V-Series",
+   "Year": 2026,
+   "Agency_Price": "315,000"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "CT5-V Blackwing",
+   "Type": "Sedan",
+   "Trim": "Blackwing (668hp)",
+   "Year": 2026,
+   "Agency_Price": "455,000"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "XT4",
+   "Type": "SUV",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "187,250"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "XT4",
+   "Type": "SUV",
+   "Trim": "Premium Luxury",
+   "Year": 2026,
+   "Agency_Price": "242,500"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "XT4",
+   "Type": "SUV",
+   "Trim": "Sport",
+   "Year": 2026,
+   "Agency_Price": "248,500"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "XT5",
+   "Type": "SUV",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "210,700"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "XT5",
+   "Type": "SUV",
+   "Trim": "Premium Luxury",
+   "Year": 2026,
+   "Agency_Price": "252,000"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "XT5",
+   "Type": "SUV",
+   "Trim": "Sport (AWD)",
+   "Year": 2026,
+   "Agency_Price": "265,400"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "XT6",
+   "Type": "SUV",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "247,500"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "XT6",
+   "Type": "SUV",
+   "Trim": "Premium Luxury",
+   "Year": 2026,
+   "Agency_Price": "295,000"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "XT6",
+   "Type": "SUV",
+   "Trim": "Sport (AWD)",
+   "Year": 2026,
+   "Agency_Price": "308,000"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "Lyriq",
+   "Type": "SUV",
+   "Trim": "Luxury (Electric)",
+   "Year": 2026,
+   "Agency_Price": "335,000"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "Lyriq",
+   "Type": "SUV",
+   "Trim": "Sport (Electric)",
+   "Year": 2026,
+   "Agency_Price": "352,000"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "Escalade",
+   "Type": "SUV",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "541,500"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "Escalade",
+   "Type": "SUV",
+   "Trim": "Premium Luxury",
+   "Year": 2026,
+   "Agency_Price": "619,800"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "Escalade",
+   "Type": "SUV",
+   "Trim": "Sport Platinum",
+   "Year": 2026,
+   "Agency_Price": "720,800"
+ },
+ {
+   "Make": "Cadillac",
+   "Model": "Escalade-V",
+   "Type": "SUV",
+   "Trim": "V-Series",
+   "Year": 2026,
+   "Agency_Price": "845,000"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Charger",
+   "Type": "Sedan",
+   "Trim": "GT",
+   "Year": 2026,
+   "Agency_Price": "175,000"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Charger",
+   "Type": "Sedan",
+   "Trim": "GT Black Edition",
+   "Year": 2026,
+   "Agency_Price": "185,000"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Charger",
+   "Type": "Sedan",
+   "Trim": "R/T",
+   "Year": 2026,
+   "Agency_Price": "195,000"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Charger",
+   "Type": "Sedan",
+   "Trim": "Scat Pack Widebody",
+   "Year": 2026,
+   "Agency_Price": "285,000"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Charger",
+   "Type": "Sedan",
+   "Trim": "SRT Hellcat Redeye",
+   "Year": 2026,
+   "Agency_Price": "456,000"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Charger",
+   "Type": "Sedan",
+   "Trim": "Sixpack R/T (New Gen)",
+   "Year": 2026,
+   "Agency_Price": "202,500"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Challenger",
+   "Type": "Coupe",
+   "Trim": "GT",
+   "Year": 2026,
+   "Agency_Price": "189,750"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Challenger",
+   "Type": "Coupe",
+   "Trim": "R/T Shaker",
+   "Year": 2026,
+   "Agency_Price": "255,500"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Challenger",
+   "Type": "Coupe",
+   "Trim": "R/T Scat Pack",
+   "Year": 2026,
+   "Agency_Price": "291,800"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Challenger",
+   "Type": "Coupe",
+   "Trim": "SRT Hellcat Redeye",
+   "Year": 2026,
+   "Agency_Price": "395,000"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Durango",
+   "Type": "SUV",
+   "Trim": "SXT",
+   "Year": 2026,
+   "Agency_Price": "194,999"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Durango",
+   "Type": "SUV",
+   "Trim": "GT (RWD)",
+   "Year": 2026,
+   "Agency_Price": "216,430"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Durango",
+   "Type": "SUV",
+   "Trim": "R/T (AWD)",
+   "Year": 2026,
+   "Agency_Price": "258,348"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Durango",
+   "Type": "SUV",
+   "Trim": "SRT Hellcat",
+   "Year": 2026,
+   "Agency_Price": "465,000"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Hornet",
+   "Type": "Crossover",
+   "Trim": "GT",
+   "Year": 2026,
+   "Agency_Price": "145,000"
+ },
+ {
+   "Make": "Dodge",
+   "Model": "Hornet",
+   "Type": "Crossover",
+   "Trim": "R/T (Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "175,000"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Wrangler",
+   "Type": "SUV",
+   "Trim": "Sport (2-Door)",
+   "Year": 2026,
+   "Agency_Price": "214,760"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Wrangler",
+   "Type": "SUV",
+   "Trim": "Sport (4-Door)",
+   "Year": 2026,
+   "Agency_Price": "203,700"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Wrangler",
+   "Type": "SUV",
+   "Trim": "Sahara (2-Door)",
+   "Year": 2026,
+   "Agency_Price": "225,000"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Wrangler",
+   "Type": "SUV",
+   "Trim": "Sahara (4-Door)",
+   "Year": 2026,
+   "Agency_Price": "233,000"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Wrangler",
+   "Type": "SUV",
+   "Trim": "Rubicon",
+   "Year": 2026,
+   "Agency_Price": "249,600"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Wrangler",
+   "Type": "SUV",
+   "Trim": "Rubicon X",
+   "Year": 2026,
+   "Agency_Price": "230,000"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Wrangler",
+   "Type": "SUV",
+   "Trim": "4xe (PHEV Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "320,000"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Grand Cherokee",
+   "Type": "SUV",
+   "Trim": "Limited (V6)",
+   "Year": 2026,
+   "Agency_Price": "229,400"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Grand Cherokee",
+   "Type": "SUV",
+   "Trim": "Summit",
+   "Year": 2026,
+   "Agency_Price": "296,300"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Grand Cherokee",
+   "Type": "SUV",
+   "Trim": "Overland",
+   "Year": 2026,
+   "Agency_Price": "260,000"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Gladiator",
+   "Type": "Pickup",
+   "Trim": "Sport (4x4)",
+   "Year": 2026,
+   "Agency_Price": "211,598"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Gladiator",
+   "Type": "Pickup",
+   "Trim": "Overland (4x4)",
+   "Year": 2026,
+   "Agency_Price": "242,073"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Gladiator",
+   "Type": "Pickup",
+   "Trim": "Rubicon (4x4)",
+   "Year": 2026,
+   "Agency_Price": "250,000"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Gladiator",
+   "Type": "Pickup",
+   "Trim": "Sand Runner",
+   "Year": 2026,
+   "Agency_Price": "272,548"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Commander",
+   "Type": "SUV",
+   "Trim": "Limited Plus",
+   "Year": 2026,
+   "Agency_Price": "174,000"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Commander",
+   "Type": "SUV",
+   "Trim": "Overland",
+   "Year": 2026,
+   "Agency_Price": "190,000"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Compass",
+   "Type": "Crossover",
+   "Trim": "Longitude (4x4)",
+   "Year": 2026,
+   "Agency_Price": "121,000"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Compass",
+   "Type": "Crossover",
+   "Trim": "Limited (4x4)",
+   "Year": 2026,
+   "Agency_Price": "127,700"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Compass",
+   "Type": "Crossover",
+   "Trim": "Trailhawk (4x4)",
+   "Year": 2026,
+   "Agency_Price": "127,700"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Cherokee",
+   "Type": "SUV",
+   "Trim": "Limited",
+   "Year": 2026,
+   "Agency_Price": "129,900"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Cherokee",
+   "Type": "SUV",
+   "Trim": "Trailhawk",
+   "Year": 2026,
+   "Agency_Price": "130,000"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Renegade",
+   "Type": "Crossover",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "89,000"
+ },
+ {
+   "Make": "Jeep",
+   "Model": "Grand Wagoneer",
+   "Type": "SUV",
+   "Trim": "Series III",
+   "Year": 2026,
+   "Agency_Price": "495,000"
+ },
+ {
+   "Make": "Chrysler",
+   "Model": "300",
+   "Type": "Sedan",
+   "Trim": "3.6L Limited",
+   "Year": 2026,
+   "Agency_Price": "182,465"
+ },
+ {
+   "Make": "Chrysler",
+   "Model": "300",
+   "Type": "Sedan",
+   "Trim": "3.6L S",
+   "Year": 2026,
+   "Agency_Price": "207,329"
+ },
+ {
+   "Make": "Chrysler",
+   "Model": "300",
+   "Type": "Sedan",
+   "Trim": "3.6L Luxury",
+   "Year": 2026,
+   "Agency_Price": "217,984"
+ },
+ {
+   "Make": "Chrysler",
+   "Model": "300",
+   "Type": "Sedan",
+   "Trim": "5.7L Luxury (V8)",
+   "Year": 2026,
+   "Agency_Price": "228,639"
+ },
+ {
+   "Make": "Chrysler",
+   "Model": "300C",
+   "Type": "Sedan",
+   "Trim": "3.6L V6 Limited",
+   "Year": 2026,
+   "Agency_Price": "259,725"
+ },
+ {
+   "Make": "Chrysler",
+   "Model": "Pacifica",
+   "Type": "Minivan",
+   "Trim": "3.6L V6 Touring L",
+   "Year": 2026,
+   "Agency_Price": "163,400"
+ },
+ {
+   "Make": "Chrysler",
+   "Model": "Pacifica",
+   "Type": "Minivan",
+   "Trim": "3.6L V6 Touring L Plus",
+   "Year": 2026,
+   "Agency_Price": "160,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "A-Class",
+   "Type": "Hatchback",
+   "Trim": "A 200",
+   "Year": 2026,
+   "Agency_Price": "210,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "CLA",
+   "Type": "Sedan/Coupe",
+   "Trim": "CLA 200",
+   "Year": 2026,
+   "Agency_Price": "242,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "CLA",
+   "Type": "Sedan/Coupe",
+   "Trim": "CLA 250 4MATIC",
+   "Year": 2026,
+   "Agency_Price": "275,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "C-Class",
+   "Type": "Sedan",
+   "Trim": "C 200",
+   "Year": 2026,
+   "Agency_Price": "268,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "C-Class",
+   "Type": "Sedan",
+   "Trim": "C 300",
+   "Year": 2026,
+   "Agency_Price": "329,800"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "C-Class",
+   "Type": "Sedan",
+   "Trim": "C 43 AMG 4MATIC",
+   "Year": 2026,
+   "Agency_Price": "444,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "E-Class",
+   "Type": "Sedan",
+   "Trim": "E 200",
+   "Year": 2026,
+   "Agency_Price": "365,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "E-Class",
+   "Type": "Sedan",
+   "Trim": "E 350",
+   "Year": 2026,
+   "Agency_Price": "388,900"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "E-Class",
+   "Type": "Sedan",
+   "Trim": "E 450 4MATIC",
+   "Year": 2026,
+   "Agency_Price": "465,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "S-Class",
+   "Type": "Sedan",
+   "Trim": "S 450 4MATIC (Long)",
+   "Year": 2026,
+   "Agency_Price": "635,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "S-Class",
+   "Type": "Sedan",
+   "Trim": "S 500 4MATIC (Long)",
+   "Year": 2026,
+   "Agency_Price": "695,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "S-Class",
+   "Type": "Sedan",
+   "Trim": "S 580 4MATIC (Long)",
+   "Year": 2026,
+   "Agency_Price": "815,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "S-Class",
+   "Type": "Sedan",
+   "Trim": "S 63 AMG E Performance",
+   "Year": 2026,
+   "Agency_Price": "1,120,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "GLA",
+   "Type": "SUV/Crossover",
+   "Trim": "GLA 200",
+   "Year": 2026,
+   "Agency_Price": "256,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "GLB",
+   "Type": "SUV",
+   "Trim": "GLB 250 4MATIC",
+   "Year": 2026,
+   "Agency_Price": "285,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "GLC",
+   "Type": "SUV",
+   "Trim": "GLC 200 4MATIC",
+   "Year": 2026,
+   "Agency_Price": "325,100"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "GLC",
+   "Type": "SUV",
+   "Trim": "GLC 300 4MATIC",
+   "Year": 2026,
+   "Agency_Price": "360,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "GLE",
+   "Type": "SUV",
+   "Trim": "GLE 450 4MATIC",
+   "Year": 2026,
+   "Agency_Price": "485,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "GLE",
+   "Type": "Coupe",
+   "Trim": "GLE 53 AMG 4MATIC+",
+   "Year": 2026,
+   "Agency_Price": "595,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "GLS",
+   "Type": "SUV",
+   "Trim": "GLS 450 4MATIC",
+   "Year": 2026,
+   "Agency_Price": "610,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "GLS",
+   "Type": "SUV",
+   "Trim": "GLS 580 4MATIC",
+   "Year": 2026,
+   "Agency_Price": "725,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "G-Class",
+   "Type": "SUV",
+   "Trim": "G 500",
+   "Year": 2026,
+   "Agency_Price": "850,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "G-Class",
+   "Type": "SUV",
+   "Trim": "G 63 AMG",
+   "Year": 2026,
+   "Agency_Price": "1,115,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "SL",
+   "Type": "Convertible",
+   "Trim": "SL 55 AMG",
+   "Year": 2026,
+   "Agency_Price": "895,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "EQE",
+   "Type": "Sedan",
+   "Trim": "350+ (Electric)",
+   "Year": 2026,
+   "Agency_Price": "455,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "EQS",
+   "Type": "Sedan",
+   "Trim": "450+ (Electric)",
+   "Year": 2026,
+   "Agency_Price": "625,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "Maybach S",
+   "Type": "Sedan",
+   "Trim": "S 580 4MATIC",
+   "Year": 2026,
+   "Agency_Price": "1,250,000"
+ },
+ {
+   "Make": "Mercedes-Benz",
+   "Model": "Maybach GLS",
+   "Type": "SUV",
+   "Trim": "GLS 600 4MATIC",
+   "Year": 2026,
+   "Agency_Price": "1,380,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "1 Series",
+   "Type": "Hatchback",
+   "Trim": "120i M Sport",
+   "Year": 2026,
+   "Agency_Price": "189,750"
+ },
+ {
+   "Make": "BMW",
+   "Model": "2 Series",
+   "Type": "Coupe",
+   "Trim": "220i M Sport",
+   "Year": 2026,
+   "Agency_Price": "205,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "2 Series",
+   "Type": "Gran Coupe",
+   "Trim": "218i M Sport",
+   "Year": 2026,
+   "Agency_Price": "195,500"
+ },
+ {
+   "Make": "BMW",
+   "Model": "3 Series",
+   "Type": "Sedan",
+   "Trim": "320i M Sport",
+   "Year": 2026,
+   "Agency_Price": "260,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "3 Series",
+   "Type": "Sedan",
+   "Trim": "330i xDrive",
+   "Year": 2026,
+   "Agency_Price": "315,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "3 Series",
+   "Type": "Sedan",
+   "Trim": "M340i xDrive",
+   "Year": 2026,
+   "Agency_Price": "392,088"
+ },
+ {
+   "Make": "BMW",
+   "Model": "4 Series",
+   "Type": "Coupe",
+   "Trim": "420i M Sport",
+   "Year": 2026,
+   "Agency_Price": "270,250"
+ },
+ {
+   "Make": "BMW",
+   "Model": "4 Series",
+   "Type": "Coupe",
+   "Trim": "430i M Sport",
+   "Year": 2026,
+   "Agency_Price": "319,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "5 Series",
+   "Type": "Sedan",
+   "Trim": "520i",
+   "Year": 2026,
+   "Agency_Price": "290,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "5 Series",
+   "Type": "Sedan",
+   "Trim": "530i xDrive",
+   "Year": 2026,
+   "Agency_Price": "340,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "i5",
+   "Type": "Sedan",
+   "Trim": "eDrive40 (Electric)",
+   "Year": 2026,
+   "Agency_Price": "415,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "7 Series",
+   "Type": "Sedan",
+   "Trim": "735i xDrive M Sport",
+   "Year": 2026,
+   "Agency_Price": "560,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "7 Series",
+   "Type": "Sedan",
+   "Trim": "740i xDrive M Sport",
+   "Year": 2026,
+   "Agency_Price": "610,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "7 Series",
+   "Type": "Sedan",
+   "Trim": "760i xDrive",
+   "Year": 2026,
+   "Agency_Price": "730,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "i7",
+   "Type": "Sedan",
+   "Trim": "xDrive60 (Electric)",
+   "Year": 2026,
+   "Agency_Price": "750,260"
+ },
+ {
+   "Make": "BMW",
+   "Model": "8 Series",
+   "Type": "Coupe",
+   "Trim": "840i M Sport",
+   "Year": 2026,
+   "Agency_Price": "556,512"
+ },
+ {
+   "Make": "BMW",
+   "Model": "X1",
+   "Type": "SUV",
+   "Trim": "sDrive20i",
+   "Year": 2026,
+   "Agency_Price": "190,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "X2",
+   "Type": "Crossover",
+   "Trim": "sDrive20i",
+   "Year": 2026,
+   "Agency_Price": "230,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "X3",
+   "Type": "SUV",
+   "Trim": "xDrive30i",
+   "Year": 2026,
+   "Agency_Price": "264,500"
+ },
+ {
+   "Make": "BMW",
+   "Model": "X4",
+   "Type": "SUV/Coupe",
+   "Trim": "xDrive30i M Sport",
+   "Year": 2026,
+   "Agency_Price": "299,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "X5",
+   "Type": "SUV",
+   "Trim": "xDrive40i M Sport",
+   "Year": 2026,
+   "Agency_Price": "391,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "X6",
+   "Type": "SUV/Coupe",
+   "Trim": "xDrive40i M Sport",
+   "Year": 2026,
+   "Agency_Price": "414,999"
+ },
+ {
+   "Make": "BMW",
+   "Model": "X7",
+   "Type": "SUV",
+   "Trim": "xDrive40i",
+   "Year": 2026,
+   "Agency_Price": "515,706"
+ },
+ {
+   "Make": "BMW",
+   "Model": "X7",
+   "Type": "SUV",
+   "Trim": "M60i",
+   "Year": 2026,
+   "Agency_Price": "580,750"
+ },
+ {
+   "Make": "BMW",
+   "Model": "XM",
+   "Type": "SUV",
+   "Trim": "XM Label Red",
+   "Year": 2026,
+   "Agency_Price": "785,000"
+ },
+ {
+   "Make": "BMW",
+   "Model": "Z4",
+   "Type": "Roadster",
+   "Trim": "sDrive30i",
+   "Year": 2026,
+   "Agency_Price": "270,250"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A3",
+   "Type": "Sedan",
+   "Trim": "35 TFSI",
+   "Year": 2026,
+   "Agency_Price": "187,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A3",
+   "Type": "Sedan",
+   "Trim": "S-Line",
+   "Year": 2026,
+   "Agency_Price": "215,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "S3",
+   "Type": "Sedan",
+   "Trim": "TFSI quattro",
+   "Year": 2026,
+   "Agency_Price": "275,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "RS 3",
+   "Type": "Sedan",
+   "Trim": "Performance",
+   "Year": 2026,
+   "Agency_Price": "339,820"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A4",
+   "Type": "Sedan",
+   "Trim": "35 TFSI",
+   "Year": 2026,
+   "Agency_Price": "218,500"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A4",
+   "Type": "Sedan",
+   "Trim": "40 TFSI S-Line",
+   "Year": 2026,
+   "Agency_Price": "255,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A5",
+   "Type": "Sedan",
+   "Trim": "Sportback 40 TFSI",
+   "Year": 2026,
+   "Agency_Price": "265,820"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A5",
+   "Type": "Sedan",
+   "Trim": "S-Line 45 TFSI",
+   "Year": 2026,
+   "Agency_Price": "310,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A6",
+   "Type": "Sedan",
+   "Trim": "40 TFSI Premium",
+   "Year": 2026,
+   "Agency_Price": "238,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A6",
+   "Type": "Sedan",
+   "Trim": "45 TFSI Premium Plus",
+   "Year": 2026,
+   "Agency_Price": "276,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A6",
+   "Type": "Sedan",
+   "Trim": "55 TFSI Prestige",
+   "Year": 2026,
+   "Agency_Price": "313,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A7",
+   "Type": "Sedan",
+   "Trim": "Sportback 45 TFSI",
+   "Year": 2026,
+   "Agency_Price": "395,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A7",
+   "Type": "Sedan",
+   "Trim": "55 TFSI S-Line",
+   "Year": 2026,
+   "Agency_Price": "465,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A8",
+   "Type": "Sedan",
+   "Trim": "55 TFSI quattro (NWB)",
+   "Year": 2026,
+   "Agency_Price": "457,820"
+ },
+ {
+   "Make": "Audi",
+   "Model": "A8",
+   "Type": "Sedan",
+   "Trim": "60 TFSI quattro (LWB)",
+   "Year": 2026,
+   "Agency_Price": "585,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "S8",
+   "Type": "Sedan",
+   "Trim": "TFSI quattro",
+   "Year": 2026,
+   "Agency_Price": "690,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "Q2",
+   "Type": "Crossover",
+   "Trim": "35 TFSI Progress",
+   "Year": 2026,
+   "Agency_Price": "152,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "Q3",
+   "Type": "SUV",
+   "Trim": "35 TFSI",
+   "Year": 2026,
+   "Agency_Price": "203,820"
+ },
+ {
+   "Make": "Audi",
+   "Model": "Q3",
+   "Type": "SUV",
+   "Trim": "Sportback S-Line",
+   "Year": 2026,
+   "Agency_Price": "235,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "Q5",
+   "Type": "SUV",
+   "Trim": "45 TFSI quattro",
+   "Year": 2026,
+   "Agency_Price": "270,820"
+ },
+ {
+   "Make": "Audi",
+   "Model": "Q5",
+   "Type": "SUV",
+   "Trim": "Sportback S-Line",
+   "Year": 2026,
+   "Agency_Price": "315,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "Q7",
+   "Type": "SUV",
+   "Trim": "45 TFSI quattro",
+   "Year": 2026,
+   "Agency_Price": "337,820"
+ },
+ {
+   "Make": "Audi",
+   "Model": "Q7",
+   "Type": "SUV",
+   "Trim": "55 TFSI S-Line",
+   "Year": 2026,
+   "Agency_Price": "398,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "Q8",
+   "Type": "SUV",
+   "Trim": "55 TFSI quattro",
+   "Year": 2026,
+   "Agency_Price": "483,820"
+ },
+ {
+   "Make": "Audi",
+   "Model": "Q8",
+   "Type": "SUV",
+   "Trim": "S-Line Black Edition",
+   "Year": 2026,
+   "Agency_Price": "525,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "RS Q8",
+   "Type": "SUV",
+   "Trim": "Performance",
+   "Year": 2026,
+   "Agency_Price": "780,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "e-tron GT",
+   "Type": "Sedan",
+   "Trim": "Electric quattro",
+   "Year": 2026,
+   "Agency_Price": "565,000"
+ },
+ {
+   "Make": "Audi",
+   "Model": "RS e-tron GT",
+   "Type": "Sedan",
+   "Trim": "Electric Performance",
+   "Year": 2026,
+   "Agency_Price": "745,000"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Jetta",
+   "Type": "Sedan",
+   "Trim": "Comfortline",
+   "Year": 2026,
+   "Agency_Price": "98,685"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Jetta",
+   "Type": "Sedan",
+   "Trim": "Highline",
+   "Year": 2026,
+   "Agency_Price": "122,000"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Passat",
+   "Type": "Sedan",
+   "Trim": "Trendline",
+   "Year": 2026,
+   "Agency_Price": "117,653"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Passat",
+   "Type": "Sedan",
+   "Trim": "Highline",
+   "Year": 2026,
+   "Agency_Price": "145,000"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Golf GTI",
+   "Type": "Hatchback",
+   "Trim": "GTI (Base)",
+   "Year": 2026,
+   "Agency_Price": "154,380"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Golf GTI",
+   "Type": "Hatchback",
+   "Trim": "GTI Performance",
+   "Year": 2026,
+   "Agency_Price": "178,500"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Golf R",
+   "Type": "Hatchback",
+   "Trim": "R (quattro)",
+   "Year": 2026,
+   "Agency_Price": "215,000"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "T-Roc",
+   "Type": "Crossover",
+   "Trim": "Life",
+   "Year": 2026,
+   "Agency_Price": "115,145"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "T-Roc",
+   "Type": "Crossover",
+   "Trim": "R-Line",
+   "Year": 2026,
+   "Agency_Price": "138,000"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Tiguan",
+   "Type": "SUV",
+   "Trim": "Life",
+   "Year": 2026,
+   "Agency_Price": "126,932"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Tiguan",
+   "Type": "SUV",
+   "Trim": "Elegance",
+   "Year": 2026,
+   "Agency_Price": "149,500"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Tiguan",
+   "Type": "SUV",
+   "Trim": "R-Line",
+   "Year": 2026,
+   "Agency_Price": "172,000"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Teramont",
+   "Type": "SUV",
+   "Trim": "Trendline",
+   "Year": 2026,
+   "Agency_Price": "185,555"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Teramont",
+   "Type": "SUV",
+   "Trim": "Comfortline",
+   "Year": 2026,
+   "Agency_Price": "208,000"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Teramont",
+   "Type": "SUV",
+   "Trim": "Highline (R-Line)",
+   "Year": 2026,
+   "Agency_Price": "235,000"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Touareg",
+   "Type": "SUV",
+   "Trim": "Trendline",
+   "Year": 2026,
+   "Agency_Price": "228,095"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Touareg",
+   "Type": "SUV",
+   "Trim": "Highline",
+   "Year": 2026,
+   "Agency_Price": "285,000"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Touareg",
+   "Type": "SUV",
+   "Trim": "R-Line",
+   "Year": 2026,
+   "Agency_Price": "335,000"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "ID.4",
+   "Type": "SUV",
+   "Trim": "Pro (Electric)",
+   "Year": 2026,
+   "Agency_Price": "163,000"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "ID.4",
+   "Type": "SUV",
+   "Trim": "AWD Pro S Plus (Electric)",
+   "Year": 2026,
+   "Agency_Price": "208,000"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Amarok",
+   "Type": "Pickup",
+   "Trim": "Style",
+   "Year": 2026,
+   "Agency_Price": "159,538"
+ },
+ {
+   "Make": "Volkswagen",
+   "Model": "Amarok",
+   "Type": "Pickup",
+   "Trim": "Aventura",
+   "Year": 2026,
+   "Agency_Price": "198,000"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Emgrand",
+   "Type": "Sedan",
+   "Trim": "GS",
+   "Year": 2026,
+   "Agency_Price": "57,385"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Emgrand",
+   "Type": "Sedan",
+   "Trim": "GF",
+   "Year": 2026,
+   "Agency_Price": "68,770"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Binray",
+   "Type": "Sedan",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "65,000"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Binray",
+   "Type": "Sedan",
+   "Trim": "GF",
+   "Year": 2026,
+   "Agency_Price": "73,500"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Preface",
+   "Type": "Sedan",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "91,655"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Preface",
+   "Type": "Sedan",
+   "Trim": "Flagship",
+   "Year": 2026,
+   "Agency_Price": "118,785"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Coolray",
+   "Type": "Crossover",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "71,954"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Coolray",
+   "Type": "Crossover",
+   "Trim": "GK",
+   "Year": 2026,
+   "Agency_Price": "80,004"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Coolray",
+   "Type": "Crossover",
+   "Trim": "GF",
+   "Year": 2026,
+   "Agency_Price": "88,054"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Starray",
+   "Type": "SUV",
+   "Trim": "GL",
+   "Year": 2026,
+   "Agency_Price": "88,900"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Starray",
+   "Type": "SUV",
+   "Trim": "GF",
+   "Year": 2026,
+   "Agency_Price": "96,500"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Starray",
+   "Type": "SUV",
+   "Trim": "GF+ (Full)",
+   "Year": 2026,
+   "Agency_Price": "101,500"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Cityray",
+   "Type": "SUV",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "81,000"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Cityray",
+   "Type": "SUV",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "96,485"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Monjaro",
+   "Type": "SUV",
+   "Trim": "Comfort (GK)",
+   "Year": 2026,
+   "Agency_Price": "119,985"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Monjaro",
+   "Type": "SUV",
+   "Trim": "Smart (GC)",
+   "Year": 2026,
+   "Agency_Price": "126,960"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Monjaro",
+   "Type": "SUV",
+   "Trim": "Premium (GF)",
+   "Year": 2026,
+   "Agency_Price": "137,310"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Tugella",
+   "Type": "SUV/Coupe",
+   "Trim": "GL (2WD)",
+   "Year": 2026,
+   "Agency_Price": "119,285"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Tugella",
+   "Type": "SUV/Coupe",
+   "Trim": "GF (4WD)",
+   "Year": 2026,
+   "Agency_Price": "129,785"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Tugella",
+   "Type": "SUV/Coupe",
+   "Trim": "GF+ Black Roof",
+   "Year": 2026,
+   "Agency_Price": "135,785"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Okavango",
+   "Type": "SUV (7 Seats)",
+   "Trim": "GK",
+   "Year": 2026,
+   "Agency_Price": "95,450"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Okavango",
+   "Type": "SUV (7 Seats)",
+   "Trim": "GF",
+   "Year": 2026,
+   "Agency_Price": "115,000"
+ },
+ {
+   "Make": "Geely",
+   "Model": "Geometry C",
+   "Type": "Hatchback",
+   "Trim": "550 GF (Electric)",
+   "Year": 2026,
+   "Agency_Price": "112,098"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 3",
+   "Type": "Hatchback",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "47,438"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 3",
+   "Type": "Hatchback",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "55,488"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 3",
+   "Type": "Hatchback",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "64,860"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 5",
+   "Type": "Sedan",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "50,658"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 5",
+   "Type": "Sedan",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "60,605"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 5",
+   "Type": "Sedan",
+   "Trim": "Deluxe",
+   "Year": 2026,
+   "Agency_Price": "62,950"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 6",
+   "Type": "Sedan",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "59,225"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG GT",
+   "Type": "Sedan",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "66,600"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG GT",
+   "Type": "Sedan",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "75,000"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG GT",
+   "Type": "Sedan",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "80,730"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 7",
+   "Type": "Sedan",
+   "Trim": "STD 1.5L",
+   "Year": 2026,
+   "Agency_Price": "94,760"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 7",
+   "Type": "Sedan",
+   "Trim": "DEL 1.5L",
+   "Year": 2026,
+   "Agency_Price": "104,765"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 7",
+   "Type": "Sedan",
+   "Trim": "COM 2.0L",
+   "Year": 2026,
+   "Agency_Price": "110,400"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 7",
+   "Type": "Sedan",
+   "Trim": "LUX 2.0L",
+   "Year": 2026,
+   "Agency_Price": "123,453"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 8",
+   "Type": "Sedan",
+   "Trim": "PHEV (Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "110,515"
+ },
+ {
+   "Make": "MG",
+   "Model": "ZS",
+   "Type": "Crossover",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "63,445"
+ },
+ {
+   "Make": "MG",
+   "Model": "ZS",
+   "Type": "Crossover",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "70,510"
+ },
+ {
+   "Make": "MG",
+   "Model": "ZS",
+   "Type": "Crossover",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "79,983"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG ONE",
+   "Type": "SUV",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "87,000"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG ONE",
+   "Type": "SUV",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "97,000"
+ },
+ {
+   "Make": "MG",
+   "Model": "RX5",
+   "Type": "SUV",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "83,900"
+ },
+ {
+   "Make": "MG",
+   "Model": "RX5",
+   "Type": "SUV",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "91,000"
+ },
+ {
+   "Make": "MG",
+   "Model": "RX5",
+   "Type": "SUV",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "100,000"
+ },
+ {
+   "Make": "MG",
+   "Model": "HS",
+   "Type": "SUV",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "91,425"
+ },
+ {
+   "Make": "MG",
+   "Model": "HS",
+   "Type": "SUV",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "105,000"
+ },
+ {
+   "Make": "MG",
+   "Model": "HS",
+   "Type": "SUV",
+   "Trim": "Hybrid+ Luxury",
+   "Year": 2026,
+   "Agency_Price": "116,149"
+ },
+ {
+   "Make": "MG",
+   "Model": "Whale",
+   "Type": "SUV/Coupe",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "100,388"
+ },
+ {
+   "Make": "MG",
+   "Model": "Whale",
+   "Type": "SUV/Coupe",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "116,243"
+ },
+ {
+   "Make": "MG",
+   "Model": "RX8",
+   "Type": "SUV",
+   "Trim": "Luxury (4WD)",
+   "Year": 2026,
+   "Agency_Price": "106,420"
+ },
+ {
+   "Make": "MG",
+   "Model": "RX8",
+   "Type": "SUV",
+   "Trim": "Black Edition",
+   "Year": 2026,
+   "Agency_Price": "133,330"
+ },
+ {
+   "Make": "MG",
+   "Model": "RX9",
+   "Type": "SUV",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "103,500"
+ },
+ {
+   "Make": "MG",
+   "Model": "RX9",
+   "Type": "SUV",
+   "Trim": "Luxury (7-Seater)",
+   "Year": 2026,
+   "Agency_Price": "126,960"
+ },
+ {
+   "Make": "MG",
+   "Model": "MG 4 EV",
+   "Type": "Hatchback",
+   "Trim": "Electric (Standard)",
+   "Year": 2026,
+   "Agency_Price": "113,900"
+ },
+ {
+   "Make": "MG",
+   "Model": "T60",
+   "Type": "Pickup",
+   "Trim": "Diesel (4WD)",
+   "Year": 2026,
+   "Agency_Price": "85,000"
+ },
+ {
+   "Make": "Haval",
+   "Model": "Jolion",
+   "Type": "SUV",
+   "Trim": "Active",
+   "Year": 2026,
+   "Agency_Price": "69,900"
+ },
+ {
+   "Make": "Haval",
+   "Model": "Jolion",
+   "Type": "SUV",
+   "Trim": "Premium",
+   "Year": 2026,
+   "Agency_Price": "77,500"
+ },
+ {
+   "Make": "Haval",
+   "Model": "Jolion Pro",
+   "Type": "SUV",
+   "Trim": "Highline",
+   "Year": 2026,
+   "Agency_Price": "84,500"
+ },
+ {
+   "Make": "Haval",
+   "Model": "H6",
+   "Type": "SUV",
+   "Trim": "Basic",
+   "Year": 2026,
+   "Agency_Price": "75,900"
+ },
+ {
+   "Make": "Haval",
+   "Model": "H6",
+   "Type": "SUV",
+   "Trim": "Active (New Shape)",
+   "Year": 2026,
+   "Agency_Price": "88,400"
+ },
+ {
+   "Make": "Haval",
+   "Model": "H6",
+   "Type": "SUV",
+   "Trim": "Premium (New Shape)",
+   "Year": 2026,
+   "Agency_Price": "98,900"
+ },
+ {
+   "Make": "Haval",
+   "Model": "H6",
+   "Type": "SUV",
+   "Trim": "HEV (Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "115,575"
+ },
+ {
+   "Make": "Haval",
+   "Model": "Dargo",
+   "Type": "SUV",
+   "Trim": "Sport (FWD)",
+   "Year": 2026,
+   "Agency_Price": "101,485"
+ },
+ {
+   "Make": "Haval",
+   "Model": "Dargo",
+   "Type": "SUV",
+   "Trim": "Adventure (4WD)",
+   "Year": 2026,
+   "Agency_Price": "118,910"
+ },
+ {
+   "Make": "Haval",
+   "Model": "H9",
+   "Type": "SUV",
+   "Trim": "Mid (4WD)",
+   "Year": 2026,
+   "Agency_Price": "125,925"
+ },
+ {
+   "Make": "Haval",
+   "Model": "H9",
+   "Type": "SUV",
+   "Trim": "High (4WD)",
+   "Year": 2026,
+   "Agency_Price": "147,200"
+ },
+ {
+   "Make": "Haval",
+   "Model": "H9",
+   "Type": "SUV",
+   "Trim": "Super Dignity",
+   "Year": 2026,
+   "Agency_Price": "165,600"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Arrizo 5",
+   "Type": "Sedan",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "37,375"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Arrizo 6 Pro",
+   "Type": "Sedan",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "65,550"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Arrizo 6 Pro",
+   "Type": "Sedan",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "73,600"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Arrizo 8",
+   "Type": "Sedan",
+   "Trim": "Comfort 1.6L",
+   "Year": 2026,
+   "Agency_Price": "70,725"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Arrizo 8",
+   "Type": "Sedan",
+   "Trim": "Luxury 1.6L",
+   "Year": 2026,
+   "Agency_Price": "86,825"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Arrizo 8",
+   "Type": "Sedan",
+   "Trim": "Excellence 2.0L",
+   "Year": 2026,
+   "Agency_Price": "93,150"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Tiggo 2 Pro",
+   "Type": "SUV",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "56,350"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Tiggo 4 Pro",
+   "Type": "SUV",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "63,250"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Tiggo 4 Pro",
+   "Type": "SUV",
+   "Trim": "Flagship",
+   "Year": 2026,
+   "Agency_Price": "69,575"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Tiggo 7 Pro Max",
+   "Type": "SUV",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "63,825"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Tiggo 7 Pro Max",
+   "Type": "SUV",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "90,275"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Tiggo 8 Pro",
+   "Type": "SUV",
+   "Trim": "Comfort 1.6L",
+   "Year": 2026,
+   "Agency_Price": "81,880"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Tiggo 8 Pro Max",
+   "Type": "SUV",
+   "Trim": "Luxury 2.0T",
+   "Year": 2026,
+   "Agency_Price": "110,630"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Tiggo 8 Pro Max",
+   "Type": "SUV",
+   "Trim": "Flagship 2.0T",
+   "Year": 2026,
+   "Agency_Price": "137,080"
+ },
+ {
+   "Make": "Chery",
+   "Model": "Tiggo 9",
+   "Type": "SUV",
+   "Trim": "Luxury 2.0L (Base)",
+   "Year": 2026,
+   "Agency_Price": "128,225"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "X50",
+   "Type": "Crossover",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "63,250"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "X50",
+   "Type": "Crossover",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "66,700"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "X70",
+   "Type": "SUV",
+   "Trim": "Comfort (No Sunroof)",
+   "Year": 2026,
+   "Agency_Price": "66,125"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "X70",
+   "Type": "SUV",
+   "Trim": "Comfort",
+   "Year": 2026,
+   "Agency_Price": "74,333"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "X70",
+   "Type": "SUV",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "91,310"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "X70 Plus",
+   "Type": "SUV",
+   "Trim": "Comfort (1.5L)",
+   "Year": 2026,
+   "Agency_Price": "95,770"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "X70 Plus",
+   "Type": "SUV",
+   "Trim": "Comfort (1.6L)",
+   "Year": 2026,
+   "Agency_Price": "105,000"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "X70 Plus",
+   "Type": "SUV",
+   "Trim": "Luxury (1.6L)",
+   "Year": 2026,
+   "Agency_Price": "110,825"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "Dashing",
+   "Type": "SUV",
+   "Trim": "Comfort (1.5L)",
+   "Year": 2026,
+   "Agency_Price": "67,160"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "Dashing",
+   "Type": "SUV",
+   "Trim": "Luxury (1.5L)",
+   "Year": 2026,
+   "Agency_Price": "99,849"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "Dashing",
+   "Type": "SUV",
+   "Trim": "Luxury (1.6L)",
+   "Year": 2026,
+   "Agency_Price": "102,925"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "X90 Plus",
+   "Type": "SUV",
+   "Trim": "Luxury (2.0L)",
+   "Year": 2026,
+   "Agency_Price": "120,324"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "T2 (Traveler)",
+   "Type": "SUV",
+   "Trim": "Luxury (2.0L)",
+   "Year": 2026,
+   "Agency_Price": "138,500"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "T2 (Traveler)",
+   "Type": "SUV",
+   "Trim": "Luxury Plus",
+   "Year": 2026,
+   "Agency_Price": "151,767"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "T2 (Traveler)",
+   "Type": "SUV",
+   "Trim": "Hybrid (1.5L HEV)",
+   "Year": 2026,
+   "Agency_Price": "159,990"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "T2 (Traveler)",
+   "Type": "SUV",
+   "Trim": "Luxury 8-Speed",
+   "Year": 2026,
+   "Agency_Price": "167,268"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "T1",
+   "Type": "SUV",
+   "Trim": "Standard",
+   "Year": 2026,
+   "Agency_Price": "117,724"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "T1",
+   "Type": "SUV",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "120,750"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "G700",
+   "Type": "SUV",
+   "Trim": "Luxury",
+   "Year": 2026,
+   "Agency_Price": "182,850"
+ },
+ {
+   "Make": "Jetour",
+   "Model": "G700",
+   "Type": "SUV",
+   "Trim": "Flagship",
+   "Year": 2026,
+   "Agency_Price": "287,500"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Qin Plus",
+   "Type": "Sedan",
+   "Trim": "Luxury (Super Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "65,391"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Qin Plus",
+   "Type": "Sedan",
+   "Trim": "Flagship (Super Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "75,200"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Seal 7",
+   "Type": "Sedan",
+   "Trim": "Design (Super Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "98,087"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Seal 7",
+   "Type": "Sedan",
+   "Trim": "Premium (Super Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "112,800"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Seal",
+   "Type": "Sedan",
+   "Trim": "Luxury (Electric)",
+   "Year": 2026,
+   "Agency_Price": "124,900"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Seal",
+   "Type": "Sedan",
+   "Trim": "Performance (AWD)",
+   "Year": 2026,
+   "Agency_Price": "151,900"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Han",
+   "Type": "Sedan",
+   "Trim": "Premium (Electric)",
+   "Year": 2026,
+   "Agency_Price": "154,900"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Han",
+   "Type": "Sedan",
+   "Trim": "Flagship (Electric)",
+   "Year": 2026,
+   "Agency_Price": "174,900"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Atto 3",
+   "Type": "SUV",
+   "Trim": "Premium (Electric)",
+   "Year": 2026,
+   "Agency_Price": "99,900"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Sealion 5",
+   "Type": "SUV",
+   "Trim": "Standard (Super Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "79,900"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Sealion 5",
+   "Type": "SUV",
+   "Trim": "Luxury (Super Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "94,500"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Song Plus",
+   "Type": "SUV",
+   "Trim": "FWD (Super Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "98,087"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Song Plus",
+   "Type": "SUV",
+   "Trim": "AWD (Super Hybrid)",
+   "Year": 2026,
+   "Agency_Price": "118,200"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Song Plus",
+   "Type": "SUV",
+   "Trim": "Premium (Full)",
+   "Year": 2026,
+   "Agency_Price": "145,100"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Atto 8",
+   "Type": "SUV",
+   "Trim": "Premium (7-Seater)",
+   "Year": 2026,
+   "Agency_Price": "156,900"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Atto 8",
+   "Type": "SUV",
+   "Trim": "Performance (AWD)",
+   "Year": 2026,
+   "Agency_Price": "179,900"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Sealion 7",
+   "Type": "SUV",
+   "Trim": "Fully Electric",
+   "Year": 2026,
+   "Agency_Price": "168,174"
+ },
+ {
+   "Make": "BYD",
+   "Model": "Shark 6",
+   "Type": "Pickup",
+   "Trim": "Super Hybrid 4WD",
+   "Year": 2026,
+   "Agency_Price": "165,900"
+ },
+ {
+   "Make": "BYD",
+   "Model": "F3",
+   "Type": "Sedan",
+   "Trim": "1.5L Luxury",
+   "Year": 2026,
+   "Agency_Price": "68,650"
+ }
+]
