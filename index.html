@@ -157,6 +157,7 @@
       <button class="topnav-tab" data-section="budget" onclick="goToSection('budget')" data-t="budgetFinder">بحث بالميزانية</button>
       <button class="topnav-tab" data-section="sell" onclick="goToSection('sell')" data-t="addCarTitle">أعلن عن سيارتك</button>
       <button class="topnav-tab" data-section="listings" onclick="goToSection('listings')" data-t="browseTitle">الإعلانات</button>
+      <button class="topnav-tab" data-section="inbox" onclick="goToSection('inbox')">📬 رسائلي الخاصة</button>
       <button class="topnav-tab admin-only-tab" data-section="admin" onclick="goToSection('admin')" style="display:none;color:var(--red)" id="admin-nav-tab">🛡️ لوحة التحكم</button>
     </div>
 
@@ -499,6 +500,20 @@
     </div>
   </section>
 
+
+  <!-- ══ INBOX ══ -->
+  <section id="section-inbox" class="app-section">
+    <div class="inner-page" style="max-width:700px">
+      <div class="inner-header">
+        <div class="inner-title">📬 رسائلي الخاصة</div>
+        <div class="inner-subtitle">جميع محادثاتك الخاصة مع المعلنين</div>
+      </div>
+      <div id="inbox-list" class="inbox-list">
+        <div class="empty-listings"><div class="empty-icon">💬</div><p>لا توجد محادثات بعد.</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ PROFILE ══ -->
   <section id="section-profile" class="app-section">
     <div class="inner-page" style="max-width:600px">
@@ -529,6 +544,9 @@
             <label>اسم المستخدم</label>
             <div class="input-wrap"><span class="input-icon">@</span>
               <input id="profile-username" type="text" placeholder="ahmed_99">
+            </div>
+            <div id="username-lock-hint" class="username-lock-hint" style="display:none">
+              🔒 اسم المستخدم لا يمكن تغييره بعد تحديده.
             </div>
           </div>
           <div class="form-field full">

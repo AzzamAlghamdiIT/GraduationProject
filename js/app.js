@@ -49,6 +49,7 @@ const db = {
   markNotifRead:    id       => sb(`notifications?id=eq.${id}`,{method:'PATCH',body:JSON.stringify({is_read:true})}),
   markAllNotifsRead:email    => sb(`notifications?user_email=eq.${encodeURIComponent(email)}`,{method:'PATCH',body:JSON.stringify({is_read:true})}),
   insertNotif:      d        => sb('notifications',{method:'POST',body:JSON.stringify(d)}),
+  getMyPrivateChats: email   => sb(`private_chats?or=(sender_email.eq.${encodeURIComponent(email)},receiver_email.eq.${encodeURIComponent(email)})&order=created_at.desc`),
 };
 
 // ── Make→Models data ─────────────────────────────────────────
@@ -238,6 +239,7 @@ window.goToSection = function(name){
   if(name==='notifications') loadNotifications();
   if(name==='profile') loadProfileForm();
   if(name==='dashboard') loadDashboard();
+  if(name==='inbox') loadInbox();
   if(name==='admin'){ if(currentUser?.email!==ADMIN_EMAIL){goToSection('dashboard');return;} loadAdminDashboard(); }
 };
 window.goToDashboard=()=>goToSection('dashboard');
@@ -298,7 +300,23 @@ window.doLogin=async()=>{
   catch(e){ showAlert('login','error',fbErr(e.code)); }
   setBtnLoading('btn-login',false);
 };
-window.doLogout=()=>signOut(auth);
+window.doLogout=function(){
+  // Show confirm dialog
+  const overlay = document.createElement('div');
+  overlay.className = 'confirm-overlay';
+  overlay.innerHTML = `
+    <div class="confirm-box">
+      <div class="confirm-icon">👋</div>
+      <div class="confirm-title">تسجيل الخروج</div>
+      <div class="confirm-msg">هل أنت متأكد أنك تريد تسجيل الخروج؟</div>
+      <div class="confirm-btns">
+        <button class="btn-blue" onclick="signOut(window._fbAuth);this.closest('.confirm-overlay').remove()">نعم، خروج</button>
+        <button class="btn-ghost" onclick="this.closest('.confirm-overlay').remove()">إلغاء</button>
+      </div>
+    </div>`;
+  document.body.appendChild(overlay);
+};
+window._fbAuth = auth;
 
 function fbErr(c){
   const m={'auth/user-not-found':'❌ لا يوجد حساب بهذا البريد.','auth/wrong-password':'❌ كلمة المرور غير صحيحة.',
@@ -338,7 +356,22 @@ function loadProfileForm(){
   const name = (currentUser.displayName||'').split(' ');
   document.getElementById('profile-firstname').value = name[0]||'';
   document.getElementById('profile-lastname').value  = name.slice(1).join(' ')||'';
-  document.getElementById('profile-username').value  = currentProfile?.username||'';
+  const unEl = document.getElementById('profile-username');
+  unEl.value = currentProfile?.username||'';
+  // Lock username if already set
+  if(currentProfile?.username){
+    unEl.disabled = true;
+    unEl.style.opacity = '0.6';
+    unEl.style.cursor = 'not-allowed';
+    const hint = document.getElementById('username-lock-hint');
+    if(hint) hint.style.display = 'block';
+  } else {
+    unEl.disabled = false;
+    unEl.style.opacity = '';
+    unEl.style.cursor = '';
+    const hint = document.getElementById('username-lock-hint');
+    if(hint) hint.style.display = 'none';
+  }
   document.getElementById('profile-email').value     = currentUser.email||'';
   // Avatar
   const img=document.getElementById('profile-avatar-img'),ini=document.getElementById('profile-avatar-initials');
@@ -736,12 +769,14 @@ async function loadPublicMessages(carId){
           const isMine=m.sender_email===myEmail;
           const uname=m.sender_username?'@'+m.sender_username:m.sender_email?.split('@')[0]||'?';
           const avLetter=(m.sender_username||m.sender_email||'?')[0]?.toUpperCase();
+          const msgTime=new Date(m.created_at).toLocaleTimeString(LANG==='ar'?'ar-SA':'en-US',{hour:'2-digit',minute:'2-digit'});
+          const msgDate=new Date(m.created_at).toLocaleDateString(LANG==='ar'?'ar-SA':'en-US',{month:'short',day:'numeric'});
           return `<div class="chat-msg ${isMine?'mine':'theirs'}">
             ${!isMine?`<div class="chat-av">${avLetter}</div>`:''}
             <div>
               ${!isMine?`<div class="chat-uname">${uname}</div>`:''}
               <div class="chat-bubble">${escHtml(m.message)}</div>
-              <div class="chat-meta">${isMine?'أنت':uname} · ${timeAgo(m.created_at)}</div>
+              <div class="chat-meta">${isMine?(LANG==='ar'?'أنت':'You'):uname} · ${msgTime} · ${msgDate}</div>
             </div>
           </div>`;
         }).join('');
@@ -811,6 +846,80 @@ window.sendPrivateMessage=async function(){
       message:`${uname} أرسل لك رسالة خاصة: "${text.slice(0,50)}${text.length>50?'…':''}"`});
     await loadPrivateMessages(currentCarId,currentUser.email,currentCarOwner);
   }catch(e){ toast('❌ فشل الإرسال.','error'); }
+};
+
+
+// ================================================================
+//  INBOX — All private chat threads
+// ================================================================
+async function loadInbox(){
+  if(!currentUser) return;
+  const list = document.getElementById('inbox-list');
+  if(!list) return;
+  list.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-muted)">جاري التحميل…</div>';
+  try{
+    const all = await db.getMyPrivateChats(currentUser.email);
+    if(!all || !all.length){
+      list.innerHTML = '<div class="empty-listings"><div class="empty-icon">💬</div><p>لا توجد محادثات خاصة بعد.</p></div>';
+      return;
+    }
+    // Group by conversation: car_id + other party
+    const threads = {};
+    all.forEach(m=>{
+      const other = m.sender_email===currentUser.email ? m.receiver_email : m.sender_email;
+      const key = m.car_id+'__'+other;
+      if(!threads[key]){
+        threads[key] = { carId: m.car_id, otherEmail: other, messages: [], lastMsg: m };
+      }
+      threads[key].messages.push(m);
+      if(new Date(m.created_at) > new Date(threads[key].lastMsg.created_at)) threads[key].lastMsg = m;
+    });
+
+    // Load car info for each thread
+    const carIds = [...new Set(Object.values(threads).map(th=>th.carId))];
+    let carsMap = {};
+    try{
+      const cars = await sb('Cars?id=in.('+carIds.join(',')+')&select=id,make,model,year,owner_email');
+      (cars||[]).forEach(c=>{ carsMap[c.id]=c; });
+    }catch(e){}
+
+    list.innerHTML = Object.values(threads).sort((a,b)=>
+      new Date(b.lastMsg.created_at)-new Date(a.lastMsg.created_at)
+    ).map(th=>{
+      const car = carsMap[th.carId];
+      const carName = car ? `${car.make} ${car.model} ${car.year}` : 'إعلان';
+      const otherName = th.otherEmail.split('@')[0];
+      const lastText = escHtml(th.lastMsg.message.slice(0,60))+(th.lastMsg.message.length>60?'…':'');
+      const isMine = th.lastMsg.sender_email===currentUser.email;
+      const timeStr = timeAgo(th.lastMsg.created_at);
+      return `<div class="inbox-thread" onclick="openInboxChat('${th.carId}','${escAttr(carName)}','${escAttr(th.otherEmail)}')">
+        <div class="inbox-avatar">${th.otherEmail[0]?.toUpperCase()}</div>
+        <div class="inbox-body">
+          <div class="inbox-header">
+            <span class="inbox-name">${otherName}</span>
+            <span class="inbox-time">${timeStr}</span>
+          </div>
+          <div class="inbox-car">🚗 ${carName}</div>
+          <div class="inbox-preview">${isMine?'أنت: ':''} ${lastText}</div>
+        </div>
+      </div>`;
+    }).join('');
+  }catch(e){
+    list.innerHTML = '<div class="empty-listings"><p>خطأ في التحميل.</p></div>';
+    console.error(e);
+  }
+}
+
+window.openInboxChat = function(carId, carName, otherEmail){
+  currentCarId = carId;
+  currentCarOwner = otherEmail;
+  document.getElementById('pchat-title').textContent = '🔒 ' + carName;
+  document.getElementById('pchat-subtitle').textContent = otherEmail.split('@')[0];
+  document.getElementById('pchat-back-btn').onclick = ()=>goToSection('inbox');
+  goToSection('private-chat');
+  loadPrivateMessages(carId, currentUser.email, otherEmail);
+  if(pchatTimer) clearInterval(pchatTimer);
+  pchatTimer = setInterval(()=>loadPrivateMessages(carId,currentUser.email,otherEmail),5000);
 };
 
 // ── Gallery ───────────────────────────────────────────────────
