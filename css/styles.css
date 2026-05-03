@@ -499,3 +499,102 @@ html[dir="ltr"] .chat-meta{text-align:left;}
   .hero-badge{margin:0 auto 20px;}
   .hero-desc{max-width:100%;margin-left:auto;margin-right:auto;}
 }
+
+/* ── Hamburger Button ───────────────────────────────────── */
+.hamburger-btn{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  width:40px;height:40px;
+  background:var(--surface2);
+  border:1.5px solid var(--border);
+  border-radius:9px;
+  cursor:pointer;
+  flex-shrink:0;
+  margin-right:8px;
+  transition:var(--transition);
+}
+html[dir="ltr"] .hamburger-btn{margin-right:0;margin-left:8px;}
+.hamburger-btn span{
+  display:block;width:20px;height:2px;
+  background:var(--text);border-radius:2px;
+  transition:var(--transition);
+  transform-origin:center;
+}
+.hamburger-btn:hover{border-color:var(--blue);}
+/* Animate to X when open */
+.hamburger-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger-btn.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.hamburger-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ── Mobile Nav Overlay ─────────────────────────────────── */
+.mobile-nav-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,0.45);
+  z-index:200;display:none;
+  animation:fadeIn 0.2s ease;
+}
+.mobile-nav-overlay.open{display:block;}
+
+/* ── Mobile Nav Drawer ──────────────────────────────────── */
+.mobile-nav-drawer{
+  position:fixed;top:0;right:0;bottom:0;
+  width:min(300px,85vw);
+  background:var(--surface);
+  border-left:1.5px solid var(--border);
+  z-index:300;
+  transform:translateX(100%);
+  transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  display:flex;flex-direction:column;
+  overflow-y:auto;
+}
+html[dir="ltr"] .mobile-nav-drawer{
+  right:auto;left:0;
+  border-left:none;border-right:1.5px solid var(--border);
+  transform:translateX(-100%);
+}
+.mobile-nav-drawer.open{transform:translateX(0);}
+
+.mobile-nav-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px;
+  border-bottom:1px solid var(--border);
+  flex-shrink:0;
+}
+.mobile-nav-close{
+  width:36px;height:36px;
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:8px;font-size:16px;color:var(--text-muted);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:var(--transition);
+}
+.mobile-nav-close:hover{border-color:var(--red);color:var(--red);}
+
+.mobile-nav-items{padding:12px 10px;display:flex;flex-direction:column;gap:4px;}
+
+.mobile-nav-item{
+  width:100%;padding:14px 16px;
+  background:transparent;border:none;border-radius:10px;
+  text-align:right;color:var(--text);font-size:15px;font-weight:500;
+  display:flex;align-items:center;gap:10px;
+  cursor:pointer;transition:var(--transition);
+}
+html[dir="ltr"] .mobile-nav-item{text-align:left;}
+.mobile-nav-item:hover{background:var(--surface2);}
+.mobile-nav-item.danger{color:var(--red);}
+.mobile-nav-item.danger:hover{background:var(--red-dim);}
+
+.mobile-nav-divider{height:1px;background:var(--border);margin:8px 10px;}
+
+/* ── Show hamburger on mobile, hide nav tabs ────────────── */
+@media(max-width:768px){
+  .topnav-tabs{display:none !important;}
+  .hamburger-btn{display:flex;}
+  /* Keep topbar icons visible */
+  .user-name{display:none;}
+}
+@media(min-width:769px){
+  .hamburger-btn{display:none;}
+  .mobile-nav-overlay,.mobile-nav-drawer{display:none !important;}
+}

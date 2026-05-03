@@ -218,9 +218,11 @@ async function showApp(user){
   setPage('app-page');
   await loadProfile(user.email);
   updateTopbarUser();
-  // Show admin tab only for owner
+  // Show admin tab only for owner (desktop + mobile)
   const adminTab = document.getElementById('admin-nav-tab');
   if(adminTab) adminTab.style.display = user.email===ADMIN_EMAIL ? 'block' : 'none';
+  const adminMobileTab = document.getElementById('admin-mobile-tab');
+  if(adminMobileTab) adminMobileTab.style.display = user.email===ADMIN_EMAIL ? 'block' : 'none';
   goToSection('dashboard');
   fetchNotifCount();
 }
@@ -300,23 +302,28 @@ window.doLogin=async()=>{
   catch(e){ showAlert('login','error',fbErr(e.code)); }
   setBtnLoading('btn-login',false);
 };
+// Expose signOut globally so the confirm dialog can call it
+window._doSignOut = async function(){
+  document.querySelector('.confirm-overlay')?.remove();
+  await signOut(auth);
+};
+
 window.doLogout=function(){
-  // Show confirm dialog
   const overlay = document.createElement('div');
   overlay.className = 'confirm-overlay';
   overlay.innerHTML = `
     <div class="confirm-box">
       <div class="confirm-icon">👋</div>
-      <div class="confirm-title">تسجيل الخروج</div>
-      <div class="confirm-msg">هل أنت متأكد أنك تريد تسجيل الخروج؟</div>
+      <div class="confirm-title">${LANG==='ar'?'تسجيل الخروج':'Sign Out'}</div>
+      <div class="confirm-msg">${LANG==='ar'?'هل أنت متأكد أنك تريد تسجيل الخروج؟':'Are you sure you want to sign out?'}</div>
       <div class="confirm-btns">
-        <button class="btn-blue" onclick="signOut(window._fbAuth);this.closest('.confirm-overlay').remove()">نعم، خروج</button>
-        <button class="btn-ghost" onclick="this.closest('.confirm-overlay').remove()">إلغاء</button>
+        <button class="btn-blue" onclick="window._doSignOut()">${LANG==='ar'?'نعم، خروج':'Yes, Sign Out'}</button>
+        <button class="btn-ghost" onclick="this.closest('.confirm-overlay').remove()">${LANG==='ar'?'إلغاء':'Cancel'}</button>
       </div>
     </div>`;
+  overlay.onclick = e => { if(e.target===overlay) overlay.remove(); };
   document.body.appendChild(overlay);
 };
-window._fbAuth = auth;
 
 function fbErr(c){
   const m={'auth/user-not-found':'❌ لا يوجد حساب بهذا البريد.','auth/wrong-password':'❌ كلمة المرور غير صحيحة.',
@@ -875,12 +882,21 @@ async function loadInbox(){
       if(new Date(m.created_at) > new Date(threads[key].lastMsg.created_at)) threads[key].lastMsg = m;
     });
 
-    // Load car info for each thread
+    // Load car info + other users' profiles in parallel
     const carIds = [...new Set(Object.values(threads).map(th=>th.carId))];
-    let carsMap = {};
+    const otherEmails = [...new Set(Object.values(threads).map(th=>th.otherEmail))];
+    let carsMap = {}, profilesMap = {};
     try{
-      const cars = await sb('Cars?id=in.('+carIds.join(',')+')&select=id,make,model,year,owner_email');
+      const [cars, profiles] = await Promise.all([
+        sb('Cars?id=in.('+carIds.join(',')+')&select=id,make,model,year,owner_email').catch(()=>[]),
+        // Fetch profiles for the other parties in each conversation
+        Promise.all(otherEmails.map(em=>
+          sb(`profiles?email=eq.${encodeURIComponent(em)}&select=email,username,avatar&limit=1`)
+            .then(rows=>(rows&&rows.length)?rows[0]:null).catch(()=>null)
+        ))
+      ]);
       (cars||[]).forEach(c=>{ carsMap[c.id]=c; });
+      (profiles||[]).forEach(p=>{ if(p) profilesMap[p.email]=p; });
     }catch(e){}
 
     list.innerHTML = Object.values(threads).sort((a,b)=>
@@ -888,19 +904,24 @@ async function loadInbox(){
     ).map(th=>{
       const car = carsMap[th.carId];
       const carName = car ? `${car.make} ${car.model} ${car.year}` : 'إعلان';
-      const otherName = th.otherEmail.split('@')[0];
+      const otherProfile = profilesMap[th.otherEmail];
+      const otherName = otherProfile?.username ? '@'+otherProfile.username : th.otherEmail.split('@')[0];
+      const otherAvatar = otherProfile?.avatar || '';
+      const avatarHtml = otherAvatar
+        ? `<div class="inbox-avatar" style="padding:0;overflow:hidden"><img src="${otherAvatar}" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>`
+        : `<div class="inbox-avatar">${(otherProfile?.username||th.otherEmail)[0]?.toUpperCase()}</div>`;
       const lastText = escHtml(th.lastMsg.message.slice(0,60))+(th.lastMsg.message.length>60?'…':'');
       const isMine = th.lastMsg.sender_email===currentUser.email;
       const timeStr = timeAgo(th.lastMsg.created_at);
       return `<div class="inbox-thread" onclick="openInboxChat('${th.carId}','${escAttr(carName)}','${escAttr(th.otherEmail)}')">
-        <div class="inbox-avatar">${th.otherEmail[0]?.toUpperCase()}</div>
+        ${avatarHtml}
         <div class="inbox-body">
           <div class="inbox-header">
             <span class="inbox-name">${otherName}</span>
             <span class="inbox-time">${timeStr}</span>
           </div>
           <div class="inbox-car">🚗 ${carName}</div>
-          <div class="inbox-preview">${isMine?'أنت: ':''} ${lastText}</div>
+          <div class="inbox-preview">${isMine?(LANG==='ar'?'أنت: ':'You: '):''} ${lastText}</div>
         </div>
       </div>`;
     }).join('');
@@ -910,11 +931,18 @@ async function loadInbox(){
   }
 }
 
-window.openInboxChat = function(carId, carName, otherEmail){
+window.openInboxChat = async function(carId, carName, otherEmail){
   currentCarId = carId;
   currentCarOwner = otherEmail;
   document.getElementById('pchat-title').textContent = '🔒 ' + carName;
-  document.getElementById('pchat-subtitle').textContent = otherEmail.split('@')[0];
+  // Try to load the other person's username
+  try{
+    const rows = await sb(`profiles?email=eq.${encodeURIComponent(otherEmail)}&select=username,avatar&limit=1`);
+    const p = rows&&rows.length ? rows[0] : null;
+    document.getElementById('pchat-subtitle').textContent = p?.username ? '@'+p.username : otherEmail.split('@')[0];
+  }catch(e){
+    document.getElementById('pchat-subtitle').textContent = otherEmail.split('@')[0];
+  }
   document.getElementById('pchat-back-btn').onclick = ()=>goToSection('inbox');
   goToSection('private-chat');
   loadPrivateMessages(carId, currentUser.email, otherEmail);
@@ -1088,3 +1116,18 @@ window.adminDeleteCar = async function(id){
     loadAdminDashboard();
   }catch(e){ toast('❌ فشل الحذف.','error'); }
 };
+
+// ================================================================
+//  MOBILE HAMBURGER MENU
+// ================================================================
+window.toggleMobileMenu = function(){
+  document.getElementById('mobile-nav-drawer').classList.toggle('open');
+  document.getElementById('mobile-nav-overlay').classList.toggle('open');
+  document.getElementById('hamburger-btn').classList.toggle('open');
+};
+window.closeMobileMenu = function(){
+  document.getElementById('mobile-nav-drawer')?.classList.remove('open');
+  document.getElementById('mobile-nav-overlay')?.classList.remove('open');
+  document.getElementById('hamburger-btn')?.classList.remove('open');
+};
+// Close on section change already handled by closeMobileMenu calls

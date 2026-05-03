@@ -150,8 +150,13 @@
       <img src="logo.png" alt="ثمنها" class="topbar-logo">
     </div>
 
-    <!-- Main nav tabs -->
-    <div class="topnav-tabs">
+    <!-- Hamburger button — mobile only -->
+    <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="القائمة">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Main nav tabs (desktop) -->
+    <div class="topnav-tabs" id="topnav-tabs">
       <button class="topnav-tab active" data-section="dashboard" onclick="goToSection('dashboard')" data-t="dashTitle">الرئيسية</button>
       <button class="topnav-tab" data-section="estimator" onclick="goToSection('estimator')" data-t="carValuation">تقدير السعر</button>
       <button class="topnav-tab" data-section="budget" onclick="goToSection('budget')" data-t="budgetFinder">بحث بالميزانية</button>
@@ -197,6 +202,30 @@
   </nav>
 
   <div id="toast-container" class="toast-container"></div>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" onclick="closeMobileMenu()"></div>
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <img src="logo.png" alt="ثمنها" style="height:40px;object-fit:contain">
+      <button class="mobile-nav-close" onclick="closeMobileMenu()">✕</button>
+    </div>
+    <div class="mobile-nav-items">
+      <button class="mobile-nav-item" onclick="goToSection('dashboard');closeMobileMenu()" data-t="dashTitle">🏠 الرئيسية</button>
+      <button class="mobile-nav-item" onclick="goToSection('estimator');closeMobileMenu()" data-t="carValuation">📊 تقدير السعر</button>
+      <button class="mobile-nav-item" onclick="goToSection('budget');closeMobileMenu()" data-t="budgetFinder">💰 بحث بالميزانية</button>
+      <button class="mobile-nav-item" onclick="goToSection('sell');closeMobileMenu()" data-t="addCarTitle">➕ أعلن عن سيارتك</button>
+      <button class="mobile-nav-item" onclick="goToSection('listings');closeMobileMenu()" data-t="browseTitle">🏷️ الإعلانات</button>
+      <button class="mobile-nav-item" onclick="goToSection('inbox');closeMobileMenu()">📬 رسائلي الخاصة</button>
+      <div class="mobile-nav-divider"></div>
+      <button class="mobile-nav-item" onclick="goToSection('profile');closeMobileMenu()">👤 <span data-t="myProfile">ملفي الشخصي</span></button>
+      <button class="mobile-nav-item" onclick="goToSection('my-listings');closeMobileMenu()">🚗 <span data-t="myListings">إعلاناتي</span></button>
+      <button class="mobile-nav-item" onclick="goToSection('notifications');closeMobileMenu()">🔔 <span data-t="myNotifs">إشعاراتي</span></button>
+      <div class="mobile-nav-divider"></div>
+      <button class="mobile-nav-item admin-only-mobile" id="admin-mobile-tab" style="display:none;color:var(--red)" onclick="goToSection('admin');closeMobileMenu()">🛡️ لوحة التحكم</button>
+      <button class="mobile-nav-item danger" onclick="doLogout();closeMobileMenu()">🚪 <span data-t="signOut">تسجيل الخروج</span></button>
+    </div>
+  </div>
 
   <!-- ══ DASHBOARD ══ -->
   <section id="section-dashboard" class="app-section active">
