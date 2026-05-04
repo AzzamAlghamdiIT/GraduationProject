@@ -22,7 +22,7 @@
   </nav>
   <section class="landing-hero">
     <div class="hero-bg-shapes"><div class="shape s1"></div><div class="shape s2"></div></div>
-    <div class="hero-content">
+    <div class="hero-content" id="hero-content">
       <div class="hero-badge"><span class="badge-dot"></span><span data-t="tagline">تقدير سيارتك · شراء · بيع</span></div>
       <h1 class="hero-title" data-t="landingTitle">قيّم سيارتك<br>بذكاء وسرعة</h1>
       <p class="hero-desc" data-t="landingDesc">المنصة الأذكى في المملكة لتقدير سعر السيارة والبحث حسب الميزانية والسوق.</p>
@@ -211,11 +211,11 @@
       <button class="mobile-nav-close" onclick="closeMobileMenu()">✕</button>
     </div>
     <div class="mobile-nav-items">
-      <button class="mobile-nav-item" onclick="goToSection('dashboard');closeMobileMenu()" data-t="dashTitle">🏠 الرئيسية</button>
-      <button class="mobile-nav-item" onclick="goToSection('estimator');closeMobileMenu()" data-t="carValuation">📊 تقدير السعر</button>
-      <button class="mobile-nav-item" onclick="goToSection('budget');closeMobileMenu()" data-t="budgetFinder">💰 بحث بالميزانية</button>
-      <button class="mobile-nav-item" onclick="goToSection('sell');closeMobileMenu()" data-t="addCarTitle">➕ أعلن عن سيارتك</button>
-      <button class="mobile-nav-item" onclick="goToSection('listings');closeMobileMenu()" data-t="browseTitle">🏷️ الإعلانات</button>
+      <button class="mobile-nav-item" onclick="goToSection('dashboard');closeMobileMenu()" data-mobile-key="dashTitle">🏠 الرئيسية</button>
+      <button class="mobile-nav-item" onclick="goToSection('estimator');closeMobileMenu()" data-mobile-key="carValuation">📊 تقدير السعر</button>
+      <button class="mobile-nav-item" onclick="goToSection('budget');closeMobileMenu()" data-mobile-key="budgetFinder">💰 بحث بالميزانية</button>
+      <button class="mobile-nav-item" onclick="goToSection('sell');closeMobileMenu()" data-mobile-key="addCarTitle">➕ أعلن عن سيارتك</button>
+      <button class="mobile-nav-item" onclick="goToSection('listings');closeMobileMenu()" data-mobile-key="browseTitle">🏷️ الإعلانات</button>
       <button class="mobile-nav-item" onclick="goToSection('inbox');closeMobileMenu()">📬 رسائلي الخاصة</button>
       <div class="mobile-nav-divider"></div>
       <button class="mobile-nav-item" onclick="goToSection('profile');closeMobileMenu()">👤 <span data-t="myProfile">ملفي الشخصي</span></button>

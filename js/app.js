@@ -174,17 +174,52 @@ function t(k){ return T[LANG][k]||T.ar[k]||k; }
 function currency(){ return t('currency'); }
 
 function applyTranslations(){
+  const ar = LANG==='ar';
+
+  // 1. Translate all [data-t] elements
   document.querySelectorAll('[data-t]').forEach(el=>{
-    const k=el.getAttribute('data-t'),v=t(k);
+    const k=el.getAttribute('data-t'), v=t(k);
     if(el.tagName==='INPUT') el.placeholder=v; else el.textContent=v;
   });
-  const ar=LANG==='ar';
-  document.documentElement.lang=LANG;
-  document.documentElement.dir=ar?'rtl':'ltr';
-  document.body.classList.toggle('rtl',ar);
+
+  // 2. Set document direction
+  document.documentElement.lang = LANG;
+  document.documentElement.dir  = ar ? 'rtl' : 'ltr';
+  document.body.classList.toggle('rtl', ar);
+
+  // 3. Update lang toggle buttons
   document.querySelectorAll('[id^="lang-btn"]').forEach(b=>b.textContent=ar?'EN':'ع');
+
+  // 4. Direction-aware arrow buttons
   document.querySelectorAll('.back-btn').forEach(b=>b.textContent=ar?'→':'←');
   document.querySelectorAll('.card-arrow').forEach(a=>a.textContent=ar?'←':'→');
+
+  // 5. Mobile drawer items — re-render with correct language
+  const mobileItems = document.querySelectorAll('.mobile-nav-item[data-mobile-key]');
+  mobileItems.forEach(btn=>{
+    const k = btn.getAttribute('data-mobile-key');
+    if(k) btn.textContent = t(k);
+  });
+
+  // 6. Mobile drawer direction — slides from correct side
+  const drawer = document.getElementById('mobile-nav-drawer');
+  if(drawer){
+    if(ar){
+      drawer.style.right='0'; drawer.style.left='auto';
+      drawer.style.borderLeft='1.5px solid var(--border)'; drawer.style.borderRight='none';
+      drawer.style.transform = drawer.classList.contains('open')?'translateX(0)':'translateX(100%)';
+    } else {
+      drawer.style.left='0'; drawer.style.right='auto';
+      drawer.style.borderRight='1.5px solid var(--border)'; drawer.style.borderLeft='none';
+      drawer.style.transform = drawer.classList.contains('open')?'translateX(0)':'translateX(-100%)';
+    }
+  }
+
+  // 7. Update chat placeholder text
+  const chatInput  = document.getElementById('chat-input');
+  const pchatInput = document.getElementById('pchat-input');
+  if(chatInput)  chatInput.placeholder  = ar?'اكتب تعليقاً…':'Write a comment…';
+  if(pchatInput) pchatInput.placeholder = ar?'اكتب رسالة خاصة…':'Write a private message…';
 }
 window.toggleLang=()=>{ LANG=LANG==='ar'?'en':'ar'; localStorage.setItem('th_lang',LANG); applyTranslations(); populateEstimatorMakes(); populateTypeFilter(); populateSellMakes(); populateSellCities(); };
 
@@ -677,9 +712,16 @@ window.openDetail=function(id){
   document.getElementById('detail-title').textContent=`${l.make} ${l.model} ${l.year}`;
   document.getElementById('detail-content').innerHTML=`
     <div class="detail-gallery">
-      ${imgs.length?`<div class="detail-main-img" onclick="openGallery('${l.id}',${JSON.stringify(imgs).replace(/"/g,"'")})">
-        <img src="${imgs[0]}" id="gmain-${l.id}" alt="main">
-        ${imgs.length>1?`<div class="gallery-thumb-strip">${imgs.slice(0,5).map((img,i)=>`<img src="${img}" onclick="event.stopPropagation();document.getElementById('gmain-${l.id}').src='${img}'" class="${i===0?'active':''}">`).join('')}</div>`:''}
+      ${imgs.length?`<div class="detail-main-img-wrap">
+        <div class="detail-main-img" onclick="openGallery('${l.id}',${JSON.stringify(imgs).replace(/"/g,"'")})">
+          <img src="${imgs[0]}" id="gmain-${l.id}" alt="main">
+          <div class="detail-gallery-count">📷 ${imgs.length} ${LANG==='ar'?'صورة':'photos'} — انقر للعرض الكامل</div>
+        </div>
+        ${imgs.length>1?`<div class="gallery-thumb-strip-full">${imgs.map((img,i)=>`<div class="gallery-thumb-item ${i===0?'active':''}" onclick="
+          document.getElementById('gmain-${l.id}').src='${img}';
+          document.querySelectorAll('.gallery-thumb-item').forEach(t=>t.classList.remove('active'));
+          this.classList.add('active');
+        "><img src="${img}" alt="thumb ${i+1}"><div class="thumb-num">${i+1}</div></div>`).join('')}</div>`:''}
       </div>`:'<div class="detail-no-img">🚗</div>'}
     </div>
     <div class="detail-info-grid">
