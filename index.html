@@ -154,6 +154,7 @@
     <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="القائمة">
       <span></span><span></span><span></span>
     </button>
+    <div style="flex:1"></div><!-- spacer -->
 
     <!-- Main nav tabs (desktop) -->
     <div class="topnav-tabs" id="topnav-tabs">
@@ -246,7 +247,7 @@
       </div>
 
       <!-- Quick access cards -->
-      <div class="home-section-title">الخدمات</div>
+      <div class="home-section-title" data-t="servicesLabel">الخدمات</div>
       <div class="feature-cards" style="max-width:100%">
         <div class="feature-card" onclick="goToSection('estimator')">
           <div class="card-icon">📊</div>
@@ -277,8 +278,8 @@
       <!-- Recent listings -->
       <div class="home-recent">
         <div class="home-section-title" style="display:flex;align-items:center;justify-content:space-between">
-          <span>آخر الإعلانات</span>
-          <button class="btn-ghost btn-sm" onclick="goToSection('listings')">عرض الكل ←</button>
+          <span data-t="recentListings">آخر الإعلانات</span>
+          <button class="btn-ghost btn-sm" id="view-all-btn" onclick="goToSection('listings')">عرض الكل ←</button>
         </div>
         <div class="listings-grid" id="home-recent-grid" style="margin-top:16px">
           <div class="listing-skeleton"></div><div class="listing-skeleton"></div><div class="listing-skeleton"></div>

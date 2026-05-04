@@ -516,10 +516,13 @@ html[dir="ltr"] .chat-meta{text-align:left;}
   border-radius:9px;
   cursor:pointer;
   flex-shrink:0;
-  margin-right:8px;
   transition:var(--transition);
+  /* RTL: appears after logo on the right side */
+  margin-right:0;
+  margin-left:8px;
 }
-html[dir="ltr"] .hamburger-btn{margin-right:0;margin-left:8px;}
+html[dir="rtl"] .hamburger-btn{margin-left:0; margin-right:0;}
+html[dir="ltr"] .hamburger-btn{margin-right:0; margin-left:8px;}
 .hamburger-btn span{
   display:block;width:20px;height:2.5px;
   background:var(--text);border-radius:2px;
@@ -544,28 +547,26 @@ body.light-mode .hamburger-btn span{background:#1B5599;}
 
 /* ── Mobile Nav Drawer ──────────────────────────────────── */
 .mobile-nav-drawer{
-  position:fixed;top:0;right:0;bottom:0;
+  position:fixed;top:0;bottom:0;
   width:min(300px,85vw);
   background:var(--surface);
-  border-left:1.5px solid var(--border);
   z-index:300;
-  transform:translateX(100%);
   transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);
   display:flex;flex-direction:column;
   overflow-y:auto;
+  /* Default RTL: comes from right */
+  right:0;left:auto;
+  border-left:1.5px solid var(--border);border-right:none;
+  transform:translateX(100%);
 }
-html[dir="ltr"] .mobile-nav-drawer{
-  right:auto;left:0;
-  border-left:none;border-right:1.5px solid var(--border);
-  transform:translateX(-100%);
-}
-.mobile-nav-drawer.open{transform:translateX(0);}
+.mobile-nav-drawer.open{transform:translateX(0) !important;}
 
 .mobile-nav-header{
   display:flex;align-items:center;justify-content:space-between;
   padding:16px 20px;
   border-bottom:1px solid var(--border);
   flex-shrink:0;
+  direction:inherit;
 }
 .mobile-nav-close{
   width:36px;height:36px;
@@ -581,11 +582,13 @@ html[dir="ltr"] .mobile-nav-drawer{
 .mobile-nav-item{
   width:100%;padding:14px 16px;
   background:transparent;border:none;border-radius:10px;
-  text-align:right;color:var(--text);font-size:15px;font-weight:500;
+  color:var(--text);font-size:15px;font-weight:500;
   display:flex;align-items:center;gap:10px;
   cursor:pointer;transition:var(--transition);
+  text-align:inherit;
+  justify-content:flex-end;
 }
-html[dir="ltr"] .mobile-nav-item{text-align:left;}
+html[dir="ltr"] .mobile-nav-item{justify-content:flex-start;}
 .mobile-nav-item:hover{background:var(--surface2);}
 .mobile-nav-item.danger{color:var(--red);}
 .mobile-nav-item.danger:hover{background:var(--red-dim);}
@@ -595,13 +598,14 @@ html[dir="ltr"] .mobile-nav-item{text-align:left;}
 /* ── Show hamburger on mobile, hide nav tabs ────────────── */
 @media(max-width:768px){
   .topnav-tabs{display:none !important;}
-  .hamburger-btn{display:flex;}
-  /* Keep topbar icons visible */
+  .hamburger-btn{display:flex !important;}
   .user-name{display:none;}
+  /* Topbar layout on mobile: logo | hamburger | spacer | right-icons */
+  .topbar{flex-wrap:nowrap;}
 }
 @media(min-width:769px){
-  .hamburger-btn{display:none;}
-  .mobile-nav-overlay,.mobile-nav-drawer{display:none !important;}
+  .hamburger-btn{display:none !important;}
+  .mobile-nav-overlay,.mobile-nav-drawer{display:none !important; transform:none !important;}
 }
 
 /* ── Detail Page Full Gallery ───────────────────────────── */

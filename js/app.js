@@ -24,8 +24,15 @@ const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZi
 const H   = { 'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY,'Prefer':'return=representation' };
 
 async function sb(path, opts={}) {
-  const r = await fetch(`${SB}/rest/v1/${path}`, { headers:H, ...opts });
-  if (!r.ok) { const e=await r.text(); throw new Error(e); }
+  const fetchOpts = { headers:H, cache:'no-store', ...opts };
+  // Merge headers if opts has its own
+  if(opts.headers) fetchOpts.headers = { ...H, ...opts.headers };
+  const r = await fetch(`${SB}/rest/v1/${path}`, fetchOpts);
+  if (!r.ok) {
+    const e = await r.text();
+    console.error(`Supabase error [${r.status}] ${path}:`, e);
+    throw new Error(`${r.status}: ${e}`);
+  }
   return r.status===204 ? null : r.json();
 }
 
@@ -110,6 +117,9 @@ const T = {
     photosUpTo5:'الصور (حتى 5)',clickUpload:'انقر لرفع الصور',uploadSub:'JPG أو PNG حتى 5MB',
     publishListing:'🚀 نشر الإعلان',activeListings:'الإعلانات النشطة',listings:'إعلان',
     noListings:'لا توجد إعلانات بعد. كن أول من يبيع سيارته!',
+    servicesLabel:'الخدمات',
+    recentListings:'آخر الإعلانات',
+    viewAll:'عرض الكل',
     whatsappBtn:'💬 واتساب',selectMake:'اختر الماركة',selectModel:'اختر الموديل',
     allTrims:'جميع الفئات',currency:'ر.س',
     retentionLabel:'نسبة القيمة المتبقية',agencyPriceLbl:'سعر الوكالة',
@@ -156,7 +166,7 @@ const T = {
     phoneWa:'Phone / WhatsApp *',notes:'Notes',
     photosUpTo5:'Photos (up to 5)',clickUpload:'Click to upload',uploadSub:'JPG, PNG up to 5MB',
     publishListing:'🚀 Publish Listing',activeListings:'Active Listings',listings:'listing(s)',
-    noListings:'No listings yet.',whatsappBtn:'💬 WhatsApp',selectMake:'Select Make',
+    noListings:'No listings yet.',servicesLabel:'Services',recentListings:'Recent Listings',viewAll:'View All',whatsappBtn:'💬 WhatsApp',selectMake:'Select Make',
     selectModel:'Select Model',allTrims:'All Trims',currency:'SAR',
     retentionLabel:'Value Retention',agencyPriceLbl:'Agency Price',
     fillRequired:'Please fill in all required fields.',yearInvalid:'Year must be between 1980 and',
@@ -220,6 +230,16 @@ function applyTranslations(){
   const pchatInput = document.getElementById('pchat-input');
   if(chatInput)  chatInput.placeholder  = ar?'اكتب تعليقاً…':'Write a comment…';
   if(pchatInput) pchatInput.placeholder = ar?'اكتب رسالة خاصة…':'Write a private message…';
+
+  // 8. View-all button direction arrow
+  const viewAllBtn = document.getElementById('view-all-btn');
+  if(viewAllBtn) viewAllBtn.textContent = (ar ? 'عرض الكل ←' : 'View All →');
+
+  // 9. Result card currency label
+  const resDisclaimer = document.querySelector('.result-disclaimer[data-t="disclaimer"]');
+  if(resDisclaimer) resDisclaimer.textContent = t('disclaimer');
+  const sarLabel = document.getElementById('res-currency');
+  if(sarLabel) sarLabel.textContent = currency();
 }
 window.toggleLang=()=>{ LANG=LANG==='ar'?'en':'ar'; localStorage.setItem('th_lang',LANG); applyTranslations(); populateEstimatorMakes(); populateTypeFilter(); populateSellMakes(); populateSellCities(); };
 
@@ -569,9 +589,29 @@ window.runEstimation=function(){
   document.getElementById('res-high').textContent=`${formatPrice(result.rangeHigh)} ${curr}`;
   document.getElementById('res-car-name').textContent=`${result.car.Make} ${result.car.Model} ${result.car.Trim||''}`;
   document.getElementById('res-retention').textContent=`${result.retentionPct}%`;
+  // Translate factor labels
+  const factorLabelMap = {
+    'Brand Resale Value': LANG==='ar'?'قيمة إعادة البيع':'Brand Resale',
+    'Age Depreciation':   LANG==='ar'?'استهلاك العمر':'Age Depreciation',
+    'Trim Level':         LANG==='ar'?'مستوى الفئة':'Trim Level',
+    'Mileage':            LANG==='ar'?'عداد الكيلومتر':'Mileage',
+    'Condition / History':LANG==='ar'?'الحالة والتاريخ':'Condition',
+    'Market Demand':      LANG==='ar'?'الطلب في السوق':'Market Demand',
+  };
+  const impactLabelMap = {
+    'Excellent':'ممتاز','Very Good':'جيد جداً','Good':'جيد',
+    'Average':'متوسط','Below Average':'أقل من المتوسط','Poor':'ضعيف',
+    'Normal Market Demand': LANG==='ar'?'طلب عادي':'Normal Demand',
+    'High Market Demand (+8%)': LANG==='ar'?'طلب مرتفع (+٨٪)':'High Demand (+8%)',
+    'Low Market Demand (-7%)':  LANG==='ar'?'طلب منخفض (-٧٪)':'Low Demand (-7%)',
+  };
   const fe=document.getElementById('res-factors'); fe.innerHTML='';
   Object.values(result.factors).forEach(f=>{
-    fe.innerHTML+=`<div class="factor-chip"><div class="factor-label">${f.label}</div><div class="factor-value">${f.value.split(' (')[0].split(' (-')[0]}</div><div class="factor-impact ${f.impact}">${f.value.match(/\(.*?\)/)?.[0]||''}</div></div>`;
+    const label = factorLabelMap[f.label] || f.label;
+    const rawVal = f.value.split(' (')[0].split(' (-')[0];
+    const translatedVal = LANG==='ar' ? (impactLabelMap[rawVal]||rawVal) : rawVal;
+    const paren = f.value.match(/\(.*?\)/)?.[0]||'';
+    fe.innerHTML+=`<div class="factor-chip"><div class="factor-label">${label}</div><div class="factor-value">${translatedVal}</div><div class="factor-impact ${f.impact}">${paren}</div></div>`;
   });
   document.getElementById('est-result').classList.add('show');
   document.getElementById('est-result').scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -654,7 +694,7 @@ async function fetchAndRenderListings(){
   const grid=document.getElementById('listings-grid'); if(!grid) return;
   grid.innerHTML='<div class="listing-skeleton"></div><div class="listing-skeleton"></div><div class="listing-skeleton"></div>';
   try{ allListings=await db.getCars(); renderListings(allListings,'listings-grid'); }
-  catch(e){ grid.innerHTML='<div class="empty-listings"><p>خطأ في التحميل</p></div>'; }
+  catch(e){ console.error('Listings fetch error:',e); grid.innerHTML=`<div class="empty-listings"><p>خطأ في التحميل: ${e.message?.slice(0,80)||''}</p></div>`; }
 }
 
 async function fetchMyListings(){
@@ -1074,7 +1114,13 @@ async function loadDashboard(){
     document.getElementById('home-stat-cars').textContent    = (allCars||[]).length;
     document.getElementById('home-stat-users').textContent   = (allProfiles||[]).length;
     document.getElementById('home-stat-msgs').textContent    = (allMsgs||[]).length;
-  }catch(e){ console.error('Dashboard load error',e); }
+  }catch(e){
+    console.error('Dashboard load error',e);
+    // Show zeros instead of dashes on error
+    ['home-stat-cars','home-stat-users','home-stat-msgs'].forEach(id=>{
+      const el=document.getElementById(id); if(el && el.textContent==='—') el.textContent='0';
+    });
+  }
 }
 
 function renderHomepageListings(listings){
@@ -1185,9 +1231,21 @@ window.adminDeleteCar = async function(id){
 //  MOBILE HAMBURGER MENU
 // ================================================================
 window.toggleMobileMenu = function(){
-  document.getElementById('mobile-nav-drawer').classList.toggle('open');
-  document.getElementById('mobile-nav-overlay').classList.toggle('open');
-  document.getElementById('hamburger-btn').classList.toggle('open');
+  const drawer  = document.getElementById('mobile-nav-drawer');
+  const overlay = document.getElementById('mobile-nav-overlay');
+  const btn     = document.getElementById('hamburger-btn');
+  const isAr = document.documentElement.dir === 'rtl';
+  // Set drawer side before opening
+  if(isAr){
+    drawer.style.right = '0'; drawer.style.left = 'auto';
+    drawer.style.borderLeft = '1.5px solid var(--border)'; drawer.style.borderRight = 'none';
+  } else {
+    drawer.style.left = '0'; drawer.style.right = 'auto';
+    drawer.style.borderRight = '1.5px solid var(--border)'; drawer.style.borderLeft = 'none';
+  }
+  drawer.classList.toggle('open');
+  overlay.classList.toggle('open');
+  btn.classList.toggle('open');
 };
 window.closeMobileMenu = function(){
   document.getElementById('mobile-nav-drawer')?.classList.remove('open');
