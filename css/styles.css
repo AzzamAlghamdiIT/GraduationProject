@@ -45,7 +45,14 @@ input,select,textarea{font-family:var(--font-body);font-size:15px;}
 .btn-lang:hover{border-color:var(--blue);color:var(--blue);}
 
 /* LANDING */
-.landing-nav{position:fixed;top:0;left:0;right:0;height:var(--topbar-h);background:rgba(242,246,252,0.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 32px;}
+.landing-nav{
+  position:fixed;top:0;left:0;right:0;height:var(--topbar-h);
+  background:rgba(242,246,252,0.94);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 32px;
+  direction:ltr;
+}
 body:not(.light-mode) .landing-nav{background:rgba(8,12,20,0.92);}
 .nav-logo{height:50px;object-fit:contain;}
 .nav-actions{display:flex;align-items:center;gap:10px;}
@@ -115,20 +122,32 @@ html[dir="rtl"] .form-group input{padding:13px 44px 13px 14px;}
 @keyframes spin{to{transform:rotate(360deg);}}
 
 /* TOPBAR */
-.topbar{position:fixed;top:0;left:0;right:0;height:var(--topbar-h);background:rgba(242,246,252,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:100;display:flex;align-items:center;gap:0;padding:0 20px;}
+.topbar{
+  position:fixed;top:0;left:0;right:0;height:var(--topbar-h);
+  background:rgba(242,246,252,0.96);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);z-index:100;
+  display:flex;align-items:center;gap:0;padding:0 20px;
+  /* Force consistent LTR layout — we control order manually */
+  direction:ltr;
+}
+
 body:not(.light-mode) .topbar{background:rgba(8,12,20,0.94);}
 .topbar-brand{flex-shrink:0;margin-left:12px;}
 html[dir="ltr"] .topbar-brand{margin-left:0;margin-right:12px;}
 .topbar-logo{height:46px;object-fit:contain;}
 
 /* Top nav tabs */
-.topnav-tabs{display:flex;gap:2px;align-items:center;flex:1;overflow-x:auto;padding:0 12px;}
+.topnav-tabs{display:flex;gap:2px;align-items:center;flex:1;overflow-x:auto;padding:0 12px;order:2;}
+/* In RTL, reverse the tab order so they read right-to-left */
+html[dir="rtl"] .topnav-tabs{flex-direction:row-reverse;}
 .topnav-tabs::-webkit-scrollbar{display:none;}
 .topnav-tab{padding:8px 16px;border:none;background:transparent;color:var(--text-muted);font-size:14px;font-weight:500;border-radius:8px;transition:var(--transition);white-space:nowrap;cursor:pointer;}
 .topnav-tab:hover{background:var(--surface2);color:var(--text);}
 .topnav-tab.active{background:var(--blue-dim2);color:var(--blue);font-weight:700;}
 
 .topbar-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+html[dir="rtl"] .topbar-right{order:1;}
+html[dir="ltr"] .topbar-right{order:3;}
 .notif-btn{position:relative;width:36px;height:36px;background:var(--surface2);border:1px solid var(--border);border-radius:9px;font-size:18px;display:flex;align-items:center;justify-content:center;transition:var(--transition);}
 .notif-btn:hover{border-color:var(--blue);}
 .notif-badge{position:absolute;top:-4px;right:-4px;background:var(--red);color:#fff;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px;border:2px solid var(--bg);}
@@ -517,12 +536,9 @@ html[dir="ltr"] .chat-meta{text-align:left;}
   cursor:pointer;
   flex-shrink:0;
   transition:var(--transition);
-  /* RTL: appears after logo on the right side */
-  margin-right:0;
-  margin-left:8px;
+  order:2; /* always between brand(3/1) and right(1/3) on mobile */
+  margin:0 6px;
 }
-html[dir="rtl"] .hamburger-btn{margin-left:0; margin-right:0;}
-html[dir="ltr"] .hamburger-btn{margin-right:0; margin-left:8px;}
 .hamburger-btn span{
   display:block;width:20px;height:2.5px;
   background:var(--text);border-radius:2px;
@@ -646,3 +662,8 @@ html[dir="ltr"] .detail-gallery-count{right:auto;left:12px;}
   font-size:10px;font-weight:700;
   padding:1px 5px;border-radius:4px;
 }
+
+/* Keep topbar inner content always readable */
+.topbar-right{direction:ltr;}
+html[dir="rtl"] .topbar-right{direction:rtl;}
+.topnav-tabs .topnav-tab{direction:inherit;}
