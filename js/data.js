@@ -67,40 +67,47 @@ export function findByBudget(minPrice, maxPrice, type = '') {
 // ============================================================
 
 const BRAND_PROFILES = {
-  Toyota:          { firstYear: 0.14, annual: 0.09, floor: 0.38, resale: 'Excellent' },
-  Lexus:           { firstYear: 0.12, annual: 0.08, floor: 0.40, resale: 'Excellent' },
-  Honda:           { firstYear: 0.16, annual: 0.10, floor: 0.35, resale: 'Very Good' },
-  Mazda:           { firstYear: 0.17, annual: 0.11, floor: 0.32, resale: 'Very Good' },
-  Nissan:          { firstYear: 0.18, annual: 0.12, floor: 0.30, resale: 'Good' },
-  Mitsubishi:      { firstYear: 0.17, annual: 0.11, floor: 0.30, resale: 'Good' },
-  Suzuki:          { firstYear: 0.18, annual: 0.12, floor: 0.28, resale: 'Good' },
-  Infiniti:        { firstYear: 0.17, annual: 0.11, floor: 0.30, resale: 'Good' },
-  Isuzu:           { firstYear: 0.15, annual: 0.10, floor: 0.35, resale: 'Very Good' },
-  Hyundai:         { firstYear: 0.18, annual: 0.12, floor: 0.28, resale: 'Good' },
-  KIA:             { firstYear: 0.18, annual: 0.12, floor: 0.28, resale: 'Good' },
-  Genesis:         { firstYear: 0.17, annual: 0.11, floor: 0.30, resale: 'Good' },
-  GMC:             { firstYear: 0.15, annual: 0.10, floor: 0.36, resale: 'Good' },
-  Ford:            { firstYear: 0.16, annual: 0.11, floor: 0.32, resale: 'Good' },
-  Chevrolet:       { firstYear: 0.18, annual: 0.13, floor: 0.28, resale: 'Average' },
-  Cadillac:        { firstYear: 0.20, annual: 0.14, floor: 0.25, resale: 'Average' },
-  Jeep:            { firstYear: 0.19, annual: 0.13, floor: 0.26, resale: 'Average' },
-  Dodge:           { firstYear: 0.21, annual: 0.14, floor: 0.24, resale: 'Below Average' },
-  Chrysler:        { firstYear: 0.22, annual: 0.15, floor: 0.22, resale: 'Poor' },
-  Lincoln:         { firstYear: 0.21, annual: 0.14, floor: 0.24, resale: 'Below Average' },
-  'Mercedes-Benz': { firstYear: 0.16, annual: 0.11, floor: 0.32, resale: 'Good' },
-  BMW:             { firstYear: 0.18, annual: 0.13, floor: 0.28, resale: 'Average' },
-  Audi:            { firstYear: 0.20, annual: 0.14, floor: 0.25, resale: 'Average' },
-  Volkswagen:      { firstYear: 0.19, annual: 0.13, floor: 0.26, resale: 'Average' },
-  BYD:             { firstYear: 0.28, annual: 0.18, floor: 0.18, resale: 'Poor' },
-  Changan:         { firstYear: 0.30, annual: 0.19, floor: 0.16, resale: 'Poor' },
-  Chery:           { firstYear: 0.32, annual: 0.20, floor: 0.15, resale: 'Poor' },
-  Geely:           { firstYear: 0.30, annual: 0.19, floor: 0.16, resale: 'Poor' },
-  Haval:           { firstYear: 0.28, annual: 0.18, floor: 0.18, resale: 'Poor' },
-  Jetour:          { firstYear: 0.32, annual: 0.21, floor: 0.14, resale: 'Poor' },
-  MG:              { firstYear: 0.26, annual: 0.17, floor: 0.20, resale: 'Below Average' },
+  // ── Japanese ─────────────────────────────────────────────
+  Toyota:          { firstYear: 0.08, annual: 0.05, floor: 0.45, resale: 'Excellent' },
+  Lexus:           { firstYear: 0.12, annual: 0.08, floor: 0.38, resale: 'Excellent' },
+  Honda:           { firstYear: 0.08, annual: 0.05, floor: 0.45, resale: 'Very Good' },
+  Mazda:           { firstYear: 0.09, annual: 0.06, floor: 0.38, resale: 'Very Good' },
+  Nissan:          { firstYear: 0.08, annual: 0.05, floor: 0.45, resale: 'Good' },
+  Mitsubishi:      { firstYear: 0.06, annual: 0.04, floor: 0.50, resale: 'Good' },
+  Suzuki:          { firstYear: 0.04, annual: 0.03, floor: 0.50, resale: 'Good' },
+  Infiniti:        { firstYear: 0.12, annual: 0.08, floor: 0.27, resale: 'Good' },
+  Isuzu:           { firstYear: 0.08, annual: 0.05, floor: 0.45, resale: 'Very Good' },
+  // ── Korean ───────────────────────────────────────────────
+  Hyundai:         { firstYear: 0.06, annual: 0.04, floor: 0.50, resale: 'Good' },
+  KIA:             { firstYear: 0.04, annual: 0.03, floor: 0.50, resale: 'Good' },
+  Genesis:         { firstYear: 0.08, annual: 0.05, floor: 0.45, resale: 'Good' },
+  // ── American ─────────────────────────────────────────────
+  GMC:             { firstYear: 0.15, annual: 0.10, floor: 0.30, resale: 'Good' },
+  Ford:            { firstYear: 0.06, annual: 0.04, floor: 0.50, resale: 'Good' },
+  Chevrolet:       { firstYear: 0.09, annual: 0.06, floor: 0.38, resale: 'Average' },
+  Cadillac:        { firstYear: 0.08, annual: 0.05, floor: 0.45, resale: 'Average' },
+  Jeep:            { firstYear: 0.06, annual: 0.04, floor: 0.50, resale: 'Good' },
+  Dodge:           { firstYear: 0.15, annual: 0.10, floor: 0.22, resale: 'Average' },
+  Chrysler:        { firstYear: 0.18, annual: 0.12, floor: 0.20, resale: 'Below Average' },
+  Lincoln:         { firstYear: 0.08, annual: 0.05, floor: 0.45, resale: 'Average' },
+  // ── European ─────────────────────────────────────────────
+  'Mercedes-Benz': { firstYear: 0.12, annual: 0.08, floor: 0.27, resale: 'Good' },
+  BMW:             { firstYear: 0.11, annual: 0.07, floor: 0.32, resale: 'Average' },
+  Audi:            { firstYear: 0.09, annual: 0.06, floor: 0.38, resale: 'Average' },
+  Volkswagen:      { firstYear: 0.12, annual: 0.08, floor: 0.27, resale: 'Average' },
+  // ── Chinese ──────────────────────────────────────────────
+  // Note: Chinese brands were over-depreciated. KSA market shows
+  // Changan/Haval/Geely hold value better than initially modelled.
+  BYD:             { firstYear: 0.20, annual: 0.13, floor: 0.18, resale: 'Below Average' },
+  Changan:         { firstYear: 0.04, annual: 0.03, floor: 0.50, resale: 'Average' },
+  Chery:           { firstYear: 0.14, annual: 0.09, floor: 0.25, resale: 'Below Average' },
+  Geely:           { firstYear: 0.04, annual: 0.03, floor: 0.50, resale: 'Average' },
+  Haval:           { firstYear: 0.04, annual: 0.03, floor: 0.50, resale: 'Average' },
+  Jetour:          { firstYear: 0.04, annual: 0.03, floor: 0.50, resale: 'Average' },
+  MG:              { firstYear: 0.04, annual: 0.03, floor: 0.50, resale: 'Average' },
 };
 
-const DEFAULT_PROFILE = { firstYear: 0.19, annual: 0.13, floor: 0.27, resale: 'Average' };
+const DEFAULT_PROFILE = { firstYear: 0.10, annual: 0.07, floor: 0.35, resale: 'Average' };
 
 function calcAgeFactor(make, age) {
   if (age <= 0) return { mult: 1.0, label: 'Brand New (2026)', pct: 0 };
@@ -138,8 +145,8 @@ function calcMileageFactor(km, make, age) {
     GMC: 0.017, Ford: 0.018, Chevrolet: 0.020,
     Jeep: 0.020, Dodge: 0.021, Cadillac: 0.021,
     'Mercedes-Benz': 0.019, BMW: 0.020, Audi: 0.021, Volkswagen: 0.020,
-    BYD: 0.027, Changan: 0.028, Chery: 0.029, Geely: 0.028,
-    Haval: 0.027, Jetour: 0.029, MG: 0.025,
+    BYD: 0.022, Changan: 0.018, Chery: 0.022, Geely: 0.016,
+    Haval: 0.016, Jetour: 0.018, MG: 0.018,
   };
   const rate = rates[make] || 0.020;
   const units = km / 10000;
