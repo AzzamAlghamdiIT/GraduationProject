@@ -132,6 +132,7 @@ const T = {
     confirmDelete:'هل أنت متأكد من حذف هذا الإعلان؟',myListing:'إعلانك',
     myProfile:'ملفي الشخصي',myListings:'إعلاناتي',myNotifs:'إشعاراتي',
     inboxNav:'رسائلي الخاصة',inboxSub:'جميع محادثاتك الخاصة مع المعلنين',
+    cityLabel:'المدينة *',selectCity:'اختر المدينة',
     photoCount:'صور',unreadNotif:'إشعار جديد',
   },
   en:{ siteName:'Thmmenha',tagline:'Valuing Your Car · Buy · Sell',subTagline:'Saudi Arabia · Car Price Intelligence',
@@ -179,6 +180,7 @@ const T = {
     confirmDelete:'Delete this listing?',myListing:'Your Listing',
     myProfile:'My Profile',myListings:'My Listings',myNotifs:'Notifications',
     inboxNav:'My Private Messages',inboxSub:'All your private conversations with sellers',
+    cityLabel:'City *',selectCity:'Select City',
     photoCount:'photos',unreadNotif:'New notification',
   }
 };
