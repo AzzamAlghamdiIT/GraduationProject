@@ -163,7 +163,7 @@
       <button class="topnav-tab" data-section="budget" onclick="goToSection('budget')" data-t="budgetFinder">بحث بالميزانية</button>
       <button class="topnav-tab" data-section="sell" onclick="goToSection('sell')" data-t="addCarTitle">أعلن عن سيارتك</button>
       <button class="topnav-tab" data-section="listings" onclick="goToSection('listings')" data-t="browseTitle">الإعلانات</button>
-      <button class="topnav-tab" data-section="inbox" onclick="goToSection('inbox')">📬 رسائلي الخاصة</button>
+      <button class="topnav-tab" data-section="inbox" onclick="goToSection('inbox')" data-t="inboxNav">رسائلي الخاصة</button>
       <button class="topnav-tab admin-only-tab" data-section="admin" onclick="goToSection('admin')" style="display:none;color:var(--red)" id="admin-nav-tab">🛡️ لوحة التحكم</button>
     </div>
 
@@ -217,7 +217,7 @@
       <button class="mobile-nav-item" onclick="goToSection('budget');closeMobileMenu()" data-mobile-key="budgetFinder">💰 بحث بالميزانية</button>
       <button class="mobile-nav-item" onclick="goToSection('sell');closeMobileMenu()" data-mobile-key="addCarTitle">➕ أعلن عن سيارتك</button>
       <button class="mobile-nav-item" onclick="goToSection('listings');closeMobileMenu()" data-mobile-key="browseTitle">🏷️ الإعلانات</button>
-      <button class="mobile-nav-item" onclick="goToSection('inbox');closeMobileMenu()">📬 رسائلي الخاصة</button>
+      <button class="mobile-nav-item" onclick="goToSection('inbox');closeMobileMenu()" data-t="inboxNav">رسائلي الخاصة</button>
       <div class="mobile-nav-divider"></div>
       <button class="mobile-nav-item" onclick="goToSection('profile');closeMobileMenu()">👤 <span data-t="myProfile">ملفي الشخصي</span></button>
       <button class="mobile-nav-item" onclick="goToSection('my-listings');closeMobileMenu()">🚗 <span data-t="myListings">إعلاناتي</span></button>
@@ -238,12 +238,7 @@
           <h1 class="home-title" data-t="dashTitle">الصفحة الرئيسية</h1>
           <p class="home-sub" data-t="dashSub">تقدير فوري للسيارة، بحث بالميزانية، وسوق للبيع والشراء.</p>
         </div>
-        <!-- Quick stats -->
-        <div class="home-stats">
-          <div class="home-stat"><div class="home-stat-num" id="home-stat-cars">—</div><div class="home-stat-lbl">إعلان نشط</div></div>
-          <div class="home-stat"><div class="home-stat-num" id="home-stat-users">—</div><div class="home-stat-lbl">مستخدم مسجل</div></div>
-          <div class="home-stat"><div class="home-stat-num" id="home-stat-msgs">—</div><div class="home-stat-lbl">تعليق</div></div>
-        </div>
+
       </div>
 
       <!-- Quick access cards -->
@@ -385,11 +380,11 @@
         <div class="form-grid">
           <div class="form-field">
             <label data-t="make">الماركة *</label>
-            <select id="sell-make" onchange="onSellMakeChange()"><option value="">اختر الماركة</option></select>
+            <select id="sell-make" onchange="onSellMakeChange()"><option value="" data-t="selectMake">اختر الماركة</option></select>
           </div>
           <div class="form-field">
             <label data-t="model">الموديل *</label>
-            <select id="sell-model" disabled><option value="">اختر الموديل</option></select>
+            <select id="sell-model" disabled><option value="" data-t="selectModel">اختر الموديل</option></select>
           </div>
           <div class="form-field">
             <label data-t="sellYear">السنة *</label>
@@ -410,12 +405,12 @@
           </div>
           <div class="form-field full">
             <label>المدينة *</label>
-            <select id="sell-city"><option value="">اختر المدينة</option></select>
+            <select id="sell-city"><option value="" data-t="selectCity">اختر المدينة</option></select>
           </div>
         </div>
         <div class="form-field" style="margin-top:14px">
           <label data-t="notes">ملاحظات</label>
-          <textarea id="sell-notes" placeholder="اللون، الحالة، الإضافات…" rows="3"></textarea>
+          <textarea id="sell-notes" id="sell-notes-ta" placeholder="اللون، الحالة، الإضافات…" rows="3"></textarea>
         </div>
         <div class="form-field" style="margin-top:14px;margin-bottom:20px">
           <label data-t="photosUpTo5">الصور (حتى 5)</label>
@@ -535,8 +530,8 @@
   <section id="section-inbox" class="app-section">
     <div class="inner-page" style="max-width:700px">
       <div class="inner-header">
-        <div class="inner-title">📬 رسائلي الخاصة</div>
-        <div class="inner-subtitle">جميع محادثاتك الخاصة مع المعلنين</div>
+        <div class="inner-title" data-t="inboxNav">رسائلي الخاصة</div>
+        <div class="inner-subtitle" data-t="inboxSub">جميع محادثاتك الخاصة مع المعلنين</div>
       </div>
       <div id="inbox-list" class="inbox-list">
         <div class="empty-listings"><div class="empty-icon">💬</div><p>لا توجد محادثات بعد.</p></div>
@@ -624,7 +619,7 @@
 
       <!-- Recent listings table -->
       <div class="admin-table-card">
-        <div class="admin-chart-title">📋 آخر الإعلانات (10)</div>
+        <div class="admin-chart-title">📋 جميع الإعلانات</div>
         <div style="overflow-x:auto">
           <table class="admin-table">
             <thead><tr><th>السيارة</th><th>السعر</th><th>المدينة</th><th>المعلن</th><th>التاريخ</th><th>إجراء</th></tr></thead>
@@ -635,10 +630,10 @@
 
       <!-- Recent users table -->
       <div class="admin-table-card">
-        <div class="admin-chart-title">👥 آخر المستخدمين (10)</div>
+        <div class="admin-chart-title">👥 جميع المستخدمين</div>
         <div style="overflow-x:auto">
           <table class="admin-table">
-            <thead><tr><th>اسم المستخدم</th><th>البريد الإلكتروني</th><th>تاريخ التسجيل</th></tr></thead>
+            <thead><tr><th>اسم المستخدم</th><th>البريد الإلكتروني</th><th>تاريخ التسجيل</th><th>إجراء</th></tr></thead>
             <tbody id="admin-recent-users"><tr><td colspan="3" style="text-align:center;padding:20px;color:var(--text-muted)">جاري التحميل…</td></tr></tbody>
           </table>
         </div>

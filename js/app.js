@@ -128,9 +128,10 @@ const T = {
     passRule1:'8 أحرف على الأقل',passRule2:'حرف كبير واحد',
     passRule3:'رقم واحد',passRule4:'رمز خاص واحد',
     showDetails:'عرض التفاصيل',editListing:'تعديل',deleteListing:'حذف',
-    chatBtn:'💬 التعليقات العامة',privateChatBtn:'🔒 محادثة خاصة',
+    chatBtn:'💬 التعليقات العامة',privateChatBtn:'محادثة خاصة',
     confirmDelete:'هل أنت متأكد من حذف هذا الإعلان؟',myListing:'إعلانك',
     myProfile:'ملفي الشخصي',myListings:'إعلاناتي',myNotifs:'إشعاراتي',
+    inboxNav:'رسائلي الخاصة',inboxSub:'جميع محادثاتك الخاصة مع المعلنين',
     photoCount:'صور',unreadNotif:'إشعار جديد',
   },
   en:{ siteName:'Thmmenha',tagline:'Valuing Your Car · Buy · Sell',subTagline:'Saudi Arabia · Car Price Intelligence',
@@ -174,9 +175,10 @@ const T = {
     passRule1:'At least 8 characters',passRule2:'One uppercase letter',
     passRule3:'One number',passRule4:'One special character',
     showDetails:'View Details',editListing:'Edit',deleteListing:'Delete',
-    chatBtn:'💬 Public Comments',privateChatBtn:'🔒 Private Message',
+    chatBtn:'💬 Public Comments',privateChatBtn:'Private Message',
     confirmDelete:'Delete this listing?',myListing:'Your Listing',
     myProfile:'My Profile',myListings:'My Listings',myNotifs:'Notifications',
+    inboxNav:'My Private Messages',inboxSub:'All your private conversations with sellers',
     photoCount:'photos',unreadNotif:'New notification',
   }
 };
@@ -234,6 +236,23 @@ function applyTranslations(){
   // 8. View-all button direction arrow
   const viewAllBtn = document.getElementById('view-all-btn');
   if(viewAllBtn) viewAllBtn.textContent = (ar ? 'عرض الكل ←' : 'View All →');
+
+  // 9. Sell form — translate select placeholders and textarea
+  const smOpt = document.querySelector('#sell-make option[value=""]');
+  if(smOpt) smOpt.textContent = ar ? 'اختر الماركة' : 'Select Make';
+  const sdOpt = document.querySelector('#sell-model option[value=""]');
+  if(sdOpt) sdOpt.textContent = ar ? 'اختر الموديل' : 'Select Model';
+  const scOpt = document.querySelector('#sell-city option[value=""]');
+  if(scOpt) scOpt.textContent = ar ? 'اختر المدينة' : 'Select City';
+  const snTa = document.getElementById('sell-notes');
+  if(snTa) snTa.placeholder = ar ? 'اللون، الحالة، الإضافات…' : 'Color, condition, extras…';
+  // Also fix year/mileage/price/phone placeholders
+  const syIn = document.getElementById('sell-year');
+  if(syIn) syIn.placeholder = ar ? '2020' : '2020';
+  const spIn = document.getElementById('sell-price');
+  if(spIn) spIn.placeholder = ar ? '95000' : '95000';
+  const sphIn = document.getElementById('sell-phone');
+  if(sphIn) sphIn.placeholder = ar ? '05XXXXXXXX' : '05XXXXXXXX';
 
   // 9. Result card currency label
   const resDisclaimer = document.querySelector('.result-disclaimer[data-t="disclaimer"]');
@@ -1105,21 +1124,9 @@ async function loadDashboard(){
     // Load last 3 listings for homepage preview
     const recent = await sb('Cars?select=*&order=created_at.desc&limit=3');
     renderHomepageListings(recent);
-    // Load stats
-    const [allCars, allProfiles, allMsgs] = await Promise.all([
-      sb('Cars?select=id'),
-      sb('profiles?select=id'),
-      sb('messages?select=id').catch(()=>[]),
-    ]);
-    document.getElementById('home-stat-cars').textContent    = (allCars||[]).length;
-    document.getElementById('home-stat-users').textContent   = (allProfiles||[]).length;
-    document.getElementById('home-stat-msgs').textContent    = (allMsgs||[]).length;
+    // Stats removed — not displayed to users
   }catch(e){
     console.error('Dashboard load error',e);
-    // Show zeros instead of dashes on error
-    ['home-stat-cars','home-stat-users','home-stat-msgs'].forEach(id=>{
-      const el=document.getElementById(id); if(el && el.textContent==='—') el.textContent='0';
-    });
   }
 }
 
@@ -1196,7 +1203,7 @@ async function loadAdminDashboard(){
 
     // Recent listings table
     const tbl = el('admin-recent-listings');
-    if(tbl) tbl.innerHTML = (cars||[]).slice(0,10).map(c=>`
+    if(tbl) tbl.innerHTML = (cars||[]).map(c=>`
       <tr>
         <td>${c.make} ${c.model} ${c.year}</td>
         <td>${formatPrice(c.price)} ر.س</td>
@@ -1208,11 +1215,12 @@ async function loadAdminDashboard(){
 
     // Recent users table
     const utbl = el('admin-recent-users');
-    if(utbl) utbl.innerHTML = (profiles||[]).slice(0,10).map(p=>`
+    if(utbl) utbl.innerHTML = (profiles||[]).map(p=>`
       <tr>
         <td>${p.username?'@'+p.username:'—'}</td>
         <td>${p.email}</td>
         <td>${new Date(p.created_at).toLocaleDateString('ar-SA')}</td>
+        <td><button class="admin-del-btn" onclick="adminDeleteUser('${p.email}','${p.username||''}')">🗑️ حذف</button></td>
       </tr>`).join('');
 
   }catch(e){ console.error('Admin load error',e); }
@@ -1225,6 +1233,22 @@ window.adminDeleteCar = async function(id){
     toast('✅ تم حذف الإعلان.');
     loadAdminDashboard();
   }catch(e){ toast('❌ فشل الحذف.','error'); }
+};
+
+window.adminDeleteUser = async function(email, username){
+  const label = username ? '@'+username : email;
+  if(!confirm(`حذف المستخدم ${label} نهائياً؟ سيتم حذف بياناته من قاعدة البيانات.`)) return;
+  try{
+    // Delete user's profile from Supabase
+    await sb(`profiles?email=eq.${encodeURIComponent(email)}`, {method:'DELETE'});
+    // Also delete their listings
+    await sb(`Cars?owner_email=eq.${encodeURIComponent(email)}`, {method:'DELETE'}).catch(()=>{});
+    toast('✅ تم حذف المستخدم وإعلاناته.');
+    loadAdminDashboard();
+  }catch(e){
+    console.error(e);
+    toast('❌ فشل الحذف: '+e.message,'error');
+  }
 };
 
 // ================================================================
