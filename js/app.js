@@ -1,7 +1,27 @@
-// ============================================================
-//  app.js — Thmmenha v4.0
-//  Firebase Auth + Supabase + Profile + Private Chat + Notifications
-// ============================================================
+// ════════════════════════════════════════════════════════════════════
+//  app.js — وحدة التحكّم الرئيسية لتطبيق ثمنها
+//  Main Application Controller for the Thmmenha Web App
+//
+//  ┌─────────────────────────────────────────────────────────────┐
+//  │ المسؤوليات | Responsibilities:                              │
+//  │  • نظام المصادقة (تسجيل/دخول/خروج) عبر Firebase             │
+//  │    Firebase Authentication (register / login / logout)       │
+//  │  • التعامل مع Supabase REST API لقواعد البيانات              │
+//  │    Wrap Supabase REST calls (cars, profiles, messages…)      │
+//  │  • التنقل بين الصفحات داخل التطبيق                          │
+//  │    Client-side routing between app sections                  │
+//  │  • ترجمة الواجهة (عربي/إنجليزي) مع دعم RTL                  │
+//  │    Bilingual UI (Arabic / English) with RTL layout           │
+//  │  • CRUD لإعلانات السيارات + الدردشة العامة والخاصة          │
+//  │    Listings CRUD + public/private chat + notifications       │
+//  │  • لوحة تحكم المسؤول (مقيّدة بالبريد الإلكتروني للمالك)      │
+//  │    Admin dashboard (restricted to ADMIN_EMAIL)               │
+//  └─────────────────────────────────────────────────────────────┘
+//
+//  المؤلف   | Author     : Team LogicMinds (CPIT499 — FCIT KAU)
+//  المشرف   | Supervisor : Dr. Madini O. Alassafi
+//  الإصدار  | Version    : v4.0 — Production
+// ════════════════════════════════════════════════════════════════════
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
@@ -11,21 +31,38 @@ import { loadCarData, getMakes, getModels, getTrims, findByBudget,
          estimatePrice, formatPrice, getTypes }
   from './data.js';
 
-// ── Firebase ─────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+//  SECTION 1 — تهيئة Firebase Auth | Firebase initialisation
+// ─────────────────────────────────────────────────────────────
 const auth = getAuth(initializeApp({
   apiKey:"AIzaSyDf_qhKIr3-NXhzQZoxMo2RjupYSbFvs3Y",
   authDomain:"car-price-app-610fb.firebaseapp.com",
   projectId:"car-price-app-610fb"
 }));
 
-// ── Supabase ─────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+//  SECTION 2 — اتصال Supabase | Supabase REST connection
+// ─────────────────────────────────────────────────────────────
 const SB  = 'https://cydznlbilyutnuvmzpin.supabase.co';
 const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5ZHpubGJpbHl1dG51dm16cGluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMTc5NDUsImV4cCI6MjA5Mjg5Mzk0NX0.Km4bP0Sh8gCg4F0MzErN69-y-PYe2H5cS7akhJjkupA';
 const H   = { 'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY,'Prefer':'return=representation' };
 
+/**
+ * ┌─────────────────────────────────────────────────────────────┐
+ * │ sb — مغلّف عام لجميع طلبات Supabase REST                       │
+ * │ Generic Supabase REST helper used by every db.* method.      │
+ * ├─────────────────────────────────────────────────────────────┤
+ * │ Parameters:                                                  │
+ * │   path: String — مسار الـ endpoint (مثل "Cars?select=*")     │
+ * │   opts: Object — خيارات fetch (method, body, headers…)       │
+ * │ Returns: Promise<any|null> — JSON أو null عند 204            │
+ * │ Throws:  Error — عند أي استجابة HTTP غير ناجحة (≠2xx)         │
+ * └─────────────────────────────────────────────────────────────┘
+ */
 async function sb(path, opts={}) {
+  // ─ no-store يضمن أن المتصفح لا يخزّن الردود (الإعلانات تتغير لحظياً)
+  //   no-store ensures fresh data — listings change in real time
   const fetchOpts = { headers:H, cache:'no-store', ...opts };
-  // Merge headers if opts has its own
   if(opts.headers) fetchOpts.headers = { ...H, ...opts.headers };
   const r = await fetch(`${SB}/rest/v1/${path}`, fetchOpts);
   if (!r.ok) {
@@ -36,6 +73,15 @@ async function sb(path, opts={}) {
   return r.status===204 ? null : r.json();
 }
 
+/**
+ * ┌─────────────────────────────────────────────────────────────┐
+ * │ db — كائن واجهة قاعدة البيانات | Database API object        │
+ * │ كل دالة هنا تقابل طلب REST واحد على Supabase.                │
+ * │ Each method maps to exactly one Supabase REST call.          │
+ * │ تجميع الدوال يسهّل المحاكاة (mocking) خلال الاختبارات.        │
+ * │ Centralising calls makes them mockable during testing.       │
+ * └─────────────────────────────────────────────────────────────┘
+ */
 const db = {
   getCars:          ()       => sb('Cars?select=*&order=created_at.desc'),
   insertCar:        d        => sb('Cars',{method:'POST',body:JSON.stringify(d)}),
@@ -61,27 +107,63 @@ const db = {
 
 // ── Make→Models data ─────────────────────────────────────────
 let MAKE_MODELS = {};
+/**
+ * ┌─────────────────────────────────────────────────────────────┐
+ * │ loadMakeModels — تحميل خريطة الماركة→الموديل من JSON         │
+ * │ Load the Make→Models mapping used for sell form dropdowns.   │
+ * ├─────────────────────────────────────────────────────────────┤
+ * │ Returns: Promise<void>                                       │
+ * │ Side effect: تُعدّل المتغير العام MAKE_MODELS                  │
+ * └─────────────────────────────────────────────────────────────┘
+ */
 async function loadMakeModels() {
-  try { const r=await fetch('./data/make_models.json'); MAKE_MODELS=await r.json(); } catch(e){}
+  try {
+    const r = await fetch('./data/make_models.json');
+    if(!r.ok) throw new TypeError(`HTTP ${r.status}`);
+    MAKE_MODELS = await r.json();
+  } catch(e){
+    // ─ معالجة محددة:
+    //   TypeError  → فشل الشبكة أو 404 (الملف غير موجود)
+    //                Network failure or 404 (file missing).
+    //   SyntaxError→ ملف make_models.json معطوب
+    //                make_models.json contains malformed JSON.
+    //   تأثير الفشل: قائمة الموديل في صفحة "بيع سيارتي" تبقى فارغة
+    //   Impact: the model dropdown in "Sell My Car" stays empty.
+    //   الاستراتيجية: لا نوقف التطبيق — نسجّل الخطأ ونكمل
+    //   Strategy: don't crash — log silently, app continues.
+    if(e instanceof TypeError)        console.error('[loadMakeModels] Network/HTTP error:', e.message);
+    else if(e instanceof SyntaxError) console.error('[loadMakeModels] Bad JSON syntax:',   e.message);
+    else                              console.error('[loadMakeModels] Unknown error:',     e);
+  }
 }
 
 // ── Saudi cities ─────────────────────────────────────────────
 const CITIES = ['الرياض','جدة','مكة المكرمة','المدينة المنورة','الدمام','الخبر','الظهران','القطيف','الأحساء','الطائف','تبوك','أبها','خميس مشيط','حائل','نجران','جيزان','ينبع','القصيم','بريدة','عنيزة','الجوف','سكاكا','عرعر','الباحة','بيشة','وادي الدواسر','القنفذة','محايل عسير','صبيا','صامطة'];
 
-// ── State ─────────────────────────────────────────────────────
-let currentUser = null;
-let currentProfile = null;
-let allListings = [];
-let currentCarId = null;
-let currentCarOwner = '';
-let chatTimer = null;
-let pchatTimer = null;
-let uploadedImages = [];
-let currentEditId = null;
+// ─────────────────────────────────────────────────────────────
+//  SECTION 3 — حالة التطبيق العامة | Global Application State
+//  جميع المتغيرات المُحدّثة (mutable state) معلنة هنا.
+//  All mutable state is declared up-front for clarity.
+// ─────────────────────────────────────────────────────────────
+let currentUser    = null;   // مستخدم Firebase الحالي | Firebase user (or null)
+let currentProfile = null;  // سجل profile من Supabase | Supabase profile row
+let allListings    = [];    // كاش جميع الإعلانات | Cache of fetched listings
+let currentCarId   = null;  // ID الإعلان المفتوح حالياً | Open listing UUID
+let currentCarOwner= '';    // إيميل صاحب الإعلان المفتوح | Owner email
+let chatTimer      = null;  // مؤقت تحديث الدردشة العامة | Public chat polling
+let pchatTimer     = null;  // مؤقت تحديث الدردشة الخاصة | Private chat polling
+let uploadedImages = [];    // صور Base64 للإعلان الجديد | Images queued for upload
+let currentEditId  = null;  // ID الإعلان قيد التعديل | Listing being edited
 const ADMIN_EMAIL = 'azzamalradef5@gmail.com';
 
-// ── i18n ─────────────────────────────────────────────────────
-let LANG = localStorage.getItem('th_lang') || 'ar';
+// ─────────────────────────────────────────────────────────────
+//  SECTION 4 — الترجمة (i18n) | Internationalisation
+//  جميع نصوص الواجهة في كائن T مفهرس باللغة (ar | en).
+//  All UI strings live in T, keyed by language code.
+//  اللغة المحفوظة في localStorage تستمر بين الجلسات.
+//  Selected language persists across page reloads.
+// ─────────────────────────────────────────────────────────────
+let LANG = localStorage.getItem('th_lang') || 'ar'; // افتراضي عربي | Default: Arabic
 const T = {
   ar:{ siteName:'ثمنها',tagline:'تقدير سيارتك · شراء · بيع',subTagline:'المملكة العربية السعودية · ذكاء أسعار السيارات',
     signIn:'تسجيل الدخول',createAccount:'إنشاء حساب',welcomeBack:'مرحباً بعودتك',
@@ -264,7 +346,9 @@ function applyTranslations(){
 }
 window.toggleLang=()=>{ LANG=LANG==='ar'?'en':'ar'; localStorage.setItem('th_lang',LANG); applyTranslations(); populateEstimatorMakes(); populateTypeFilter(); populateSellMakes(); populateSellCities(); };
 
-// ── Theme ─────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+//  SECTION 6 — السمات (داكن/فاتح) | Theme (Dark/Light)
+// ─────────────────────────────────────────────────────────────
 let DARK = localStorage.getItem('th_dark')==='true';
 function applyTheme(){
   document.body.classList.toggle('light-mode',!DARK);
@@ -287,9 +371,17 @@ window.toggleTheme=()=>{ DARK=!DARK; localStorage.setItem('th_dark',DARK); apply
   onAuthStateChanged(auth, user=>{ currentUser=user; user?showApp(user):showLanding(); });
 })();
 
-// ── Routing ───────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+//  SECTION 5 — التنقّل بين الصفحات | Page Routing
+// ─────────────────────────────────────────────────────────────
 function showLanding(){ setPage('landing-page'); }
 function showAuth(tab){ setPage('auth-page'); switchAuthTab(tab||'login'); }
+/**
+ * عرض الواجهة الرئيسية بعد تسجيل الدخول.
+ * Transition to the logged-in app view.
+ * Loads Supabase profile, updates topbar, shows admin tab if owner.
+ * @param {import('firebase/auth').User} user
+ */
 async function showApp(user){
   setPage('app-page');
   await loadProfile(user.email);
@@ -304,6 +396,12 @@ async function showApp(user){
 }
 function setPage(id){ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active')); document.getElementById(id).classList.add('active'); }
 
+/**
+ * موجّه التنقّل (router) داخل التطبيق.
+ * Client-side router — hides all sections, shows the target,
+ * triggers any section-specific data loads.
+ * @param {string} name  e.g. 'listings', 'estimator', 'profile'
+ */
 window.goToSection = function(name){
   document.querySelectorAll('.app-section').forEach(s=>s.classList.remove('active'));
   document.getElementById(`section-${name}`)?.classList.add('active');
@@ -348,6 +446,16 @@ window.onPasswordInput=()=>{
 };
 
 // ── Register ─────────────────────────────────────────────────
+/**
+ * ┌─────────────────────────────────────────────────────────────┐
+ * │ doRegister — معالج زر إنشاء حساب جديد                          │
+ * │ Handle the Register button click.                            │
+ * ├─────────────────────────────────────────────────────────────┤
+ * │ Flow: validate password rules + username → call Firebase     │
+ * │       createUserWithEmailAndPassword → insert Supabase row.  │
+ * │ Returns: Promise<void>                                       │
+ * └─────────────────────────────────────────────────────────────┘
+ */
 window.doRegister=async()=>{
   clearAlert('register');
   const fn=val('reg-firstname'),ln=val('reg-lastname'),un=val('reg-username'),
@@ -364,7 +472,23 @@ window.doRegister=async()=>{
     // Create profile in Supabase
     await db.upsertProfile({email:em,username:un,avatar:''});
     showAlert('register','success','✅ تم إنشاء الحساب!');
-  }catch(e){ showAlert('register','error',fbErr(e.code)); }
+  }catch(e){
+    // ─ معالجة محددة لأخطاء Firebase Auth:
+    //   FirebaseError يحتوي على e.code (مثل auth/email-already-in-use)
+    //   FirebaseError objects carry an e.code field that
+    //   fbErr() translates to a user-friendly Arabic message.
+    //   مصادر الخطأ المتوقعة:
+    //   Expected error sources:
+    //     • auth/email-already-in-use → الإيميل مستخدم مسبقاً
+    //     • auth/invalid-email         → صيغة الإيميل غير صحيحة
+    //     • auth/weak-password         → كلمة المرور ضعيفة (تجاوزت validatePw)
+    //     • TypeError                  → خطأ شبكة (انقطاع اتصال)
+    //   تأثير الفشل: المستخدم لا يُسجَّل ولا تُنشأ صفحة profile له.
+    //   Impact: user is NOT registered and no profile row is created.
+    if(e && e.code) showAlert('register','error',fbErr(e.code));
+    else if(e instanceof TypeError) showAlert('register','error','خطأ في الاتصال بالشبكة');
+    else showAlert('register','error','حدث خطأ غير متوقع');
+  }
   setBtnLoading('btn-register',false);
 };
 
@@ -375,7 +499,19 @@ window.doLogin=async()=>{
   if(!em||!pw) return showAlert('login','error',t('fillRequired'));
   setBtnLoading('btn-login',true);
   try{ await signInWithEmailAndPassword(auth,em,pw); }
-  catch(e){ showAlert('login','error',fbErr(e.code)); }
+  catch(e){
+    // ─ معالجة محددة:
+    //   FirebaseError → e.code يحدّد سبب فشل تسجيل الدخول
+    //   FirebaseError → e.code identifies failure reason:
+    //     • auth/user-not-found      → لا يوجد حساب بهذا الإيميل
+    //     • auth/wrong-password      → كلمة المرور خاطئة
+    //     • auth/too-many-requests   → كثرة المحاولات
+    //     • auth/network-request-failed → فشل الشبكة
+    //   تأثير الفشل: showApp() لا تُستدعى، يبقى المستخدم في صفحة الدخول.
+    //   Impact: showApp() is not triggered; user stays on login page.
+    if(e && e.code) showAlert('login','error',fbErr(e.code));
+    else showAlert('login','error','حدث خطأ غير متوقع، حاول مرة أخرى');
+  }
   setBtnLoading('btn-login',false);
 };
 // Expose signOut globally so the confirm dialog can call it
@@ -414,7 +550,17 @@ async function loadProfile(email){
   try{
     const rows = await db.getProfile(email);
     currentProfile = rows && rows.length ? rows[0] : { email, username:'', avatar:'' };
-  }catch(e){ currentProfile = { email, username:'', avatar:'' }; }
+  }catch(e){
+    // ─ معالجة محددة:
+    //   فشل سحب profile من Supabase (شبكة أو 401 أو RLS).
+    //   Network failure, 401, or RLS denial when fetching profile.
+    //   استراتيجية: إنشاء profile مؤقت في الذاكرة لكي يستمر التطبيق.
+    //   Strategy: in-memory fallback profile so the app keeps working.
+    //   تأثير على UI: الـ avatar يظهر فارغاً واسم المستخدم لا يظهر.
+    //   UI impact: avatar empty, username placeholder shown.
+    console.warn('[loadProfile] Falling back to default profile:', e.message);
+    currentProfile = { email, username:'', avatar:'' };
+  }
 }
 
 function updateTopbarUser(){
@@ -490,7 +636,16 @@ window.saveProfile=async function(){
     currentProfile = {...(currentProfile||{}), username:un, avatar:currentProfile?.avatar||''};
     updateTopbarUser();
     toast('✅ تم حفظ الملف الشخصي.');
-  }catch(e){ toast('❌ فشل الحفظ: '+e.message,'error'); }
+  }catch(e){
+    // ─ معالجة محددة:
+    //   فشل PATCH/POST على جدول profiles (تكرار username أو شبكة).
+    //   Could be: 409 Conflict (username taken), 401 (no auth),
+    //   or TypeError (network). e.message contains the Supabase response.
+    //   تأثير: لم يُحفظ الـ profile؛ المستخدم يبقى ببياناته القديمة.
+    //   Impact: profile not saved; user keeps previous values.
+    console.error('[saveProfile] Save failed:', e);
+    toast('❌ فشل الحفظ: '+e.message,'error');
+  }
 };
 
 // ── Notifications ─────────────────────────────────────────────
@@ -502,7 +657,11 @@ async function fetchNotifCount(){
     const badge=document.getElementById('notif-count');
     if(unread>0){ badge.textContent=unread>9?'9+':unread; badge.style.display='flex'; }
     else{ badge.style.display='none'; }
-  }catch(e){}
+  }catch(e){
+    // ─ معالجة صامتة: لا نزعج المستخدم بخطأ في الشارة فقط.
+    //   Silent fail: badge is non-critical; just log.
+    console.debug('[fetchNotifCount] poll failed:', e?.message);
+  }
 }
 
 async function loadNotifications(){
@@ -521,11 +680,24 @@ async function loadNotifications(){
         </div>
         ${!n.is_read?'<div class="notif-dot"></div>':''}
       </div>`).join('');
-  }catch(e){ list.innerHTML='<div class="empty-listings"><p>خطأ في التحميل</p></div>'; }
+  }catch(e){
+    // ─ معالجة محددة:
+    //   فشل جلب الإشعارات (شبكة أو RLS). نعرض رسالة خطأ في الـ DOM.
+    //   Failure fetching notifications — show error in the DOM.
+    //   تأثير: المستخدم لا يرى إشعاراته لكن بقية التطبيق يعمل.
+    //   Impact: user can't see notifications but rest of app works.
+    console.error('[loadNotifications] Fetch error:', e);
+    list.innerHTML='<div class="empty-listings"><p>خطأ في التحميل</p></div>';
+  }
 }
 
 window.handleNotifClick=async function(id,carId){
-  try{ await db.markNotifRead(id); } catch(e){}
+  try{ await db.markNotifRead(id); }
+  catch(e){
+    // ─ معالجة صامتة: تحديث حالة قراءة الإشعار غير حرج.
+    //   Silent fail — marking-as-read is a UX nicety, not critical.
+    console.debug('[markNotifRead] failed:', e?.message);
+  }
   if(carId && carId!=='null' && carId!=='undefined'){
     const listing=allListings.find(l=>String(l.id)===String(carId));
     if(listing) openDetail(String(carId));
@@ -537,7 +709,11 @@ window.handleNotifClick=async function(id,carId){
 window.markAllRead=async function(){
   if(!currentUser) return;
   try{ await db.markAllNotifsRead(currentUser.email); loadNotifications(); fetchNotifCount(); toast('✅ تم تعليم الكل كمقروء'); }
-  catch(e){}
+  catch(e){
+    // ─ معالجة صامتة: تعليم كل الإشعارات كمقروءة عملية ثانوية.
+    //   Silent fail — marking all-as-read is non-critical.
+    console.debug('[markAllRead] failed:', e?.message);
+  }
 };
 
 // ── Sell form: Make/Model dropdowns ──────────────────────────
@@ -590,6 +766,11 @@ function populateTypeFilter(){
 }
 
 // ── Estimation ────────────────────────────────────────────────
+/**
+ * تنفيذ عملية تقدير السعر بناءً على مدخلات المستخدم.
+ * Read estimator form, validate, call estimatePrice(), render card.
+ * Shows "not found" card if the car isn't in the dataset.
+ */
 window.runEstimation=function(){
   const make=val('est-make'),model=val('est-model'),trim=val('est-trim'),
         year=val('est-year')||String(new Date().getFullYear()),
@@ -677,6 +858,11 @@ window.handleImageUpload=function(input){
 };
 
 // ── Submit Listing ────────────────────────────────────────────
+/**
+ * نشر إعلان سيارة جديد إلى Supabase.
+ * Validate and publish a new car listing.
+ * @returns {Promise<void>}
+ */
 window.submitListing=async function(){
   const make=val('sell-make'),model=val('sell-model'),yearStr=val('sell-year'),
         mileage=val('sell-mileage'),price=val('sell-price'),
@@ -711,6 +897,11 @@ function clearSellForm(){
 }
 
 // ── Fetch Listings ────────────────────────────────────────────
+/**
+ * جلب جميع الإعلانات من Supabase وعرضها في الشبكة.
+ * Fetch all listings (newest first) and render them.
+ * Also updates the allListings cache for openDetail() lookups.
+ */
 async function fetchAndRenderListings(){
   const grid=document.getElementById('listings-grid'); if(!grid) return;
   grid.innerHTML='<div class="listing-skeleton"></div><div class="listing-skeleton"></div><div class="listing-skeleton"></div>';
@@ -725,7 +916,12 @@ async function fetchMyListings(){
   try{
     const mine=await db.getMyCars(currentUser.email);
     renderListings(mine,'my-listings-grid',true);
-  }catch(e){ grid.innerHTML='<div class="empty-listings"><p>خطأ في التحميل</p></div>'; }
+  }catch(e){
+    // ─ معالجة: فشل جلب الإعلانات الخاصة بالمستخدم.
+    //   Failure fetching user's own listings. Show error inline.
+    console.error('[fetchMyListings] Fetch error:', e);
+    grid.innerHTML='<div class="empty-listings"><p>خطأ في التحميل</p></div>';
+  }
 }
 
 function renderListings(listings, gridId='listings-grid', forceOwner=false){
@@ -825,7 +1021,14 @@ window.deleteListing=async function(id){
     toast('✅ '+(LANG==='ar'?'تم حذف الإعلان.':'Deleted.'));
     const onDetail=document.getElementById('section-detail').classList.contains('active');
     if(onDetail) goToSection('listings'); else renderListings(allListings);
-  }catch(e){ toast('❌ فشل الحذف.','error'); }
+  }catch(e){
+    // ─ معالجة: فشل DELETE على Cars. أسباب محتملة:
+    //   Could be RLS (not the owner), network, or non-existent ID.
+    //   تأثير: الإعلان يبقى ظاهراً.
+    //   Impact: listing remains visible.
+    console.error('[deleteListing] failed:', e);
+    toast('❌ فشل الحذف.','error');
+  }
 };
 
 // ── Edit ──────────────────────────────────────────────────────
@@ -854,7 +1057,14 @@ window.saveEdit=async function(id){
     document.getElementById('edit-modal').style.display='none';
     toast('✅ '+(LANG==='ar'?'تم التحديث.':'Updated.'));
     renderListings(allListings);
-  }catch(e){ toast('❌ فشل التحديث.','error'); }
+  }catch(e){
+    // ─ معالجة: فشل PATCH على Cars (RLS أو شبكة).
+    //   PATCH failure — RLS rejection or network error.
+    //   تأثير: التعديلات لم تُحفظ.
+    //   Impact: edits not saved.
+    console.error('[saveEdit] failed:', e);
+    toast('❌ فشل التحديث.','error');
+  }
 };
 
 // ── Public Chat (Comments) ────────────────────────────────────
@@ -913,7 +1123,11 @@ async function loadPublicMessages(carId){
           </div>`;
         }).join('');
     box.scrollTop = box.scrollHeight;
-  }catch(e){ console.error('loadPublicMessages error',e); }
+  }catch(e){
+    // ─ معالجة: فشل جلب التعليقات (شبكة أو RLS).
+    //   Failure fetching public messages — silent in UI, logged.
+    console.error('[loadPublicMessages] error:', e);
+  }
 }
 
 window.sendPublicMessage=async function(){
@@ -961,7 +1175,11 @@ async function loadPrivateMessages(carId, me, other){
           </div>`;
         }).join('');
     box.scrollTop=box.scrollHeight;
-  }catch(e){}
+  }catch(e){
+    // ─ معالجة صامتة: poll قد يفشل أحياناً، لا نُزعج المستخدم.
+    //   Silent fail on poll — don't disrupt UX.
+    console.debug('[loadPrivateMessages] poll failed:', e?.message);
+  }
 }
 
 window.sendPrivateMessage=async function(){
@@ -1022,7 +1240,13 @@ async function loadInbox(){
       ]);
       (cars||[]).forEach(c=>{ carsMap[c.id]=c; });
       (profiles||[]).forEach(p=>{ if(p) profilesMap[p.email]=p; });
-    }catch(e){}
+    }catch(e){
+      // ─ معالجة صامتة: فشل في إثراء قائمة المحادثات بالأسماء/الصور.
+      //   Silent fail — enriching threads with names/avatars is optional.
+      //   تأثير: العناصر تظهر بدون صور أو أسماء كاملة.
+      //   Impact: items show without avatars or full names.
+      console.debug('[loadInbox] enrich failed:', e?.message);
+    }
 
     list.innerHTML = Object.values(threads).sort((a,b)=>
       new Date(b.lastMsg.created_at)-new Date(a.lastMsg.created_at)
@@ -1161,6 +1385,11 @@ function renderHomepageListings(listings){
 // ================================================================
 //  ADMIN DASHBOARD
 // ================================================================
+/**
+ * تحميل لوحة تحكم المسؤول (محصورة على ADMIN_EMAIL).
+ * Load admin dashboard — runs 5 Supabase queries in parallel.
+ * Restricted to ADMIN_EMAIL — enforced upstream in goToSection().
+ */
 async function loadAdminDashboard(){
   const el = id => document.getElementById(id);
   // Show loading
@@ -1234,7 +1463,14 @@ window.adminDeleteCar = async function(id){
     await db.deleteCar(id);
     toast('✅ تم حذف الإعلان.');
     loadAdminDashboard();
-  }catch(e){ toast('❌ فشل الحذف.','error'); }
+  }catch(e){
+    // ─ معالجة: فشل DELETE على Cars. أسباب محتملة:
+    //   Could be RLS (not the owner), network, or non-existent ID.
+    //   تأثير: الإعلان يبقى ظاهراً.
+    //   Impact: listing remains visible.
+    console.error('[deleteListing] failed:', e);
+    toast('❌ فشل الحذف.','error');
+  }
 };
 
 window.adminDeleteUser = async function(email, username){
