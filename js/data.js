@@ -260,8 +260,8 @@ export function findByBudget(minPrice, maxPrice, type = '') {
  * Per-brand depreciation profiles (manually calibrated against KSA market).
  *
  * Fields:
- *   firstYear : نسبة الإستهلاك في السنة الأولى | Year-1 depreciation %
- *   annual    : معدّل الإستهلاك السنوي بعد السنة الأولى | Subsequent yearly rate
+ *   firstYear : نسبة الإهلاك في السنة الأولى | Year-1 depreciation %
+ *   annual    : معدّل الإهلاك السنوي بعد السنة الأولى | Subsequent yearly rate
  *   floor     : أدنى قيمة متبقية | Lowest residual fraction allowed
  *   resale    : وصف نوعي لقدرة الماركة على الاحتفاظ بقيمتها | UI resale label
  */

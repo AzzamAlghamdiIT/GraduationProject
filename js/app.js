@@ -18,9 +18,7 @@
 //  │    Admin dashboard (restricted to ADMIN_EMAIL)               │
 //  └─────────────────────────────────────────────────────────────┘
 //
-//  المؤلف   | Author     : Team LogicMinds (CPIT499 — FCIT KAU)
-//  المشرف   | Supervisor : Dr. Madini O. Alassafi
-//  الإصدار  | Version    : v4.0 — Production
+
 // ════════════════════════════════════════════════════════════════════
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
